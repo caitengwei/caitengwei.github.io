@@ -1,0 +1,38 @@
+---
+layout: post
+status: publish
+published: true
+title: SRM 430
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 221
+wordpress_url: http://child.kilu.de/blog/?p=221
+date: '2008-12-21 15:44:49 +0800'
+date_gmt: '2008-12-21 07:44:49 +0800'
+categories:
+- TopCoder
+tags:
+- SRM
+comments:
+- id: 42
+  author: Mark
+  author_email: gan-676@163.com
+  author_url: http://www.december.kilu.de/blog/
+  date: '2008-12-22 22:12:21 +0800'
+  date_gmt: '2008-12-22 14:12:21 +0800'
+  content: 1000分的算是HDOJ-1074的强化版吧....
+---
+<p>印象中已经好久没做topcoder了，上次做好像是srm423。最近托蒂开始为tc疯狂，于是我也凑下热闹。</p>
+<p>学校周末还要熄灯，于是本本待机到1点，然后开始做。</p>
+<p>275&hellip;&hellip;想了很久，刚开始想手动模拟那个过程，后来才想到就是把超出范围的数据处理下就好了。不过之前要先判数据合不合法，于是开始纠结&hellip;&hellip;最后还是错了&hellip;&hellip;好吧，我承认我N久没做题了。交掉275的时候，时间还有50分钟左右。</p>
+<p>500，刚开始有点怕，第一想法是二分或者数论之类的&hellip;&hellip;后来仔细想了想，涉及到位运算，应该在二进制编码上找规律，还好找到了。就是把k的二进制编码插入到x的二进制编码中为0的位置，得出第k大的数后，减去x即可。challenge阶段看了很多高手的代码，都是几行位运算搞定的&hellip;&hellip;数学牛逼就是好啊。交掉500时，时间还剩15分钟。</p>
+<p>1000分开起来看了下，没什么具体的想法，而且当时心里就觉得275还有错，于是回头看275，发现判断合法上出了问题，但最后的5分钟居然就愣在那里想不出解决办法&hellip;&hellip;&hellip;&hellip;天啊</p>
+<p>cha的时候，看到一个用暴力做500的&hellip;&hellip;算是捡了50分</p>
+<p>system test刚开始我的本本就撑不住了，只好上床睡觉，早上起来看了下，涨了蛮多。不过想想275，真是心中的痛啊，居然死在这么sb的错误上了，555555。</p>
+<p>下次srm的时间倒是正常了，可惜要上数据库，只好&hellip;&hellip;</p>

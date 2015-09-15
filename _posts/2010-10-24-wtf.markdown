@@ -1,0 +1,64 @@
+---
+layout: post
+status: publish
+published: true
+title: "想不出标题了"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 888
+wordpress_url: http://caitengwei.com/blog/?p=888
+date: '2010-10-24 07:44:00 +0800'
+date_gmt: '2010-10-24 15:44:00 +0800'
+categories:
+- My Life
+tags: []
+comments:
+- id: 816
+  author: zerob13
+  author_email: zerob13@gmail.com
+  author_url: http://www.zerob13.in
+  date: '2010-10-30 02:57:32 +0800'
+  date_gmt: '2010-10-30 10:57:32 +0800'
+  content: "蔡大牛，文艺了"
+- id: 973
+  author: shǎ崽
+  author_email: notonlysuccess@gmail.com
+  author_url: http://notonlysuccess.com
+  date: '2010-11-28 19:43:10 +0800'
+  date_gmt: '2010-11-29 03:43:10 +0800'
+  content: "具体表现在过了个Sample就信心满满的Submit，还以为自己能拿到个Yes呢。\r\n再努力下就Accept了."
+- id: 975
+  author: CD
+  author_email: clumsywyvern@gmail.com
+  author_url: http://www.caitengwei.com
+  date: '2010-11-30 19:47:46 +0800'
+  date_gmt: '2010-12-01 03:47:46 +0800'
+  content: "哈哈，谢谢啦。不过有些事情不是努力了就能Yes的。但是我可以做到让自己回想起来不因为自己没有去努力争取而后悔。"
+---
+<p>住处突然断网，接着想起我这个已经长草的博客，于是回忆了下最近记忆比较深刻的事情，来这里Mark下。</p>
+<p><strong>造勒个梦<&#47;strong></p>
+<p>蘑菇实在是个爱折腾的孩子。我估计真要找一个愿意从紫金港跑到钱江新城的万象城去看iMax的人应该不多，何况他还无视了西湖时代广场的iMax因为那屏幕"整整"比万象城的窄了1米。</p>
+<p>那晚看的电影是Inception，整个观影的动作分解就是俩脑袋不停在45度和70度之间调整仰角，因为我们当时只能买到第三排的位置了。</p>
+<p>但是我要说，看iMax版Inception完全对的起我们这么折腾，因为iMax也可以算是某种程度上的造梦机器了！</p>
+<p><strong>傻逼了吧<&#47;strong></p>
+<p>举国同庆前的那阵子，我好像特别冲动。具体表现在过了个Sample就信心满满的Submit，还以为自己能拿到个Yes呢。结果呢，第一次拿了个Runtime Error，接着被Wrong Answer。接下来有人说是TLE，有人说是PE，一坨坨Error搞得我头都昏了。</p>
+<p>于是我想，其实也许这个算法从刚开始就YY错了呢？还是回头继续学习各种奇技淫巧吧。</p>
+<p>有些孩子很好心，会问问我你这最近YY得咋样了？我只好说：没，还差得远呢。于是，我又不小心让自己陷入绝望里面了。</p>
+<p><strong>敢再给力些么<&#47;strong></p>
+<p>国庆长假连续腐败6天。谢谢！</p>
+<p><strong>一斤欲望多少钱<&#47;strong></p>
+<p>这就是昨天的事，杭州下午还下着小雨，我只能说这天气太特么清新了。</p>
+<p>然后下雨又貌似导致机器故障，主办方可能是想缓和大家的情绪放了点音乐。有个哥们说敢情我们是买票听CD来了，于是就有了一群人跟着音乐比中指的搞笑场面。不过也有几个人大概理解不了这种幽默感，以为大家都跟他一样义愤填膺了，直接进化成骂街，对这种人只好BS+无语。</p>
+<p>即便如此，李志上场以后现场的气氛还是很给力的。弹唱，嘶吼，撒钱，一大票歌迷跟着他的节奏蹦达。后来我发现我左脚略往前的草坪上就有个水坑，估计是某位重量级的歌迷给蹦出来的。</p>
+<p>后面甜蜜的孩子，曹方都显得略怂了些。介于全身的衣服都已经可耻的湿了，我们就无视曹方的安可曲，早退了。</p>
+<p>昨晚回来把风骚的沾着几瞥泥浆的裤子扔进了洗衣机，今早晒裤子发现音乐节门票上的那个防伪标志无辜的从裤子上飘下来了。</p>
+<p>狗日的，于是音乐节划上句号。</p>
+<p><strong>Ending<&#47;strong></p>
+<p>这三个月来，有一件事情一直贯穿在其中，我为此各种烦恼但又快乐着。</p>
+<p>好吧，C'est La Vie.</p>

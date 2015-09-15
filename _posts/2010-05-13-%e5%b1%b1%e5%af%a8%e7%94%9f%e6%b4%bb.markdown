@@ -1,0 +1,32 @@
+---
+layout: post
+status: publish
+published: true
+title: "山寨生活"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 819
+wordpress_url: http://caitengwei.com/blog/?p=819
+date: '2010-05-13 17:25:14 +0800'
+date_gmt: '2010-05-14 01:25:14 +0800'
+categories:
+- My Life
+tags:
+- "自行车"
+comments:
+- id: 469
+  author: Katie
+  author_email: katieangel@sohu.com
+  author_url: http://www.loveqiuqiu.com
+  date: '2010-06-11 17:45:26 +0800'
+  date_gmt: '2010-06-12 01:45:26 +0800'
+  content: "惊奇发现这个网页认得我，和我说welcome back katie&hellip;"
+---
+<p>　　不是有部电视剧叫&ldquo;我们无处安放的青春&rdquo;吗，我脑子里突然蹦出个山寨的标题，叫&ldquo;我无处安放的自行车&rdquo;。</p>
+<p>　　还有个很囧的事情，我在公司班车上坐了20分钟后，突然觉得自己刚才好像因为等到一个自行车位太高兴而忘记刷卡还车了&hellip;&hellip;Anyway, 到底我早上有没有还上车也只有等我晚上下班了才能知道了。</p>

@@ -1,0 +1,42 @@
+---
+layout: post
+status: publish
+published: true
+title: vim括号自动完成
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 335
+wordpress_url: http://child.kilu.de/blog/?p=335
+date: '2009-03-21 11:17:16 +0800'
+date_gmt: '2009-03-21 03:17:16 +0800'
+categories:
+- Geek Stuff
+tags:
+- gvim
+- "自动完成"
+comments: []
+---
+<p>今天早上脑子很乱，从8点钟起床到10:30都不知道自己干了什么事情&hellip;&hellip;<br />
+想起下午还有比赛，于是想找点水题做做，练练手感。<br />
+在写2120的时候突然想给Gvim弄个map auto complete的功能，于是去网上搜了下代码，发现有好几个版本。其中有一个是传说中的最强vim配置，已经久仰大名了，于是知道相关的那段代码，&ldquo;拿来主义&rdquo;了一下，再稍微修改了点，用用还是比较满意。<br />
+贴下代码，具体的机制我不是很清楚，好像就是如果输入字符匹配了的话，自动执行inoremap后的命令吧，跟宏有点像。熟悉vim命令的coder应该都大致能看明白什么意思。</p>
+<pre>
+" map auto complete<br />
+inoremap ( ()<esc>:let leavechar=")"<cr>i<br />
+inoremap [ []<esc>:let leavechar="]"<cr>i<br />
+inoremap { {<esc>o}<esc>:let leavechar="}"<cr>O<br />
+"inoremap { {}<esc>:let leavechar="}"<cr>i<br />
+inoremap ' ''<esc>:let leavechar="'"<cr>i<br />
+inoremap " ""<esc>:let leavechar='"'<cr>i<br />
+au BufNewFile,BufRead *.\(vim\)\@! inoremap " ""<esc>:let leavechar='"'<cr>i<br />
+au BufNewFile,BufRead *.\(txt\)\@! inoremap ' ''<esc>:let leavechar="'"<cr>i<br />
+imap <m-l> <esc>:exec "normal f" . leavechar<cr>a<br />
+imap <d-l> <esc>:exec "normal f" . leavechar<cr><br />
+<&#47;pre><br />
+弄好后，我还想再实现这样的宏，就是一对中间没有内容的括号，删除左边的那个括号时，自动删除右边那个，不过我还没找到可以参考的代码。就先这样用着吧，有空上社区问问。</p>

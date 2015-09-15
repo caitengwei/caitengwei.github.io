@@ -1,0 +1,27 @@
+---
+layout: post
+status: publish
+published: true
+title: "寒假开始啦"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 240
+wordpress_url: http://child.kilu.de/blog/?p=240
+date: '2009-01-17 17:23:22 +0800'
+date_gmt: '2009-01-17 09:23:22 +0800'
+categories:
+- My Life
+tags: []
+comments: []
+---
+<p>14号傍晚回到了温岭，然后一直陪我的超会缠人的外甥女玩了两天<br />
+上午终于搞定了宽带，然后午饭前跑出去买了条网线，把无线路由架起来了<br />
+下午做了下成都赛的题目，感觉好久没做题了，一点感觉都没有<br />
+顺便看了下期末成绩&hellip;&hellip;我完全不是读书的料嘛～<br />
+好咯，开始我也许也许堕落也许不堕落的寒假吧</p>

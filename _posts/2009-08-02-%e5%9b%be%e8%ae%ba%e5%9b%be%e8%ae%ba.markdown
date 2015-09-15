@@ -1,0 +1,288 @@
+---
+layout: post
+status: publish
+published: true
+title: "图论图论!"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 550
+wordpress_url: http://child.kilu.de/blog/?p=550
+date: '2009-08-02 14:15:28 +0800'
+date_gmt: '2009-08-02 06:15:28 +0800'
+categories:
+- ACM&#47;ICPC
+tags:
+- HDOJ
+- POJ
+- Ural
+- "图论"
+comments:
+- id: 522
+  author: Tanky Woo
+  author_email: 17611904@qq.com
+  author_url: http://www.wutianqi.com
+  date: '2010-07-09 23:49:12 +0800'
+  date_gmt: '2010-07-10 07:49:12 +0800'
+  content: "有一个牛人，orz"
+- id: 2250
+  author: hellowjiangxin
+  author_email: jiangxin86@yeah.net
+  author_url: ''
+  date: '2011-09-13 06:12:42 +0800'
+  date_gmt: '2011-09-13 14:12:42 +0800'
+  content: "代码好漂亮"
+---
+<p>没错，就是图论！要好好练！</p>
+<p>图论旅程第一题 : <a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=2337" target="_blank">POJ 2337 Catenyms<&#47;a><br />
+5551478	clumsydragon	2337	Accepted	200K	16MS	C++	1775B<br />
+以单词的开头字母和结尾字母为点，单词为边，找一条欧拉路。先计算每个点的度数，判断能否构成一条欧拉路，然后再用深搜寻找答案。</p>
+<p><a href="http:&#47;&#47;acm.timus.ru&#47;problem.aspx?space=1&num=1129">Ural 1129 Door painting<&#47;a><br />
+这题应该MS是利用图论的性质来求解。题目要求无向图的每条边两端各涂绿或黄色(两端不同)，且一个点内两种颜色数量相差不能超过1。如果这张图能构成一个欧拉回路，假设每条边的头为黄尾为绿，按照欧拉回路来遍历，那么每个点的黄绿两色数量都恰好相等；如果这张图无法构成欧拉回路，那么可以在图中加边来使他满足，因为每个点最多被加一条边，那么拿去这条多余的边，点内黄绿两色的数量变为相差1。我的做法就是先加边，然后dfs把每条路上色。</p>
+<p><strong>最小树形图<&#47;strong>：<br />
+对图中的每个点取权值最小的入边，若这个边集组成的图中若没有圈，这得到该图的最小树形图；否则对每个圈进行缩点。缩点中，涉及到对重点在圈内的弧的权值的处理。圈内的边权全部加到最小树形图的代价上，指向圈的入弧比如Arc[i][j] 则减去 Arc[pre[j]][j], 这里pre[j]是圈中的j点的前驱。然后对缩点后的图继续上述的步骤，一直到边集中再也没有圈为止。这些所选的边的边权之和，加上之前已经得到的边权就可以得到最小树形图的总代价了。<br />
+突然有个想法，zl算法在缩点前和缩点后的状态之间权值变化的计算，是不是有DP的思想呢？<br />
+最小树形图具体的题目有 ：<br />
+<a href="http:&#47;&#47;acm.tju.edu.cn&#47;toj&#47;showp2248.html" target="_blank">TJU 2248 Channel Design<&#47;a><br />
+<a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=3164" target="_blank">PKU 3164 Command Network<&#47;a><br />
+<a href="http:&#47;&#47;uva.onlinejudge.org&#47;index.php?option=com_onlinejudge&Itemid=8&category=65&page=show_problem&problem=2124" target="_blank">UVa 11183 Teen Girl Squad<&#47;a><br />
+上面三题都是固定节点的最小树形图，没有固定节点的最小树形图也可以转化成固定节点的方法来做。</p>
+<p><a href="http:&#47;&#47;acm.hdu.edu.cn&#47;showproblem.php?pid=3072" target="_blank">HDU 3072 Intelligence System<&#47;a><br />
+这也是一题比较有意思的最小树形图。先用Kosaraju算法找出所有强连通分量并缩点，然后再做最小树形图。</p>
+<p>贴下HDU 3072的代码：</p>
+<pre class="prettyprint">#include <algorithm><br />
+#include <iostream><br />
+#include <cstdlib><br />
+#include <cstring><br />
+#include <bitset><br />
+#include <string><br />
+#include <vector><br />
+#include <cctype><br />
+#include <cstdio><br />
+#include <ctime><br />
+#include <queue><br />
+#include <stack><br />
+#include <cmath><br />
+#include
+<list>
+#include<br />
+<map>
+#include <set></p>
+<p>using namespace std;</p>
+<p>#define inf 0x7fffffff<br />
+#define sz 110</p>
+<p>vector <int> VS[50010];</p>
+<p>#define NMAX 51000<br />
+vector<int> path[NMAX];<br />
+vector<int> npath[NMAX];<br />
+int n,m, scc;<br />
+int order[NMAX], order_pos, id[NMAX];<br />
+bool vis[NMAX];</p>
+<p>int pre[sz];<br />
+int del[sz];<br />
+bool visited[sz];</p>
+<p>void dfs(int pos)<br />
+{<br />
+    int i,j,l;<br />
+    vis[pos] = true;<br />
+    l = path[pos].size();<br />
+    for (i=0;i<l;i++) {<br />
+        j = path[pos][i];<br />
+        if (!vis[j]) {<br />
+            dfs(j);<br />
+        }<br />
+    }<br />
+    order[ order_pos ++ ] = pos;&#47;&#47;make order<br />
+}</p>
+<p>void ndfs(int pos)<br />
+{<br />
+    int i,j,l;<br />
+    vis[pos] = true;<br />
+    id[pos] = scc;<br />
+    VS[scc].push_back(pos);<br />
+    l = npath[pos].size();<br />
+    for (i=0;i<l;i++) {<br />
+        j = npath[pos][i];<br />
+        if (!vis[j]) {<br />
+            ndfs(j);<br />
+        }<br />
+    }<br />
+}</p>
+<p>void Kosaraju()<br />
+{<br />
+    int i,j;<br />
+    &#47;&#47;dfs in original graph<br />
+    memset(vis, 0, sizeof(vis));<br />
+    order_pos = 0;<br />
+    for (i=0; i<n ;i++) {<br />
+        if (!vis[i]) {<br />
+            dfs(i);<br />
+        }<br />
+    }<br />
+    &#47;&#47;dfs in inverse graph<br />
+    memset(vis, 0, sizeof(vis));<br />
+    memset(id, 0, sizeof(id));<br />
+    scc = 0;<br />
+    for (i=order_pos-1; i>=0 ;i--) {<br />
+        if (!vis[ order[i] ]) {<br />
+            ndfs(order[i]);<br />
+            scc ++;<br />
+        }<br />
+    }<br />
+    scc --;<br />
+}</p>
+<p>int hash[50010];<br />
+struct node{<br />
+    int ni, nj, val;<br />
+};<br />
+node ainfo[100010];<br />
+int val[110][110];</p>
+<p>struct edge{<br />
+    int no;<br />
+    int vt[400];</p>
+<p>    edge() { no = 0; }</p>
+<p>    inline void clear() { no = 0; }</p>
+<p>    inline int operator [] (const int &x) {<br />
+        return vt[x];<br />
+    }</p>
+<p>    inline void push(const int &x) {<br />
+        vt[no ++] = x;<br />
+    }<br />
+};</p>
+<p>edge arc[sz], rarc[sz];</p>
+<p>inline void modify(int &x, const int &y) {<br />
+    x = x < y ? x : y;<br />
+}</p>
+<p>inline int minTree(int root, int n) {<br />
+    memset(del, 0, sizeof(del));<br />
+    memset(pre, -1, sizeof(pre));</p>
+<p>    int i, j, k, np, op, mi, ret = 0, last = 0;<br />
+    bool fg;<br />
+    while(1) {<br />
+        for(i = 0; i < n; i++) {<br />
+            if(i == root || del[i]) continue;<br />
+            fg = 0;<br />
+            for(j = 0; j < rarc[i].no; j++) {<br />
+                if(del[rarc[i][j]]) continue;<br />
+                op = rarc[i][j];<br />
+                if(!fg || mi > val[op][i]) {<br />
+                    mi = val[op][i];<br />
+                    np = op;<br />
+                    if(!fg) fg = 1;<br />
+                }<br />
+            }<br />
+            if(fg) pre[i] = np;<br />
+        }<br />
+        for(i = last; i < n; i++) {<br />
+            if(i == root || del[i]) continue;<br />
+            last = i;<br />
+            memset(visited, 0, sizeof(visited));<br />
+            for(j = pre[i]; j != root && !visited[j]; j = pre[j]) {<br />
+                visited[j] = 1;<br />
+            }<br />
+            if(j == root) continue;<br />
+            i = j;<br />
+            do {<br />
+                ret += val[pre[j]][j];<br />
+                del[j] = 1;<br />
+                j = pre[j];<br />
+            } while(j != i);<br />
+            j = i;<br />
+            do {<br />
+                for(k = 0; k < rarc[j].no; k++) {<br />
+                    if(del[rarc[j][k]]) continue;<br />
+                    op = rarc[j][k];<br />
+                    if(val[op][i] == inf) {<br />
+                        rarc[i].push(op);<br />
+                        arc[op].push(i);<br />
+                        val[op][i] = val[op][j] - val[pre[j]][j];<br />
+                    }<br />
+                    else<br />
+                        modify(val[op][i], val[op][j] - val[pre[j]][j]);<br />
+                }<br />
+                for(k = 0; k < arc[j].no; k ++) {<br />
+                    if(del[arc[j][k]]) continue;<br />
+                    op = arc[j][k];<br />
+                    if(val[i][op] == inf) {<br />
+                        arc[i].push(op);<br />
+                        rarc[op].push(i);<br />
+                        val[i][op] = val[j][op];<br />
+                    }<br />
+                    else<br />
+                        modify(val[i][op], val[j][op]);<br />
+                }<br />
+                j = pre[j];<br />
+            } while(j != i);<br />
+            del[i] = 0;</p>
+<p>            break;<br />
+        }<br />
+        if(i >= n) {<br />
+            for(i = 0; i < n; i++) {<br />
+                if(i == root || del[i]) continue;<br />
+                ret += val[pre[i]][i];<br />
+            }<br />
+            return ret;<br />
+        }<br />
+    }</p>
+<p>    return ret;<br />
+}</p>
+<p>int main()<br />
+{</p>
+<p>    while (scanf("%d %d" , &n , &m) == 2)<br />
+    {<br />
+        int i, j;<br />
+        for (i=0 ; i < n ; i ++){<br />
+            VS[i].clear();<br />
+            path[i].clear();<br />
+            npath[i].clear();</p>
+<p>        }<br />
+        scc = 0;</p>
+<p>        int ta , tb;<br />
+        for (i=0 ; i < m ; i++){<br />
+            scanf("%d %d %d" , &ta , &tb, &ainfo[i].val);<br />
+            ainfo[i].ni = ta;<br />
+            ainfo[i].nj = tb;<br />
+            path[ta].push_back(tb);<br />
+            npath[tb].push_back(ta);<br />
+        }</p>
+<p>        Kosaraju();</p>
+<p>        scc ++;<br />
+        for(i = 0; i < scc; i++) {<br />
+            for(j = 0; j < VS[i].size(); j++) {<br />
+                hash[VS[i][j]] = i;<br />
+                &#47;&#47;printf("%d ", VS[i][j]);<br />
+            }<br />
+            &#47;&#47;printf("\n");<br />
+        }<br />
+        for(i = 0; i < scc; i++) {<br />
+            for(j = 0; j < scc; j++) {<br />
+                val[i][j] = inf;<br />
+            }<br />
+            arc[i].clear();<br />
+            rarc[i].clear();<br />
+        }</p>
+<p>        for(i = 0; i < m; i++) {<br />
+            ta = hash[ainfo[i].ni];<br />
+            tb = hash[ainfo[i].nj];<br />
+            if(val[ta][tb] == inf) {<br />
+                arc[ta].push(tb);<br />
+                rarc[tb].push(ta);<br />
+                modify(val[ta][tb], ainfo[i].val);<br />
+            }<br />
+            else<br />
+                modify(val[ta][tb], ainfo[i].val);<br />
+        }</p>
+<p>        for(i = 0; i < scc; i++) {<br />
+            val[i][i] = inf;<br />
+        }</p>
+<p>        int root = hash[0];<br />
+        int ret = minTree(root, scc);</p>
+<p>        printf("%d\n", ret);<br />
+    }</p>
+<p>    return 0;<br />
+}<&#47;pre></p>

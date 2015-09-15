@@ -1,0 +1,221 @@
+---
+layout: post
+status: publish
+published: true
+title: AC自动机
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 538
+wordpress_url: http://child.kilu.de/blog/?p=538
+date: '2009-07-31 13:14:06 +0800'
+date_gmt: '2009-07-31 05:14:06 +0800'
+categories:
+- ACM&#47;ICPC
+tags:
+- AC自动机
+- HDOJ
+- POJ
+comments:
+- id: 181
+  author: kdfkdsfkdfskd
+  author_email: sdfkdhskd@gmail.com
+  author_url: ''
+  date: '2010-02-10 00:29:29 +0800'
+  date_gmt: '2010-02-10 08:29:29 +0800'
+  content: bs写代码不加注解的人，不管你有多牛
+- id: 183
+  author: zerob13
+  author_email: zerob13@gmail.com
+  author_url: http://www.zerob13.com
+  date: '2010-02-11 00:50:11 +0800'
+  date_gmt: '2010-02-11 08:50:11 +0800'
+  content: "<a href=\"#comment-181\" rel=\"nofollow\">@kdfkdsfkdfskd<&#47;a>, \r\n年轻人阿。。。不要这样，每个人都有每个人的风格嘛～"
+---
+<p>AC自动机是KMP算法和Trie数据结构的结合，重点主要在KMP算法的理解。我觉得AC自动机是我学过的最精妙和犀利的算法。<br />
+AC自动机的题目有蛮多的，我只做了两题最简单的 :</p>
+<p><a href="http:&#47;&#47;acm.hdu.edu.cn&#47;showproblem.php?pid=2222" target="_blank">Keywords Search<&#47;a><br />
+最单纯的AC自动机</p>
+<p><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=1204" target="_blank">Word Puzzles<&#47;a><br />
+也比较简单，不过我的做法是把单词正反两个方向都建立了Trie，这样后面查找的量能减少一半，在POJ上比我只建立一个方向的代码的效率快了1&#47;3。不过要注意的是，本来keywords都是唯一的，但是建两个方向以后就不唯一了。顺便贴下这题的代码。</p>
+<pre class="prettyprint">#include <iostream><br />
+#include <cstring><br />
+#include <queue><br />
+#include <cstdio><br />
+#include <cstdlib><br />
+#include <cmath><br />
+using namespace std;</p>
+<p>#define sz 197260</p>
+<p>int dir[8][2] = {-1, 0, -1, 1, 0, 1, 1, 1, 1, 0, 1, -1, 0, -1, -1, -1};<br />
+int rx[1011], ry[1011], rd[1011], len[1011];<br />
+char text[1001][1010];<br />
+bool vsd[1011];<br />
+int afcg[1011];<br />
+int next[sz][26], pos;<br />
+int fa[sz], fp[sz], isword[sz], val[sz], id[sz];<br />
+int r, c, zf, rm;</p>
+<p>inline bool valid(const int &x, const int &y) {<br />
+	return (x >= 0 && x < r && y >= 0 && y < c);<br />
+}</p>
+<p>inline void build(const int &cur, char *st, const int &k) {<br />
+	int op = *st - 'A';<br />
+	int ps;<br />
+ 	if(!next[cur][op]) {<br />
+		ps = pos;<br />
+		next[cur][op] = pos ++;<br />
+		val[ps] = op;<br />
+		fa[ps] = cur;<br />
+	}<br />
+	else<br />
+		ps = next[cur][op];<br />
+	if(*(st + zf) == '\0') {<br />
+		if(isword[ps]) {<br />
+			if(zf > 0) afcg[k] = -id[ps];<br />
+		}<br />
+		else {<br />
+			isword[ps] = 1;<br />
+			id[ps] = k * zf;<br />
+		}<br />
+	}<br />
+	else<br />
+		build(ps, st + zf, k);<br />
+}</p>
+<p>inline void bfs() {<br />
+	int i, j, op, now, nxt, root = 0;<br />
+	fp[root] = -1;<br />
+	queue <int> qq;<br />
+	while(!qq.empty()) qq.pop();<br />
+	for(i = 0; i < 26; i++) {<br />
+		if(next[root][i])<br />
+			qq.push(next[root][i]);<br />
+	}</p>
+<p>	while(!qq.empty()) {<br />
+		now = qq.front(), qq.pop();<br />
+		nxt = fa[now];<br />
+		op = val[now];<br />
+		do{<br />
+			nxt = fp[nxt];<br />
+		}while(nxt != -1 && !next[nxt][op]);<br />
+		if(nxt == -1)<br />
+			fp[now] = root;<br />
+		else<br />
+			fp[now] = next[nxt][op];<br />
+		for(i = 0; i < 26; i++) {<br />
+			if(next[now][i])<br />
+				qq.push(next[now][i]);<br />
+		}<br />
+	}<br />
+}</p>
+<p>inline void search(const int &x, const int &y, const int &k) {<br />
+	int tx = x, ty = y;<br />
+	int op, tmp, dd, cur = 0;<br />
+	while(valid(tx, ty)) {<br />
+		op = text[tx][ty] - 'A';<br />
+		while(cur != -1 && next[cur][op] == 0) {<br />
+			cur = fp[cur];<br />
+		}<br />
+		if(cur == -1) cur = 0;<br />
+		else {<br />
+			cur = next[cur][op];<br />
+			tmp = cur;<br />
+			while(tmp != -1) {<br />
+				if(isword[tmp]) {<br />
+					dd = abs(id[tmp]);<br />
+					if(vsd[dd]) break;<br />
+					if(id[tmp] < 0) {<br />
+						rx[dd] = tx;<br />
+						ry[dd] = ty;<br />
+						rd[dd] = (k + 4) & 7;<br />
+					}<br />
+					else {<br />
+						rx[dd] = tx - dir[k][0] * (len[dd] - 1);<br />
+						ry[dd] = ty - dir[k][1] * (len[dd] - 1);<br />
+						rd[dd] = k;<br />
+					}<br />
+					vsd[dd] = 1;<br />
+					rm --;<br />
+				}<br />
+				tmp = fp[tmp];<br />
+			}<br />
+		}<br />
+		tx += dir[k][0];<br />
+		ty += dir[k][1];<br />
+	}<br />
+}</p>
+<p>inline void init(const int &cur) {<br />
+	for(int i = 0; i < 26; i++) {<br />
+		if(next[cur][i]) {<br />
+			init(next[cur][i]);<br />
+			next[cur][i] = 0;<br />
+		}<br />
+	}<br />
+	isword[cur] = 0;<br />
+}</p>
+<p>int main()<br />
+{</p>
+<p>	freopen("ACM.in", "r", stdin);<br />
+	freopen("ACM.out", "w", stdout);</p>
+<p>	char ln[1500];<br />
+	int n, root = 0;<br />
+	int i, j;<br />
+	while(scanf("%d %d %d", &r, &c, &n) != EOF) {<br />
+		getchar();<br />
+		for(i = 0; i < r; i++) {<br />
+			gets(text[i]);<br />
+		}<br />
+		init(root);<br />
+		pos = 1;<br />
+		for(i = 1; i <= n; i++) {<br />
+			gets(ln + 1);<br />
+			afcg[i] = i;<br />
+			ln[0] = '\0';<br />
+			len[i] = strlen(ln + 1);<br />
+			zf = 1;<br />
+			build(root, ln + 1, i);<br />
+			zf = -1;<br />
+			build(root, ln + len[i], i);<br />
+		}<br />
+		rm = n;<br />
+		bfs();</p>
+<p>		memset(vsd, 0, sizeof(vsd));<br />
+		int tr = r - 1, tc = c - 1;<br />
+		for(i = 1; i < 5; i++) {<br />
+			switch(i)<br />
+			{<br />
+			case 1:<br />
+				for(j = 0; j < c; j++) {<br />
+					search(tr, j, i);<br />
+				}<br />
+			case 2:<br />
+				for(j = 0; j < r; j++) {<br />
+					search(j, root, i);<br />
+				}<br />
+				break;<br />
+			case 3:<br />
+				for(j = 0;  j < r; j++) {<br />
+					search(j, root, i);<br />
+				}<br />
+			case 4:<br />
+				for(j = 0; j < c; j++) {<br />
+					search(root, j, i);<br />
+				}<br />
+				break;<br />
+			}<br />
+		}<br />
+		for(i = 1; i <= n; i++) {<br />
+			if(afcg[i] != i) {<br />
+				j = afcg[i];<br />
+				rd[i] = (rd[j] + 4) % 8;<br />
+				rx[i] = rx[j] + (len[j] - 1) * dir[rd[j]][0];<br />
+				ry[i] = ry[j] + (len[j] - 1) * dir[rd[j]][1];<br />
+			}<br />
+			printf("%d %d %c\n", rx[i], ry[i], rd[i] + 'A');<br />
+		}<br />
+	}<br />
+	return 0;<br />
+}<&#47;pre></p>

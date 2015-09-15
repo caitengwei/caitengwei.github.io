@@ -1,0 +1,156 @@
+---
+layout: post
+status: publish
+published: true
+title: "记忆化搜索"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+excerpt: "居然整ACM那么久记忆化搜索还不会，今晚TOJ的C就这么卡在那边了&hellip;&hellip;\n不过还好学起来还是蛮简单了，回到寝室后A了比较相似的两题，一题是TOJ
+  3234，一题是POJ 1088.\n我的做法都是用dfs扩展结点，用一个数组保存最优解。\n贴下代码(顺便一提，今天看到一个等宽字体叫Monaco，狂好看！在pre的css里改了下，但是没效果=,=
+  郁闷)：\n<pre class=\"prettyprint\">&#47;&#47;TOJ 3234\n#include <iostream>\n#include
+  <queue>\n#include <algorithm>\nusing namespace std;\n\nint n, ret;\nint d[101][101];\nint
+  dp[101][101];\n\ninline int dfs(int x, int y)\n{\n\t&#47;&#47;printf(\"%d %d\\n\",
+  x, y);\n\tif(x == 0 && y == 3){\n\t\tx = 0, y = 3;\n\t}\n\tif(dp[x][y] > 0)\n\t\treturn
+  dp[x][y];\n\tint i, op;\n\top = x -1;\n\tfor(i = 0; op >= 0 && i < n; i++){\n\t\tif(abs(i
+  - y) > 1 && d[op][i] > d[x][y] )\n\t\t\tdp[x][y] = max(dp[x][y], dfs(op, i) +1);\n\t}\n\top
+  = x +1;\n\tfor(i = 0; op < n && i < n; i++){\n\t\tif(abs(i - y) > 1 && d[op][i]
+  > d[x][y] )\n\t\t\tdp[x][y] = max(dp[x][y], dfs(op, i) +1);\n\t}\n\top = y -1;\n\tfor(i
+  = 0; op >= 0 && i < n; i++){\n\t\tif(abs(i - x) > 1 && d[i][op] > d[x][y] )\n\t\t\tdp[x][y]
+  = max(dp[x][y], dfs(i, op) +1);\n\t}\n\top = y +1;\n\tfor(i = 0; op < n && i < n;
+  i++){\n\t\tif(abs(i - x) > 1 && d[i][op] > d[x][y] )\n\t\t\tdp[x][y] = max(dp[x][y],
+  dfs(i, op) +1);\n\t}\n\tif(dp[x][y] < 0)\n\t\tdp[x][y] = 1;\n\treturn dp[x][y];\n}\n\nint
+  main()\n{\n\tint x, y;\n\tint i, j;\n\t&#47;&#47;freopen(\"ACM.out\", \"w\", stdout);\n\n\twhile(scanf(\"%d\",
+  &n) != EOF){\n\t\tscanf(\"%d %d\", &x, &y);\n\t\tfor(i = 0; i < n; i++){\n\t\t\tfor(j
+  = 0; j < n; j++){\n\t\t\t\tscanf(\"%d\", &d[i][j]);\n\t\t\t}\n\t\t}\n\t\tmemset(dp,
+  -1, sizeof(dp));\n\t\tret = dfs(x -1, y -1);\n\t\tprintf(\"%d\\n\", ret);\n\t}\n\treturn
+  0;\n}<&#47;pre>\n"
+wordpress_id: 350
+wordpress_url: http://child.kilu.de/blog/?p=350
+date: '2009-04-05 00:15:12 +0800'
+date_gmt: '2009-04-04 16:15:12 +0800'
+categories:
+- ACM&#47;ICPC
+tags:
+- POJ
+- TOJ
+- "记忆化搜索"
+comments: []
+---
+<p>居然整ACM那么久记忆化搜索还不会，今晚TOJ的C就这么卡在那边了&hellip;&hellip;<br />
+不过还好学起来还是蛮简单了，回到寝室后A了比较相似的两题，一题是TOJ 3234，一题是POJ 1088.<br />
+我的做法都是用dfs扩展结点，用一个数组保存最优解。<br />
+贴下代码(顺便一提，今天看到一个等宽字体叫Monaco，狂好看！在pre的css里改了下，但是没效果=,= 郁闷)：</p>
+<pre class="prettyprint">&#47;&#47;TOJ 3234<br />
+#include <iostream><br />
+#include <queue><br />
+#include <algorithm><br />
+using namespace std;</p>
+<p>int n, ret;<br />
+int d[101][101];<br />
+int dp[101][101];</p>
+<p>inline int dfs(int x, int y)<br />
+{<br />
+	&#47;&#47;printf("%d %d\n", x, y);<br />
+	if(x == 0 && y == 3){<br />
+		x = 0, y = 3;<br />
+	}<br />
+	if(dp[x][y] > 0)<br />
+		return dp[x][y];<br />
+	int i, op;<br />
+	op = x -1;<br />
+	for(i = 0; op >= 0 && i < n; i++){<br />
+		if(abs(i - y) > 1 && d[op][i] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(op, i) +1);<br />
+	}<br />
+	op = x +1;<br />
+	for(i = 0; op < n && i < n; i++){<br />
+		if(abs(i - y) > 1 && d[op][i] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(op, i) +1);<br />
+	}<br />
+	op = y -1;<br />
+	for(i = 0; op >= 0 && i < n; i++){<br />
+		if(abs(i - x) > 1 && d[i][op] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(i, op) +1);<br />
+	}<br />
+	op = y +1;<br />
+	for(i = 0; op < n && i < n; i++){<br />
+		if(abs(i - x) > 1 && d[i][op] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(i, op) +1);<br />
+	}<br />
+	if(dp[x][y] < 0)<br />
+		dp[x][y] = 1;<br />
+	return dp[x][y];<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int x, y;<br />
+	int i, j;<br />
+	&#47;&#47;freopen("ACM.out", "w", stdout);</p>
+<p>	while(scanf("%d", &n) != EOF){<br />
+		scanf("%d %d", &x, &y);<br />
+		for(i = 0; i < n; i++){<br />
+			for(j = 0; j < n; j++){<br />
+				scanf("%d", &d[i][j]);<br />
+			}<br />
+		}<br />
+		memset(dp, -1, sizeof(dp));<br />
+		ret = dfs(x -1, y -1);<br />
+		printf("%d\n", ret);<br />
+	}<br />
+	return 0;<br />
+}<&#47;pre><br />
+<a id="more"></a><a id="more-350"></a></p>
+<pre class="prettyprint">&#47;&#47;POJ 1088<br />
+#include <iostream><br />
+#include <algorithm><br />
+using namespace std;</p>
+<p>int n, m, ret;<br />
+int d[102][102], dp[102][102];<br />
+int dir[4][2] = {0, 1, -1, 0, 0, -1, 1, 0};</p>
+<p>inline int dfs(int x, int y)<br />
+{<br />
+	&#47;&#47;printf("%d %d\n", x, y);<br />
+	if(dp[x][y] > 0)<br />
+		return dp[x][y];<br />
+	int i;<br />
+	int tx, ty;<br />
+	for(i = 0; i < 4; i++){<br />
+		tx = x + dir[i][0], ty = y + dir[i][1];<br />
+		if(tx < 0 || tx >= n || ty < 0 || ty >= m)<br />
+			continue;<br />
+		if(d[tx][ty] <= d[x][y])<br />
+			continue;<br />
+		dp[x][y] = max(dp[x][y], dfs(tx, ty) +1);<br />
+	}<br />
+	if(dp[x][y] < 0)<br />
+		dp[x][y] = 1;<br />
+	return dp[x][y];<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int i, j;<br />
+	&#47;&#47;freopen("ACM.out", "w", stdout);<br />
+	while(scanf("%d %d", &n, &m) != EOF)<br />
+	{<br />
+		for(i = 0; i < n; i++){<br />
+			for(j = 0; j < m; j++){<br />
+				scanf("%d", &d[i][j]);<br />
+			}<br />
+		}<br />
+		memset(dp, -1, sizeof(dp));<br />
+		ret = 0;<br />
+		for(i = 0; i < n; i++){<br />
+			for(j = 0; j < m; j++){<br />
+				ret = max(ret, dfs(i, j));<br />
+			}<br />
+		}<br />
+		printf("%d\n", ret);<br />
+	}<br />
+	return 0;<br />
+}<&#47;pre></p>

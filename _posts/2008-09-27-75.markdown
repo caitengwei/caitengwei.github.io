@@ -1,0 +1,26 @@
+---
+layout: post
+status: publish
+published: true
+title: 08-9-27
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 75
+wordpress_url: http://child.kilu.de/blog/?p=75
+date: '2008-09-27 14:23:15 +0800'
+date_gmt: '2008-09-27 06:23:15 +0800'
+categories:
+- My Life
+tags: []
+comments: []
+---
+<p>非常舒服的天气，也许是lcd盯太久了，偶尔抬头看天，就会有一种刺眼+震撼的感觉。那种湛蓝的颜色以及从视线边际射过来的光线让我不得不眯着眼睛，但是又充斥着就这么一直看下去的欲望。<br />
+是不是说明我真的变成一个宅男啦。<br />
+不知道为什么，如果被室外的风吹到有点凉意的时候，就会不由自主回忆起很多小时候的事情。且第一个闪过的画面总是自己趴在窗户边羡慕那些在楼下嬉戏的小孩，因为那时的我就很懒，总是不爱做作业所以老被老妈关在家里；那时候从窗外冲进来的风印象中就是这么带着点低温的伤感的。而后就是想起小学时老爸老妈常常带着我出去郊游的情景，低年级的我还是很乖的，每次都很快的把作文以外作业完成，然后星期天就可以出去郊游啦，我总是手里拿着一份树枝在行人踏出的小路上跑来跑去，并且去抽那些路边的野草。因为郊游大部分都在春天和秋天出去，地点也都在山上或者水边，那时候的风也是凉飕飕的。那时候应该还留下了蛮多照片的，不过我从高中后好像就没有去看过了，也许老爸老妈还偶尔会翻一下吧。<br />
+长大到底是好还是坏，很难说啊&hellip;&hellip;</p>

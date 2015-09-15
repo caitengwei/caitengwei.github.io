@@ -1,0 +1,43 @@
+---
+layout: post
+status: publish
+published: true
+title: "第三年零三个月"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 1128
+wordpress_url: http://caitengwei.com/blog/?p=1128
+date: '2013-07-01 05:31:22 +0800'
+date_gmt: '2013-07-01 13:31:22 +0800'
+categories:
+- Programming
+tags: []
+comments: []
+---
+<p>工作三年出头了，回头的时候突然觉得挺空荡的。</p>
+<p>折腾了三年Perl，少许C，最近一年陆陆续续的玩了下python。除了Perl有系统的学习过，大部分的获得都是tricks，工作经验和一些软技能。这些不系统，没总结的过东西，太琐碎，拿不出手。工作时感到自豪的是自己总是有点强迫症的想把活做到最好，只是主观感受，做的也不一定那么完美，何况去年还被打击了一次。脱完水，真的没剩下多少干货。</p>
+<p>所以今晚突然想着给下半年的业余时间做点计划，免得不知不觉就把时间给荒废过去了。顺便把以前的东西整理总结下，感觉会比较好。</p>
+<ol>
+<li>系统的整理一下Perl<&#47;li>
+<ul>
+<li>把perlxs,perlapi,perlguts这几块内容看一看，感觉这是我学Perl的最后一座桥头堡<&#47;li>
+<li>Learning Perl, Intermediate Perl再重新梳理一遍<&#47;li>
+<li>Mastering Perl, Advanced Perl Programming有时间再完整的读一下 XD<&#47;li><br />
+<&#47;ul></p>
+<li>好好补充下*nix服务端开发方面基础<&#47;li>
+<ul>
+<li>之前看了『Linux系统编程』的一小部分「文件读写」，感觉是本好书，下半年应该抽时间好好读一遍。<&#47;li>
+<li>其他方面的知识，还是看项目需要，选读一些资料和paper。<&#47;li><br />
+<&#47;ul></p>
+<li>恢复算法和数据结构的练习<&#47;li>
+<ul>
+<li>这个还没有具体的计划，目前的想法是选一些感兴趣的算法和数据结构，然后去CF上找相关题目练习<&#47;li><br />
+<&#47;ul><br />
+<&#47;ol></p>
+<p>先这样。</p>

@@ -1,0 +1,31 @@
+---
+layout: post
+status: publish
+published: true
+title: "一点东东"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 205
+wordpress_url: http://child.kilu.de/blog/?p=205
+date: '2008-12-11 09:31:21 +0800'
+date_gmt: '2008-12-11 01:31:21 +0800'
+categories:
+- Some parts
+tags: []
+comments:
+- id: 40
+  author: HHBL
+  author_email: google@zju.edu.cn
+  author_url: http://fm.zju.edu.cn/~hhbl
+  date: '2008-12-13 13:57:48 +0800'
+  date_gmt: '2008-12-13 05:57:48 +0800'
+  content: <a href="http:&#47;&#47;fm.zju.edu.cn&#47;~hhbl&#47;LookAlikes.bmp" title="hoho"
+    rel="nofollow">看看哥哥的<&#47;a>
+---
+<p>MyHeritage也太看得起我了，这么搓的一张大一拍的两寸照，他能把郑智友、哥哥都搬出了，太增加自信了&hellip;&hellip;&hellip;&hellip;<img class="alignright" title="人脸识别" src="http:&#47;&#47;storage.myheritagefiles.com&#47;O&#47;storage&#47;site1&#47;files&#47;15&#47;38&#47;12&#47;153812_3876940c7ef3945i3k5227.JPG" alt="" width=425"" height="487" &#47;></p>

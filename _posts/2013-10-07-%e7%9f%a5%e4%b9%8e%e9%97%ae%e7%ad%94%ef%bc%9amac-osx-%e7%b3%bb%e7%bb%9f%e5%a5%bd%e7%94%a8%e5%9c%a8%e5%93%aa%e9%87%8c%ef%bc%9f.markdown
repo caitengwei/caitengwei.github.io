@@ -1,0 +1,70 @@
+---
+layout: post
+status: publish
+published: true
+title: "知乎问答：Mac OSX 系统好用在哪里？"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 1175
+wordpress_url: http://caitengwei.com/blog/?p=1175
+date: '2013-10-07 05:57:53 +0800'
+date_gmt: '2013-10-07 13:57:53 +0800'
+categories:
+- Geek Stuff
+tags: []
+comments:
+- id: 7682
+  author: xiaoDragon
+  author_email: 88277648@163.com
+  author_url: ''
+  date: '2014-03-09 00:54:05 +0800'
+  date_gmt: '2014-03-09 08:54:05 +0800'
+  content: "好长"
+---
+<p><a href="http:&#47;&#47;www.zhihu.com&#47;question&#47;21665243&#47;answer&#47;18966696?utm_source=weibo&utm_medium=weibo_share&utm_content=share_answer&utm_campaign=share_button" title="Max OSX 系统好用在哪里" target="_blank">Max OSX 系统好用在哪里<&#47;a></p>
+<p>我先介绍一下自己的操作系统使用经历：<br />
+从小学到高中，都只接触 Windows 系统；大学因为学习计算机逐渐开始用 Linux 处理编程相关任务，用Windows 处理文档和娱乐；大学毕业后逐渐接触 Mac OSX（10.8官方已经更名为 OSX）。从两年前，随着迅雷等娱乐软件的 Mac 版功能越来越丰富，我已经很少再使用 Windows（频次在每个月1小时或更低）。因此在涉及到 Windows 的描述中如果有错误请原谅并帮忙纠正，谢谢。</p>
+<p>在开始使用 OSX 的这两年多以来，我渐渐的觉得 Macbook + OSX 是这个星球上体验最棒的笔记本产品。为什么？</p>
+<p><strong>首先 OSX 系统级别的用户体验有很多地方超过 Windows。<&#47;strong><br />
+有以下一些例子：</p>
+<ol>
+<li>几乎在所有应用的帮助菜单中，都有一个搜索框。这个搜索框除了可以搜索帮助文档，实际上最常见的用法是搜索菜单栏中按钮的关键字。符合关键字的菜单按钮名称会被罗列在帮助菜单的下拉框中，这时候如果你把光标挪到这个列表中的某项，OSX 会立刻展开该按钮所在的菜单栏，并且用醒目的标记提示你。以 iTunes 为例：<br />
+<a href="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2013&#47;10&#47;Controls_and_Help.png"><img src="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2013&#47;10&#47;Controls_and_Help.png" alt="Controls_and_Help" width="1031" height="625" class="alignnone size-full wp-image-1176" &#47;><&#47;a><&#47;li></p>
+<li>跟触摸板的结合，让日常的光标操作变得非常得心应手。首先建议在系统配置的触控板中打开所有功能，然后下面这些场景会让你发现触控板带给你的流畅体验（网页浏览请使用 Safari）：
+<ol>
+<li>双指上下滑动来浏览网页和文档。<&#47;li>
+<li>双指左右滑动，在网页浏览中进行前进和后退。<&#47;li>
+<li>双指双击网页中文本块，Safari 会将文本块放大到适配屏幕宽度，方便专心阅读。<&#47;li>
+<li>三指单击文本中的单词，OSX 会高亮选中单词并且弹出精美小框显示单词释义。<&#47;li>
+<li>还有很多&hellip;&hellip;<&#47;li><br />
+<&#47;ol><br />
+<&#47;li></p>
+<li>本地搜索Spotlight非常节省时间。Spotlight 搜索框可以用ctrl + space 呼出。除了平常直接放在 Dock上的应用，我几乎都是用 Spotlight 来打开所有我要打开的应用程序的，完全不需要切换屏幕到 LaunchPad。此外 Spotlight 还可以：<br />
+输入数学算式，直接在搜索栏中计算结果<br />
+输入英文单词，Spotlight 可以自动在词典中查询，若查询到可以用 Command + l&#47;d 打开词典查看详细内容<br />
+搜索最近打开的文档，邮件，聊天记录等，Spotlight 会按照文件类型组织搜索结果。<a href="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2013&#47;10&#47;Screenshot_21_9_13_3_33_AM.png"><img src="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2013&#47;10&#47;Screenshot_21_9_13_3_33_AM.png" alt="spotlight" width="978" height="776" class="alignnone size-full wp-image-1178" &#47;><&#47;a><&#47;li></p>
+<li>不蓝屏&hellip;&hellip;这个是玩笑，现在的 Windows 其实也相当稳定不会动不动蓝屏了，不过 OSX 会非常腹黑的把本地网络中的 PC 都显示成一个带着 Windows 标志性蓝屏的 CRT 显示器&hellip;&hellip;<&#47;li><br />
+<&#47;ol></p>
+<p><strong>OSX 在文本编辑上使用了著名文本编辑器 Emacs 的一些 Key Binding，是我非常喜欢的特色之一。<&#47;strong>而且这个也是 OSX 的全局特性，就是说在几乎所有文本编辑框中都可以使用（除了 Office for Mac 特别变态的拿掉了这个热键支持）。<br />
+举例如下：</p>
+<ol>
+<li>ctrl + a，跳到本行行首；ctrl + e，跳到本行行尾。<&#47;li>
+<li>ctrl + f，光标前进；ctrl + b，光标回退。<&#47;li>
+<li>ctrl + d，删除光标后一个字符；ctrl + k，删除从光标开始到行尾所有字符；ctrl + u，删除从光标前到行首所有字符；ctrl + w，删除光标前一个单词 （ctrl + u&#47;w并非在所有文本框中都支持）。<&#47;li>
+<li>ctrl + y，在光标后粘贴上一次用上一个列表中的快捷键删除的内容。<&#47;li><br />
+<&#47;ol></p>
+<p><strong>OSX 拥有比 Windows 更出色的一站式体验。<&#47;strong>这个特色我认为体现在下面三点：</p>
+<ul>
+<li>Apple 提供了应用商店，大部分日常应用你都完全可以在 App Store 中找到，且跟 Apple ID 绑定可以方便的恢复下载过的应用。而在 Windows 下，应用的来源完全是零散的。<&#47;li>
+<li>Apple 设备的衔接，各种原生应用都可以通过 icloud 同步数据，使用非常方便。<&#47;li>
+<li>OSX 原生应用做的非常赞。其中就包括@Brian 同学提到的 Preview：超级流畅的体验加上好用的笔记功能，是我用过最好用的文档浏览应用。经常被吐槽的 iTunes 其实在 Mac 下体验很不错，只要你事先抛弃从 Windows 带来的音乐管理方式。<&#47;li><br />
+<&#47;ul></p>
+<p>做为一个程序员，有一点不得不提，就是 <strong>OSX 的Unix 系统的起源决定了他天生比 Windows 更适合程序员<&#47;strong>。但是 Apple 在系统上所做的设计和努力又使得它跟其他*nix 系统相比在可用性上完胜。在 OSX 上既不用忍受 Windows 弱爆的命令行系统也不用忍受其他*nix 系统不稳定的桌面系统和有限的应用支持。 </p>
+<p>另外，做为最适合搭载 OSX 的笔记本电脑的 Macbook 本身也可以被称为这个星球上最好的笔记本。 </p>
+<p>以上。 </p>

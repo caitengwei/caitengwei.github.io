@@ -1,0 +1,169 @@
+---
+layout: post
+status: publish
+published: true
+title: "作为一个命令行偏执狂..."
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+excerpt: "好久没有更新博客了，这次更新的原因是上次贴的<a href=\".&#47;programming&#47;perl&#47;perl脚本查google字典&#47;\"
+  target='_blank'>Perl脚本查Google字典<&#47;a>因为Google关闭字典服务的关系已经不能再用了。\r\n\r\n前段时间接触了一个新东西叫XPath，名字听起来挺酷的，于是拿来又折腾了一个脚本出来。这次查的是有道辞典，没有Google的好用，但因为Google字典已经不再提供服务，目前能找到的Google字典服务都是通过Unofficial
+  API实现的，也不知道能用多久，就先这么凑合着用吧。\r\n\r\n上图\r\n<a href=\"http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;11&#47;youdao_dict.jpg\"><img
+  alt=\"youdao_dict \" src=\"http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;11&#47;youdao_dict.jpg\"
+  title=\"youdao_dict\" width=\"640\" height=\"400\" &#47;><&#47;a>\r\n<br&#47;>\r\n这次脚本代码还是主要分两部分，一部分是通过LWP::UserAgent抓网页内容，一部分是用HTML::TreeBuilder::XPath分析网页内容提取需要的数据。\r\n<ul>\r\n<li>XPath其实是一门用来在XML文档中查找信息的语言，比较简单的说就是他能用一个路径表达式定位到一个XML文档里面的某个（或某几个）标签。因为XHTML借鉴了XML的结构，所以我们也可以用XPath来定位XHTML网页中的某个特定标签（XPath几乎总是能定位到一个正常网页中的特定标签的）。\r\n<&#47;li>\r\n<br&#47;>\r\n<li>\r\n在原来使用的网页解析模块HTML::TokenParser中，所有网页标签都按出现顺序排列，并且标签之间都是并列的关系。但是没有一个Browser
+  DEV tool会用这种结构给开发者展示网页源代码，即便我们写代码时也不会这样写。所以这样并列的结构其实对开发者来说是不直观的，也使得编码复杂了很多。\r\n<&#47;li>\r\n<br&#47;>\r\n<li>\r\n而在XPath的世界里，网页的结构是树型的，每个标签都是这棵树上的结点或叶子，开发者会发现很容易就能找出一个路径通往我们想要的那个标签。不过如果你有Firebug和FireFinder这两个网页开发辅助插件，你会发现用起XPath来更加得心应手。\r\n<&#47;li>\r\n<&#47;ul>\r\n<br&#47;>\r\n直接对比下面一个脚本和<a
+  href=\".&#47;programming&#47;perl&#47;perl脚本查google字典&#47;\" target='_blank'>上一个脚本<&#47;a>中网页分析部分的代码，你就能直观的感受到上面提到这两种方法的差别。XPath的详细介绍和语法，请猛击<a
+  href=\"http:&#47;&#47;www.w3school.com.cn&#47;xpath&#47;index.asp\" target='_blank'>W3school<&#47;a>"
+wordpress_id: 1012
+wordpress_url: http://caitengwei.com/blog/?p=1012
+date: '2011-11-01 08:50:52 +0800'
+date_gmt: '2011-11-01 16:50:52 +0800'
+categories:
+- Perl
+tags:
+- Perl
+- "字典"
+- LWP
+- XPath
+comments:
+- id: 2293
+  author: Mark
+  author_email: gl8997@gmail.com
+  author_url: http://ganlu.name/blog
+  date: '2011-11-01 10:27:08 +0800'
+  date_gmt: '2011-11-01 18:27:08 +0800'
+  content: "装! 目的明明是为了秀新mac"
+- id: 2295
+  author: twcai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://www.caitengwei.com
+  date: '2011-11-01 19:27:30 +0800'
+  date_gmt: '2011-11-02 03:27:30 +0800'
+  content: '@<a href="#comment-2293" rel="nofollow">Mark <&#47;a> 讨厌！上次你怎么不说我秀Ubuntu呢？'
+- id: 2307
+  author: weet
+  author_email: thewawar@gmail.com
+  author_url: http://www.roammyfield.com/
+  date: '2011-11-17 20:21:22 +0800'
+  date_gmt: '2011-11-18 04:21:22 +0800'
+  content: "自从我用了Emacs之后, 我已经很少去开gnome-terminal了. \r\n一切工作都可以在Emacs里面完成, 我发现这样对集中注意力很有帮助.\r\n\r\n查单词的话,
+    装上本地的sdcv, 然后在Emacs装上相应的插件, 只要在目标单词上按一次快捷键就可以显示相应单词的意思, 非常方便!\r\n\r\n你为什么不用本地的词典呢?"
+- id: 2308
+  author: twcai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://www.caitengwei.com
+  date: '2011-11-18 06:29:58 +0800'
+  date_gmt: '2011-11-18 14:29:58 +0800'
+  content: "@<a href=\"#comment-2307\" rel=\"nofollow\">weet <&#47;a>好的，我会试试看。\r\n\r\n我之所以大部分时间都在terminal上工作是因为我经常会需要ssh到服务器上去写代码。\r\n\r\n而且不是说想要小指头健全就得用vi吗，哈哈哈。"
+- id: 2309
+  author: weet
+  author_email: thewawar@gmail.com
+  author_url: http://www.roammyfield.com
+  date: '2011-11-18 08:15:41 +0800'
+  date_gmt: '2011-11-18 16:15:41 +0800'
+  content: "@<a href=\"#comment-2308\" rel=\"nofollow\">twcai <&#47;a>\r\n对于SSH的需求。Emacs
+    中可以支持三种shell模式：1. eshell(emacs自己实现的shell)，2. shell(被emacs配置过的bash)，3. term(几乎和gnome-terminal的行为一行)\r\n\r\n对于Vi的依赖。Emacs中有支持vi操作方式的插件，据说可用性还不错，不过我现在更喜欢emacs的快捷键所以没有尝试过。\r\n\r\n对于小指头的健康考虑。我也曾为这个问题烦恼，后来我发现有种叫做hhkb(happy
+    hacking keyboard?)的键盘，我看了它的布局后发现，只要把标准键盘的Caps和左Ctrl换一下就基本上可以享受到hhkb类似的好处。Ubuntu系统默认支持交换这两个键，Mac貌似也是默认支持的，Windows下有一个小工具可以用来交换这连个键(keybmap.exe)。换了这两个键之后有一个附带好处那就是其他应用的Ctrl按起来更顺手了，同时有几个不好的地方：1.
+    改回用vim会超不习惯 2.用别人的键盘会很不习惯 3. 刚开始有段比较痛苦的过渡期。"
+---
+<p>好久没有更新博客了，这次更新的原因是上次贴的<a href=".&#47;programming&#47;perl&#47;perl脚本查google字典&#47;" target='_blank'>Perl脚本查Google字典<&#47;a>因为Google关闭字典服务的关系已经不能再用了。</p>
+<p>前段时间接触了一个新东西叫XPath，名字听起来挺酷的，于是拿来又折腾了一个脚本出来。这次查的是有道辞典，没有Google的好用，但因为Google字典已经不再提供服务，目前能找到的Google字典服务都是通过Unofficial API实现的，也不知道能用多久，就先这么凑合着用吧。</p>
+<p>上图<br />
+<a href="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;11&#47;youdao_dict.jpg"><img alt="youdao_dict " src="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;11&#47;youdao_dict.jpg" title="youdao_dict" width="640" height="400" &#47;><&#47;a><br />
+<br&#47;><br />
+这次脚本代码还是主要分两部分，一部分是通过LWP::UserAgent抓网页内容，一部分是用HTML::TreeBuilder::XPath分析网页内容提取需要的数据。</p>
+<ul>
+<li>XPath其实是一门用来在XML文档中查找信息的语言，比较简单的说就是他能用一个路径表达式定位到一个XML文档里面的某个（或某几个）标签。因为XHTML借鉴了XML的结构，所以我们也可以用XPath来定位XHTML网页中的某个特定标签（XPath几乎总是能定位到一个正常网页中的特定标签的）。<br />
+<&#47;li><br />
+<br&#47;></p>
+<li>
+在原来使用的网页解析模块HTML::TokenParser中，所有网页标签都按出现顺序排列，并且标签之间都是并列的关系。但是没有一个Browser DEV tool会用这种结构给开发者展示网页源代码，即便我们写代码时也不会这样写。所以这样并列的结构其实对开发者来说是不直观的，也使得编码复杂了很多。<br />
+<&#47;li><br />
+<br&#47;></p>
+<li>
+而在XPath的世界里，网页的结构是树型的，每个标签都是这棵树上的结点或叶子，开发者会发现很容易就能找出一个路径通往我们想要的那个标签。不过如果你有Firebug和FireFinder这两个网页开发辅助插件，你会发现用起XPath来更加得心应手。<br />
+<&#47;li><br />
+<&#47;ul><br />
+<br&#47;><br />
+直接对比下面一个脚本和<a href=".&#47;programming&#47;perl&#47;perl脚本查google字典&#47;" target='_blank'>上一个脚本<&#47;a>中网页分析部分的代码，你就能直观的感受到上面提到这两种方法的差别。XPath的详细介绍和语法，请猛击<a href="http:&#47;&#47;www.w3school.com.cn&#47;xpath&#47;index.asp" target='_blank'>W3school<&#47;a><a id="more"></a><a id="more-1012"></a></p>
+<pre class="prettyprint">#!&#47;usr&#47;bin&#47;perl<br />
+use strict;<br />
+use warnings;<br />
+use IO::Scalar;<br />
+use LWP::UserAgent;<br />
+use HTML::TreeBuilder::XPath;<br />
+use URI::Escape;<br />
+use Data::Dumper;<br />
+use encoding "utf-8";</p>
+<p>my $keyword = $ARGV[0];<br />
+die "You must pass a Chinese&#47;English word as parameter" if ( ! $keyword );</p>
+<p>my $url  = 'http:&#47;&#47;dict.youdao.com&#47;search?q=KEYW0RD&ue=utf8';<br />
+$keyword = uri_escape( $keyword );<br />
+$url     =~ s&#47;KEYW0RD&#47;$keyword&#47;;</p>
+<p>my $ua = LWP::UserAgent->new;<br />
+$ua->timeout(30);<br />
+$ua->env_proxy;</p>
+<p>my $page = $ua->get( $url );<br />
+die "Cannot connect to youdao dictionary" unless ( $page->is_success );</p>
+<p>my $buffer;<br />
+my $screen = IO::Scalar->new( \$buffer );<br />
+my $tree   = HTML::TreeBuilder::XPath->new_from_content( $page->decoded_content );</p>
+<p>get_translation( $tree, $screen );<br />
+print $buffer;</p>
+<p>END {<br />
+    $tree->delete();<br />
+}</p>
+<p>sub get_translation {<br />
+    my ( $tree, $screen ) = @_;<br />
+    my $indent = 2;<br />
+    if ( ! $tree->exists('&#47;&#47;div[@class=\'trans-wrapper\'][not(@id)]') ) {<br />
+        $screen->print( "Cannot find the translation on the page\n" );<br />
+        return 1;<br />
+    }<br />
+    else {<br />
+        # Get the spell and phonetic of the word<br />
+        $screen->print( $tree->findvalue('&#47;&#47;div[@class=\'trans-wrapper\'][not(@id)]&#47;h2'), "\n" );<br />
+        $screen->print( "\n" );<br />
+    }</p>
+<p>    if ( $tree->exists('&#47;&#47;div[@id=\'eTransform\']') ) {<br />
+        # Get the basic translation of the word<br />
+        $screen->print( $tree->findvalue('&#47;&#47;div[@id=\'eTransform\']&#47;h3&#47;span&#47;a[@rel=\'#etcTrans\']&#47;span'), "\n" );<br />
+        my @translation_list = $tree->findvalues( '&#47;&#47;div[@id=\'eTransform\']&#47;div&#47;div[@id=\'etcTrans\']&#47;ul&#47;' . 'li' );<br />
+        if ($#translation_list == -1 ) {<br />
+            # If didn't get any translation, it may be a chinese word<br />
+            @translation_list = $tree->findvalues( '&#47;&#47;div[@id=\'eTransform\']&#47;div&#47;div[@id=\'etcTrans\']&#47;ul&#47;' . 'p' );<br />
+        }<br />
+        foreach (@translation_list) {<br />
+            $screen->print( ' ' x $indent, trim( $_ ), "\n" );<br />
+        }<br />
+        $screen->print( "\n" );<br />
+    }</p>
+<p>    if ( $tree->exists('&#47;&#47;div[@id=\'examples\']') ) {<br />
+        # Get the examples of the word<br />
+        my @examples_id   = qw(bilingual originalSound authority);<br />
+        my @examples_name = split( &#47;\s+&#47;, trim( $tree->findvalue('&#47;&#47;div[@id=\'examples\']&#47;h3') ) );<br />
+        foreach my $index ( 0 .. 2 ) {<br />
+            my $xpath = '&#47;&#47;div[@id=\'examples\']&#47;div&#47;div[@id=\'' . $examples_id[$index] . '\']';<br />
+            next if ( ! $tree->exists( $xpath ) );<br />
+            $screen->print( shift @examples_name, "\n" );<br />
+            my @examples_list    = $tree->findvalues( "$xpath&#47;ul&#47;li&#47;" . "p[not(\@class)]" );<br />
+            my $is_a_translation = 0;<br />
+            foreach (@examples_list) {<br />
+                $screen->print( ' ' x $indent, $is_a_translation ? "~ $_" : $_, "\n" );<br />
+                $is_a_translation ^= 1 if ( $index < 2 );<br />
+            }<br />
+            $screen->print( "\n" );<br />
+        }<br />
+    }</p>
+<p>}</p>
+<p>sub trim {<br />
+    my $string = shift;<br />
+    $string =~ s&#47;^\s*(.*?)\s*$&#47;$1&#47;;<br />
+    return $string;<br />
+}<br />
+<&#47;pre></p>

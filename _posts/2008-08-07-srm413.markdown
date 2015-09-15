@@ -1,0 +1,26 @@
+---
+layout: post
+status: publish
+published: true
+title: SRM413
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 170
+wordpress_url: http://child.kilu.de/blog/?p=170
+date: '2008-08-07 18:38:57 +0800'
+date_gmt: '2008-08-07 10:38:57 +0800'
+categories:
+- TopCoder
+tags:
+- SRM
+comments: []
+---
+<p>第一次涨rating，主要是都是数学题，代码比较好写。<br />
+做500的时候，检查实验室的人来门口晃了一下，吓死我们，屏气吞声躲了10分钟左右。我们都是偷偷躲在实验室过夜的，寝室里没得上网了，好可怜啊~~~~<br />
+感觉这次SRM是不是TC在怜悯我这样的小菜鸟呢。。。。</p>

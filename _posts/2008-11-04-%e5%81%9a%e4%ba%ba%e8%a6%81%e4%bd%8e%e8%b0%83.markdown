@@ -1,0 +1,34 @@
+---
+layout: post
+status: publish
+published: true
+title: "做人要低调"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 151
+wordpress_url: http://child.kilu.de/blog/?p=151
+date: '2008-11-04 22:13:34 +0800'
+date_gmt: '2008-11-05 06:13:34 +0800'
+categories:
+- Geek Stuff
+tags:
+- xp
+- "瘦身"
+comments: []
+---
+<p>　　上个月重装系统时给C盘分了14G，而后又在打算C盘上安装一个Ubuntu，当wubi问我要分给Ubuntu多少空间的时候我就想怎么也不能给xp给比下去了吧，于是爽快的给了它一半的C盘。花了两三天的功夫配置好xp和Ubuntu以后，用得还真是蛮爽的。</p>
+<p>　　刚重装后的xp是挺乖的，不过用着用着问题就来了。Windows文件夹膨胀得那叫一个快啊&hellip;&hellip;我都不敢在桌面上乱放东东，眼花缭乱的那些源代码和文本文件都拾掇拾掇放在其他盘，桌面只挂链接了。我的文档和xp下面那些杂七杂八的temp文件夹也早已被我搬到其他盘上，这种情况，C盘还是被Windows文件夹挤得只剩下300M左右，连整理碎片都成问题了。xp自带的磁盘清理更是废柴&hellip;&hellip;根本整理不出什么空间。</p>
+<p>　　也想过重新安装下Ubuntu，但是配置和更新都太花时间了。备份更新？还在摸索中&hellip;&hellip;</p>
+<p>　　于是这段时间我前所未有的关心xp都在我的C盘里放了些什么东东，废话一下我早已不是当年的楞头青随便看到个自己不认识的就 shift + delete ，要删的东东我都暂时备份在某盘里，以防不测。</p>
+<p>　　进了Windows文件夹，看到$开头的就先统统枪毙，这些全都是更新xp时产生的备份、卸载程序或者还原点，以后可能有用，那到时候移过来好了。然后是ie7updates, 是IE更新的文件，同样处理。</p>
+<p>　　这些搞定后，腾出来的空间还是很有限。Installer看起来蛮诱人的，但搜索一下，发现其实这个东东很危险，还是不要碰了。接着游荡到根目录的Documents and Settings，发现每个用户下面的local settings都占了蛮多的空间，于是再搜，据说虽然可删，但是下次再用还是会重新产生，想想蛮麻烦的，于是放弃。</p>
+<p>　　这时候C盘还是只有7%的空闲，再求助于优化大师，冗余installer文件删除之类的软件，帮助还是很有限，无奈下继续在C盘游荡，偶尔突然发现 SoftwareDistribution 下有个文件夹取了个很失败的马甲 "Download". -_-! 这不是拿自己小命开玩笑吗&hellip;&hellip;于是乎搜之，果然无碍大局，我的1G的空间就被这小样给侵吞啦&hellip;&hellip;</p>
+<p>　　删掉这个东东，局面就豁然开朗，C盘可用空间回到13%。</p>
+<p>　　恩，暂时就这样，以后不够再探索吧。可能有人怀疑我写这些干嘛，随便找本windows瘦身指南就搞定的事情，其实我是有深意的&hellip;&hellip;这篇水文告诉我们没有太多用处就不要占太多空间&hellip;&hellip;如果已经占了就要取个有技术含量的马甲比如SystemRDD之类的，这样人家不认识你下手就会格外慎重啦。</p>
+<p>　　所以说，做人一定要低调&hellip;&hellip;低调&hellip;&hellip;</p>

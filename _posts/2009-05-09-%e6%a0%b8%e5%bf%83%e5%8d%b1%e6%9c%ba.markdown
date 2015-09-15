@@ -1,0 +1,68 @@
+---
+layout: post
+status: publish
+published: true
+title: "核心危机"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 423
+wordpress_url: http://child.kilu.de/blog/?p=423
+date: '2009-05-09 00:20:42 +0800'
+date_gmt: '2009-05-08 16:20:42 +0800'
+categories:
+- My Life
+tags:
+- "最终幻想"
+comments:
+- id: 57
+  author: teddy
+  author_email: gan-676@163.com
+  author_url: ''
+  date: '2009-05-09 00:28:15 +0800'
+  date_gmt: '2009-05-08 16:28:15 +0800'
+  content: |-
+    没追求，的确悲哀。。
+    ╮(╯▽╰)╭
+- id: 58
+  author: Tengwei Cai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://child.kilu.de/blog
+  date: '2009-05-09 09:42:17 +0800'
+  date_gmt: '2009-05-09 01:42:17 +0800'
+  content: "&hellip;&hellip;甘大牛&hellip;&hellip;"
+---
+<p>从刚买PSP到现在，断断续续一年多，终于玩通了最终幻想7核心危机。</p>
+<p>扎克斯，核心危机的主角，简介上说他是&ldquo;不畏自身悲惨命运的男子却为朋友而流泪&rdquo;。<br />
+从游戏一开始，他就一直是一个自信无比，老喜欢追问安吉尔(他的老师)自己什么时候能成为英雄的大男孩。<br />
+他手里，一直都握着继承自安吉尔，却连安吉尔都说不好用的斩铁剑，我坚信那承载着扎克斯的梦想和坚持。<br />
+然而梦想在现实面前却变得沉重了，连接近完美的安吉尔和萨菲罗斯都无法承担。但正如扎克斯最后说&ldquo;自由的代价是很高的&rdquo;，斩铁剑虽然沉重，却象征着他的信念，这把剑扎克斯永远都不会放弃。</p>
+<p>后来扎克斯终于带着克劳德到达米德加尔外部荒野时，事情好像都在往好的地方发展:克劳德恢复知觉了，希斯内出发去救援扎克斯(带着爱丽丝四年来的所有信件)。但我没有想到最后一战来得那么早，我以为只要清掉这些杂兵，扎克斯就能快乐的进入米德加尔去见爱丽丝了，但事实上却只能眼睁睁看着爱丽丝最后也在记忆的碎片中模糊&hellip;&hellip;怎么会这样的，热血男不是从来不会倒下的吗？</p>
+<p>有些人似乎对RPG的结局总是赚人眼泪的老套路有点厌恶了，但是我还蛮庆幸自己没有麻木。<br />
+能坚持梦想是多么美好的事情，我发现自己在残酷的现实下，已经慢慢失去追求的激情了&hellip;&hellip;真是悲哀啊。</p>
+<p>分享下核心危机的结局动画<br />
+3分50秒开始的主题曲《Why》很赞。<br />
+<embed src="http:&#47;&#47;player.youku.com&#47;player.php&#47;sid&#47;XMTI0NDY1OTI=&#47;v.swf" quality="high" width="480" height="400" align="middle" allowScriptAccess="sameDomain" type="application&#47;x-shockwave-flash"><&#47;embed><br />
+爱丽丝在照料花<br />
+扎克斯躺在血泊里，克劳德爬到扎克斯身边<br />
+克劳德： 扎克斯<br />
+扎克斯： 连我的份一起&hellip;&hellip;<br />
+克劳德： 连我的份<br />
+扎克斯： 是的，你&mdash;&mdash;<br />
+克劳德： 你<br />
+扎克斯： 你要活下去！你&mdash;&mdash;是我生存的证明。我的荣誉和梦想，全部交给你。<br />
+克劳德： 我，是你生存的证明。</p>
+<p>扎克斯：要持有梦想！如果要成为英雄&mdash;&mdash;就一定要持有梦想。<br />
+克劳德： 谢谢！我不会忘记你的教诲。你放心的沉睡吧&mdash;&mdash;扎克斯。</p>
+<p>扎克斯：<br />
+她，曾说过她对这个平常的天空充满恐惧。<br />
+但，这天空的感觉感觉很不错啊。<br />
+那样的翅膀，也给我一对吧。<br />
+不知道为什么，感觉真舒服啊。<br />
+见到爱丽丝的时候，帮我照顾她。<br />
+我终于有成为英雄了吧。</p>

@@ -1,0 +1,60 @@
+---
+layout: post
+status: publish
+published: true
+title: SRM 423 DIV2
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 178
+wordpress_url: http://child.kilu.de/blog/?p=178
+date: '2008-11-07 11:40:27 +0800'
+date_gmt: '2008-11-07 03:40:27 +0800'
+categories:
+- TopCoder
+tags:
+- SRM
+comments: []
+---
+<p>开学以后就很久没有做过TC了，不是因为比赛冲突就是时间不对头。我的寝室向来都是学习禁地&hellip;&hellip;实在太吵了。<br />
+晚上明显手生了很多，开了250以后好几分钟分钟才看懂题意, 提交后只有180分了。<br />
+开了500后，发现是我比较怕的数学类型的题目。唉，当时没有深入想，用了个很蠢的办法，肯定TLE的，到快提交时发现自己题目读错了，但是那时候还是混混沌沌没反应过来。其实这题用贪心就可以了，我用搜索交的，其实想到了主要的剪枝应该一样能过，估计我当时低血糖吧. -_-!<br />
+900分还在努力中，题目还是没读通，下次不想再这么窝囊啦&hellip;&hellip;<br />
+贴下500主要代码：</p>
+<pre class="prettyprint">class ProductOfDigits<br />
+{<br />
+public:<br />
+	int smallestNumber(int N)<br />
+	{<br />
+		int i, ret = 0;<br />
+		bool f = 0;</p>
+<p>		if(N == 1 || N == 0)<br />
+			return 1;<br />
+		while(1)<br />
+		{<br />
+			f = 0;<br />
+			for(i = 9; i > 1; i--)<br />
+			{<br />
+				if(N % i == 0)<br />
+				{<br />
+					N &#47;= i;<br />
+					f = 1;<br />
+					ret ++;<br />
+					break;<br />
+				}<br />
+			}<br />
+			if(!f || N == 1)<br />
+			{<br />
+				if(N < 10)<br />
+					return ret;<br />
+				else<br />
+					return -1;<br />
+			}<br />
+		}<br />
+	}<br />
+};<&#47;pre></p>

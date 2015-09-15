@@ -1,0 +1,152 @@
+---
+layout: post
+status: publish
+published: true
+title: HDOJ 2269 Cross The River
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 376
+wordpress_url: http://child.kilu.de/blog/?p=376
+date: '2009-04-08 21:17:17 +0800'
+date_gmt: '2009-04-08 13:17:17 +0800'
+categories:
+- ACM&#47;ICPC
+tags:
+- HDOJ
+- "优先级"
+- "位运算"
+comments: []
+---
+<p>广搜题again，本来不应该卡那么久，一个原因是逻辑不清楚，另一个原因就是位运算时犯错。<br />
+位运算是个好东东，如果某个计算过程会被大量用到，用位运算优化能够严重提高效率。但是位运算符有一个需要注意的地方就是他们的优先级都很低，除了左移右移(>>, <<)以外的几个位运算符甚至比比较运算符(比如==, >=, <=)还要低，而且位运算符之间也有优先级差别：依次为~, &, ^, |. 具体的优先级可以查阅这里：<a href="http:&#47;&#47;www.cppreference.com&#47;wiki&#47;operator_precedence">C++ Operator Precedence<&#47;a><br />
+正如软件工程课上所讲的：为了阅读上的需要，有时候加上冗余的括号也是很有必要的。</p>
+<pre class="prettyprint">#include <iostream><br />
+#include<br />
+<map>
+#include <vector><br />
+#include <string><br />
+#include <queue><br />
+#include <cstring><br />
+using namespace std;</p>
+<p>int n, m, t, end;<br />
+int d[110];<br />
+bool hash[3000][2];<br />
+map <string, int> mm;<br />
+vector <int> vv;<br />
+vector <int> vn;</p>
+<p>struct node{<br />
+	int sta[2], no[2], np, t;<br />
+};<br />
+queue <node> qq;</p>
+<p>inline void dfs(int sta, int chosen, int x, int y){<br />
+	if(y == t || x == n){<br />
+		vv.push_back(chosen);<br />
+		vn.push_back(y);<br />
+	}<br />
+	else{<br />
+		if(sta & (1 << x))<br />
+			dfs(sta, chosen | (1 << x), x +1, y +1);<br />
+		dfs(sta, chosen, x +1, y);<br />
+	}<br />
+}</p>
+<p>inline int bfs()<br />
+{<br />
+	int i, j, k;<br />
+	bool fg;<br />
+	end = (1 << n) - 1;<br />
+	while(!qq.empty()) qq.pop();<br />
+	memset(hash, 0, sizeof(hash));<br />
+	hash[0][1] = 1;<br />
+	node now, next;<br />
+	now.np = 1, now.t = 0;<br />
+	now.sta[0] = 0, now.sta[1] = end;<br />
+	now.no[0] = 0, now.no[1] = n;<br />
+	qq.push(now);</p>
+<p>	while(!qq.empty())<br />
+	{<br />
+		now = qq.front(), qq.pop();<br />
+		if(now.sta[0] == end)<br />
+			return now.t;<br />
+		if(now.no[1] <= t && now.np == 1){<br />
+			next.no[0] = n;<br />
+			next.no[1] = 0;<br />
+			next.sta[0] = end;<br />
+			next.sta[1] = 0;<br />
+			next.t = now.t + 1;<br />
+			next.np = 1 - now.np;<br />
+			hash[next.sta[0]][next.np] = 1;<br />
+			qq.push(next);<br />
+			continue;<br />
+		}<br />
+		else{<br />
+			vv.clear(), vn.clear();<br />
+			dfs(now.sta[now.np], 0, 0, 0);<br />
+			for(i = 0; i < vv.size(); i++){<br />
+				next.sta[1 -now.np] = now.sta[1 -now.np] | vv[i];<br />
+				next.sta[now.np] = now.sta[now.np] & (~vv[i]);<br />
+				fg = 1;<br />
+				for(j = 0; j < m; j++){<br />
+					if((d[j] & next.sta[now.np]) == d[j]){<br />
+						&#47;&#47;Here is my mistake<br />
+						&#47;&#47;I wrote (d[j] & next.sta[now.np] == d[j]) at first<br />
+						fg = 0;<br />
+						break;<br />
+					}<br />
+				}<br />
+				if(!fg) continue;<br />
+				next.np = 1 - now.np;<br />
+				if(hash[next.sta[0]][next.np]) continue;<br />
+				next.no[next.np] = now.no[next.np] + vn[i];<br />
+				next.no[now.np] = now.no[now.np] - vn[i];<br />
+				next.t = now.t + 1;<br />
+				hash[next.sta[0]][next.np] = 1;<br />
+				qq.push(next);<br />
+			}<br />
+		}<br />
+	}<br />
+	return -1;<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int i, ret;<br />
+	char ts[30], ln[1010];<br />
+	string name;<br />
+	while(scanf("%d %d %d", &n, &m, &t) != EOF)<br />
+	{<br />
+		mm.clear();<br />
+		for(i = 0; i < n; i++){<br />
+			scanf("%s", ts);<br />
+			name = ts;<br />
+			mm[name] = i;<br />
+		}<br />
+		gets(ln);<br />
+		for(i = 0; i < m; i++){<br />
+			gets(ln);<br />
+			d[i] = 0;<br />
+			int ct = 0;<br />
+			while(ln[ct] != '\0'){<br />
+				sscanf(ln + ct, "%s", ts);<br />
+				name = ts;<br />
+				d[i] |= 1 << mm[name];<br />
+				ct += name.length();<br />
+				for(; ln[ct] == ' '; ct++);<br />
+			}<br />
+		}</p>
+<p>		ret = bfs();<br />
+		printf("%d\n", ret);<br />
+	}<br />
+	return 0;<br />
+}</p>
+<p>&#47;*<br />
+3 1 1<br />
+cab<br />
+sheep<br />
+wolf<br />
+cab<br />
+*&#47;<&#47;pre></p>

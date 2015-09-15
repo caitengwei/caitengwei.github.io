@@ -1,0 +1,25 @@
+---
+layout: post
+status: publish
+published: true
+title: "新分类 My BlackBerry"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 9
+wordpress_url: http://child.kilu.de/blog/?p=9
+date: '2008-08-28 12:19:05 +0800'
+date_gmt: '2008-08-28 04:19:05 +0800'
+categories:
+- My BlackBerry
+tags:
+- BlackBerry
+comments: []
+---
+<p>原来的空间上有两篇关于BlackBerry的日志浏览量还挺大的，是我关于自己使用BlackBeryy手机的一点心得和记录。<br />
+也拿到这边来充实一下。</p>

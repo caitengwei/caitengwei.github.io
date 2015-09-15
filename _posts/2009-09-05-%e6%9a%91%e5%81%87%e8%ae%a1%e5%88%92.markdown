@@ -1,0 +1,45 @@
+---
+layout: post
+status: publish
+published: true
+title: "暑假计划 &amp; 总结"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 485
+wordpress_url: http://child.kilu.de/blog/?p=485
+date: '2009-09-05 09:35:43 +0800'
+date_gmt: '2009-09-05 01:35:43 +0800'
+categories:
+- Geek Stuff
+- My Life
+tags: []
+comments: []
+---
+<p><strong>结果并不重要，重要的是当机会来临时，我是准备好的！！<&#47;strong><br />
+Plan :<br />
+将代码量提升至7万行<br />
+读一些《具体数学》<br />
+读一些《操作系统概念》<br />
+读一些《Beginning Linux Programming》<br />
+补一下比赛中常用的《线性代数》内容<br />
+学习Linux下的C&#47;C++和Shell编程<br />
+学习一些网络编程</p>
+<p>暑假的代码量记录在这里：<br />
+Update at 2009-07-07 : 52364 行      965312 字节<br />
+Update at 2009-07-13 : 53520 行      986502 字节 (一个星期才写了这么点，不行啊！不要做不该做的事情！)<br />
+Update at 2009-07-20 : 54596 行      1011560 字节<br />
+Update at 2009-07-28 : 55861 行      1032153 字节 (快半个暑假了，才完成了四分之一&hellip;&hellip;最近像在梦游)<br />
+Update at 2009-08-05 : 56916 行      1054103 字节<br />
+Update at 2009-08-15 : 58127 行      1076003 字节<br />
+Update at 2009-08-24 : 59469 行      1102414 字节 (我承认我真的是懒进骨子里去了&hellip;&hellip;)<br />
+Update at 2009-09-05 : 61185 行      1135938 字节</p>
+<p>Sum-up :<br />
+暑假已经结束了，但是目标一项都没有达到&hellip;&hellip;<br />
+除了代码量完成了一半，Beginning Linux Programming 看了一点，其他基本都没动&hellip;&hellip;我猜当初在目标上加一个dota，也许这个完成情况会好看点&hellip;&hellip;<br />
+我的ACM生涯快要走完了，不想再给自己留下去年同样的遗憾 (可是为什么关键的时候老掉链子呢，需要抓紧的时候老是偷懒-_-)，好好利用这剩下来的时光吧。</p>

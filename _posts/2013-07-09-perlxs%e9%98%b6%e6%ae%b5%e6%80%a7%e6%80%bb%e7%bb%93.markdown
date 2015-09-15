@@ -1,0 +1,41 @@
+---
+layout: post
+status: publish
+published: true
+title: PerlXS阶段性总结
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 1149
+wordpress_url: http://caitengwei.com/blog/?p=1149
+date: '2013-07-09 09:45:27 +0800'
+date_gmt: '2013-07-09 17:45:27 +0800'
+categories:
+- Perl
+tags:
+- Perl
+- perlxs
+- perlapi
+- xs
+- xstut
+comments: []
+---
+<p>PerlXS不是一块好啃的骨头。</p>
+<p>它不是带你深入Perl Internals的大门。它大概是你进入了Perl Internals这个迷宫以后的第一块milestone，而带你走进来的这条路也绝对不短。所以这几天下来我觉得自己半年前看了三天PerlXS还是束手无策的状况是再正常不过了。当时我还想把一坨几万行的C代码用Perl跑起来呢，这实在是太高难度了。</p>
+<p>把学习PerlXS需要经历的路程简单总结如下：</p>
+<ol>
+<li>首先，你需要阅读的资料是<a href="http:&#47;&#47;perldoc.perl.org&#47;perlguts.html" title="perlguts" target="_blank">perlguts<&#47;a>。这是一份对Perl的C API的入门介绍，但是已然包含了很多内容了。没关系，在继续下一步之前你不需要把这个完完整整的读完。你需要的是在脑海中先建立好Perl API最基本的概念和框架。<&#47;li>
+<li>接着你可以去看<a href="http:&#47;&#47;perldoc.perl.org&#47;perlxstut.html" title="perlxstut" target="_blank">perlxstut<&#47;a>了。按照导引做一些写xsub的实验。但是别指望这个导引能让你搞明白XS，你离真相大概还有。。。恩。。10000公里吧。<&#47;li>
+<li>但是好歹你已经会写最简单的xsub了，这边还有一个更好的导引<a href="http:&#47;&#47;world.std.com&#47;~swmcd&#47;steven&#47;perl&#47;pm&#47;xs&#47;intro&#47;index.html" title="XSMechanics" target="_blank">XS Mechanics<&#47;a>。要是你真想搞明白XS，你得保证我你认认真真的把这个资料里的每句话都看了。<&#47;li>
+<li>这就完了？还远呢。上面那个导引虽然是我能找到的最好的Introduce XS from top to down的资料了，但是有一些细节连作者本人也没搞清。现在你必须得有破斧成舟的决心，让自己淹没在下面这些资料里吧。哦对了，还有之前提过的perlguts。<&#47;li>
+<ul>
+<li><a href="http:&#47;&#47;perldoc.perl.org&#47;perlxs.html" title="perlxs" target="_blank">perlxs<&#47;a><&#47;li>
+<li><a href="http:&#47;&#47;perldoc.perl.org&#47;perlapi.html" title="perlapi" target="_blank">perlapi<&#47;a><&#47;li>
+<li><a href="http:&#47;&#47;perldoc.perl.org&#47;perlxstypemap.html" title="perlxstypemap" target="_blank">perlxstypemap<&#47;a><&#47;li><&#47;ul></p>
+<li>结合你要完成的项目，把perlxs和perlapi打开方便随时查阅，然后开始写code，从跌倒中成长。<&#47;li><br />
+<&#47;ol></p>

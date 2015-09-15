@@ -1,0 +1,48 @@
+---
+layout: post
+status: publish
+published: true
+title: "第一篇日志"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 4
+wordpress_url: http://child.kilu.de/blog/?p=4
+date: '2008-08-28 02:47:10 +0800'
+date_gmt: '2008-08-27 18:47:10 +0800'
+categories:
+- Some parts
+tags:
+- Hello World
+- "测试"
+- "第一篇"
+comments: []
+---
+<p>弄了三个钟头，弄出了这点东西。发现要想随心所欲的修改css，必须要会php才行，不然永远都局限别人的框架里是一件很不爽的事情。<br />
+目前找到的这个模板我还是挺满意的，比较简洁，也不算难看，顺眼就好了，呵呵。以后主要都在这里更新啦。<br />
+另外发个代码测试一下pre插件:</p>
+<pre class="prettyprint">
+&#47;&#47;Just a Hello World.<br />
+#include <iostream><br />
+using namespace std;</p>
+<p>int main()<br />
+{<br />
+    printf("%s\n","Hello World!");<br />
+    return 0;<br />
+}&#47;&#47;end for main<br />
+<&#47;pre></p>
+<p>测试下第二段代码</p>
+<pre class="prettyprint">
+#include <iostream><br />
+using namespace std;</p>
+<p>int main()<br />
+{<br />
+    printf("%s\n","Hello World!");<br />
+    return 0;<br />
+}&#47;&#47;end for main<br />
+<&#47;pre></p>

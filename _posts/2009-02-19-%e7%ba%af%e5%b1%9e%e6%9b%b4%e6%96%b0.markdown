@@ -1,0 +1,44 @@
+---
+layout: post
+status: publish
+published: true
+title: "纯属更新"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 257
+wordpress_url: http://child.kilu.de/blog/?p=257
+date: '2009-02-19 22:39:02 +0800'
+date_gmt: '2009-02-19 14:39:02 +0800'
+categories:
+- Some parts
+tags: []
+comments:
+- id: 52
+  author: Mark
+  author_email: gan-676@163.com
+  author_url: http://www.december.kilu.de/blog
+  date: '2009-02-19 23:44:40 +0800'
+  date_gmt: '2009-02-19 15:44:40 +0800'
+  content: "汤景凡是我班主任...目前只见过三次"
+- id: 53
+  author: Tengwei Cai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://child.kilu.de/blog
+  date: '2009-02-20 13:00:39 +0800'
+  date_gmt: '2009-02-20 05:00:39 +0800'
+  content: |-
+    哇塞～～汤景凡好像很牛逼的嘞。
+    好像在恒天PMO吧
+---
+<p>好久没写了，以前发的很多都是解题的思路和代码，rational后到寒假发了很多牢骚。<br />
+开学一周，发现好课总是会时间冲突的，而我却不得不因为学分不够而选一些没必要的课并且为这些学分买单&hellip;&hellip;<br />
+我的作息趋于正常。<br />
+有决心但是不够坚决。<br />
+汤景凡老师让我更觉得读英文原版教材很重要。<br />
+A题应该成为课余的主题啦。</p>

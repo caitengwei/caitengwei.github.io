@@ -1,0 +1,210 @@
+---
+layout: post
+status: publish
+published: true
+title: HDOJ 1401
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 85
+wordpress_url: http://child.kilu.de/blog/?p=85
+date: '2008-10-06 22:04:47 +0800'
+date_gmt: '2008-10-06 14:04:47 +0800'
+categories:
+- ACM&#47;ICPC
+tags:
+- HDOJ
+- "双向广搜"
+comments:
+- id: 12
+  author: Mark
+  author_email: gan-676@163.com
+  author_url: http://www.december.kilu.de/blog
+  date: '2008-10-07 23:58:02 +0800'
+  date_gmt: '2008-10-07 15:58:02 +0800'
+  content: "相比之下...我的代码简直有如垃圾一般啊~~哎.."
+- id: 13
+  author: Tengwei Cai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://child.kilu.de/blog
+  date: '2008-10-08 20:19:41 +0800'
+  date_gmt: '2008-10-08 12:19:41 +0800'
+  content: LS的你杀了我吧！
+---
+<p>Solitaire,比较单纯的双广,考虑了下怎么保存棋子的状态,然后直接开搜. MS别人都是用两个queue来做的......<br />
+第一次写双广,效率不是很高。<br />
+一共有四个棋子，一个坐标需要3位来存，这是数是蛮大的，但实际状态64万就够用了，普通的hash能够搞定。<br />
+贴下代码：</p>
+<pre class="prettyprint">#include <iostream><br />
+#include <queue><br />
+using namespace std;<br />
+#define MAX 235536</p>
+<p>int h[MAX];<br />
+int v[MAX];<br />
+int dir[4][2]={0,1,-1,0,0,-1,1,0};</p>
+<p>struct chess{<br />
+	int i;<br />
+	int j;<br />
+};</p>
+<p>struct pos{<br />
+	chess c[4];<br />
+	int sta;<br />
+	int t;<br />
+	int fl;<br />
+};<br />
+queue
+<pos> ch;<br />
+pos s,e,now,next;</p>
+<p>inline bool cmp(const chess x,const chess y)<br />
+{<br />
+	if(x.i==y.i) return x.j<y.j;<br />
+	else return x.i<y.i;<br />
+}</p>
+<p>inline bool valid(chess x)<br />
+{<br />
+	return (x.i>=0 && x.j>=0 && x.i<8 && x.j<8);<br />
+}</p>
+<p>inline int encode(pos x)<br />
+{<br />
+	int i;<br />
+	int sta=0;<br />
+	sort(x.c, x.c+4, cmp);<br />
+	for(i=0;i<4;i++)<br />
+	{<br />
+		sta<<=3;<br />
+		sta+=x.c[i].i;<br />
+		sta<<=3;<br />
+		sta+=x.c[i].j;<br />
+	}<br />
+	return sta;<br />
+}</p>
+<p>inline bool bfs()<br />
+{<br />
+	int i,j,k,t,l;<br />
+	bool flag;</p>
+<p>	memset(h,-1,sizeof(h));<br />
+	memset(v,-1,sizeof(v));<br />
+	while(!ch.empty()) ch.pop();</p>
+<p>	s.t=0; s.fl=1;<br />
+	s.sta=encode(s);<br />
+	e.t=0; e.fl=2;<br />
+	e.sta=encode(e);<br />
+	if(s.sta == e.sta) return true;</p>
+<p>	t=s.sta%MAX;<br />
+	while(h[t]!=-1 && v[t]!=s.sta){<br />
+		t+=10;<br />
+		if(t>=MAX) t%=MAX;<br />
+	}<br />
+	h[t]=s.fl; v[t]=s.sta;<br />
+	t=e.sta%MAX;<br />
+	while(h[t]!=-1 && v[t]!=s.sta){<br />
+		t+=10;<br />
+		if(t>=MAX) t%=MAX;<br />
+	}<br />
+	h[t]=e.fl; v[t]=e.sta;<br />
+	ch.push(s); ch.push(e);</p>
+<p>	while(!ch.empty()){<br />
+		now=ch.front(); ch.pop();<br />
+		if(now.t>3) continue;<br />
+		for(i=0;i<4;i++){<br />
+			for (j=0;j<4;j++){<br />
+				next.c[j].i=now.c[j].i;<br />
+				next.c[j].j=now.c[j].j;<br />
+			}<br />
+			for(j=0;j<4;j++){<br />
+				if(j){<br />
+					next.c[j-1].i=now.c[j-1].i;<br />
+					next.c[j-1].j=now.c[j-1].j;<br />
+				}<br />
+				next.c[j].i+=dir[i][0];<br />
+				next.c[j].j+=dir[i][1];<br />
+				if(!valid(next.c[j])) continue;<br />
+				flag=0;<br />
+				for(k=0;k<4 && !flag;k++){<br />
+					if(j==k) continue;<br />
+					if(next.c[j].i==next.c[k].i && next.c[j].j==next.c[k].j)<br />
+						flag=1;<br />
+				}<br />
+				if(!flag){<br />
+					next.sta=encode(next);<br />
+					next.fl=now.fl;<br />
+					t=next.sta%MAX;<br />
+					while(h[t]!=-1 && v[t]!=next.sta){<br />
+						t+=10;<br />
+						if(t>=MAX) t%=MAX;<br />
+					}<br />
+					if(v[t]==next.sta) {<br />
+						if(h[t]!=next.fl) return true;<br />
+						else continue;<br />
+					}<br />
+					else {<br />
+						next.t=now.t+1;<br />
+						if(next.t>4) continue;<br />
+						h[t]=next.fl;<br />
+						v[t]=next.sta;<br />
+						ch.push(next);<br />
+					}<br />
+				}<br />
+				else {<br />
+					next.c[j].i+=dir[i][0];<br />
+					next.c[j].j+=dir[i][1];<br />
+					if(!valid(next.c[j])) continue;<br />
+					flag=0;<br />
+					for(k=0;k<4 && !flag;k++){<br />
+						if(j==k) continue;<br />
+						if(next.c[j].i==next.c[k].i && next.c[j].j==next.c[k].j)<br />
+							flag=1;<br />
+					}<br />
+					if(flag) continue;<br />
+					else {<br />
+						next.fl=now.fl;<br />
+						next.sta=encode(next);<br />
+						t=next.sta%MAX;<br />
+						while(h[t]!=-1 && v[t]!=next.sta){<br />
+							t+=10;<br />
+							if(t>=MAX) t%=MAX;<br />
+						}<br />
+						if(v[t]==next.sta) {<br />
+							if(h[t]!=next.fl) return true;<br />
+							else continue;<br />
+						}<br />
+						else {<br />
+							next.t=now.t+1;<br />
+							if(next.t>4) continue;<br />
+							h[t]=next.fl;<br />
+							v[t]=next.sta;<br />
+							ch.push(next);<br />
+						}<br />
+					}<br />
+				}<br />
+			}<br />
+		}<br />
+	}<br />
+	return false;<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int i;<br />
+	bool ret;</p>
+<p>	while(scanf("%d",&s.c[0].i)!=EOF){<br />
+		scanf("%d",&s.c[0].j);<br />
+		for(i=1;i<4;i++)<br />
+			scanf("%d %d",&s.c[i].i,&s.c[i].j);<br />
+		for(i=0;i<4;i++)<br />
+			scanf("%d %d",&e.c[i].i,&e.c[i].j);<br />
+		for(i=0;i<4;i++)<br />
+		{<br />
+			s.c[i].i--;s.c[i].j--;<br />
+			e.c[i].i--;e.c[i].j--;<br />
+		}</p>
+<p>		ret=bfs();<br />
+		if(ret) printf("YESn");<br />
+		else printf("NOn");<br />
+	}<br />
+	return 0;<br />
+}<&#47;pre></p>

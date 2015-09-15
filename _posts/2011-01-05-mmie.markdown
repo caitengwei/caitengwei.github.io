@@ -1,0 +1,75 @@
+---
+layout: post
+status: publish
+published: true
+title: MMIE
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 910
+wordpress_url: http://caitengwei.com/blog/?p=910
+date: '2011-01-05 08:34:19 +0800'
+date_gmt: '2011-01-05 16:34:19 +0800'
+categories:
+- My Life
+tags:
+- "总结"
+- "计划"
+- '2010'
+comments:
+- id: 1181
+  author: starvae
+  author_email: zhonglihua2008@126.com
+  author_url: http://www.starvae.com
+  date: '2011-01-09 04:27:54 +0800'
+  date_gmt: '2011-01-09 12:27:54 +0800'
+  content: "1.求姑娘靓照。\r\n2.不要再装逼，至少要学着由内而外的装。"
+- id: 1192
+  author: "木水"
+  author_email: yaomushui@gmail.com
+  author_url: http://blog.mushui.info
+  date: '2011-01-16 22:36:35 +0800'
+  date_gmt: '2011-01-17 06:36:35 +0800'
+  content: "目标中明显少了一项追姑娘，祝早日高兴 ^_^"
+- id: 1203
+  author: twcai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://www.caitengwei.com
+  date: '2011-01-27 07:54:13 +0800'
+  date_gmt: '2011-01-27 15:54:13 +0800'
+  content: "姑娘不给我靓照"
+- id: 2450
+  author: "沙扬娜拉，MMIE &laquo; 落红逐青裙"
+  author_email: ''
+  author_url: http://caitengwei.com/blog/my-life/%e6%b2%99%e6%89%ac%e5%a8%9c%e6%8b%89%ef%bc%8cmmie/
+  date: '2012-01-15 07:46:29 +0800'
+  date_gmt: '2012-01-15 15:46:29 +0800'
+  content: "[...] 先看一下去年写的计划（MMIE）好了。 [...]"
+---
+<p>前两年跨年时，我留了两小坨东西在自己的博客上。<br />
+<a href=".&#47;my-life&#47;%E5%93%87%EF%BD%9E2009%E5%95%A6&#47;">2009<&#47;a>刚开始的时候，我是个憧憬美好<del datetime="2011-01-05T13:54:37+00:00">淫生<&#47;del>人生决心投身奋斗的学习青年。<br />
+<a href=".&#47;blog&#47;my-life&#47;2010%E5%95%A6&#47;">2010<&#47;a>的元旦，我居然能听着Jay的歌，在茅坑里内牛。<br />
+所以说写博客是个好事情，看看自己的过去，会有各种欢乐。</p>
+<p>回想一下过去的十二个月，前一半时间基本是被毕设和找工作折腾。<br />
+最后一个学期，我粗略的翻阅了Beginning Linux Programming和Windows核心编程，记了半本A4大小的笔记本，也算是学了一点点win下和linux下的程序开发，于是给OJ留下一个半成品的对战评判系统。<br />
+然后花了点心思搞定丢失的一个学分，忐忑的毕业了。<br />
+照理说，大学的最后一个学期不会只有这两样事情，然而当时或不安或淡然，或失望或期待，现在想来都已经模糊了。最清晰的印象原来是一直在重复的事情:每天背着笔记本来往于寝室实验室，翻着大部头的书坐在屏幕前写着代码。</p>
+<p>下半年，我终于从毕业的压力中解脱出来。每天上上班，平时玩一玩，也不知道自己忙了些什么，就老觉得时间怎么都不够，所以这本该在跨年时出现的日志，才这么姗姗来迟。<br />
+尽管这样，我还是发现自己喜欢上了一个姑娘（虽然不那么及时）。这姑娘笑起来的时候老可爱了，又当知心姐姐又能讲冷笑话，卖萌撒娇捂脸什么的样样精通，甚至于，还有点geek的基因。要是能追上这姑娘，我得高兴成啥样？!</p>
+<p>好啦，来制定一下今年的目标吧：</p>
+<ol>
+<li>给自己买了5本非技术的书，要认认真真读完。<&#47;li>
+<li>计划以后每年去一到两个地方旅游，看时间吧，今年暂定春节去厦门看看。<&#47;li>
+<li>既然当了QA了，就要做好。从Perl帝手里接过来的事情一定不能干砸了，好好学学automation test。<&#47;li>
+<li>用动态编程语言（Perl, Python神马的）写一个有意思的东东。<&#47;li>
+<li>找一个C&#47;C++开发的产品，读懂代码。<&#47;li>
+<li>要抓机会锻炼*nix environment programming，各读一本OO和设计的书。<&#47;li>
+<li>不要再装逼，至少要学着由内而外的装。<&#47;li>
+<li>经常让自己看看上面这些都做了没。<&#47;li><br />
+<&#47;ol></p>
+<p>于是，这篇总结就这样了。你要知道，回忆神马的，总是很辛苦的。</p>

@@ -1,0 +1,220 @@
+---
+layout: post
+status: publish
+published: true
+title: Perl脚本查Google字典
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+excerpt: "这个Perl脚本其实并不能算我的原创，是师傅<a href=\"http:&#47;&#47;t.sina.com.cn&#47;kanhongdeng\">Perl帝<&#47;a>拿出来分享的。本来拿的是iciba的翻译，我另外改了一个上Google字典拿翻译的版本。\r\n\r\n要修改的原因：\r\n1.
+  Google字典的英中字典，有双语解释；\r\n2. Google字典的例句和相关短语这些资源要丰富的多，可以帮助理解单词使用的语境，写英文材料时非常有用；\r\n3.
+  我习惯用Google字典，我一个G粉。\r\n\r\n先上截图\r\n<a href=\"http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;03&#47;gdict.png\"><img
+  alt=\"gdict \" src=\"http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;03&#47;gdict.png\"
+  title=\"Google Dictionary\" width=\"640\" height=\"400\" &#47;><&#47;a>\r\n\r\n为什么要用一个脚本查单词？对于命令行控来说，离开当前工作终端，开个网页查单词是很痛苦的事情，他们甚至根本不想让手离开主键盘区！有这样的一个脚本，然后扔进&#47;user&#47;bin&#47;，就不用大费周章的移动手臂了。\r\n\r\n这个脚本用LWP::UserAgent抓取网页，HTML::TokeParser解析网页，获取单词的翻译。\r\n\r\n脚本实现了一个抓取和解析google字典的类，整体的逻辑在en2chs函数中：\r\n1.
+  生成网址\r\n2. 用LWP取得结果网页\r\n3. 解析网页\r\n\r\n_parse_html找到翻译信息所在的代码块&mdash;&mdash;一个id叫&ldquo;pr-root&rdquo;的标签，然后主要的体力活就全都扔给_get_close_mean啦。\r\n\r\n要通过html标签来定位自己想要的内容，还真是个蛮累人的事情。但是Chrome的Deveploper
+  Tools让事情简单了很多，实在是让人心神舒畅啊。\r\n\r\n来看代码吧"
+wordpress_id: 961
+wordpress_url: http://caitengwei.com/blog/?p=961
+date: '2011-03-16 09:37:18 +0800'
+date_gmt: '2011-03-16 17:37:18 +0800'
+categories:
+- Perl
+tags:
+- Perl
+- "字典"
+- LWP
+- TokeParser
+comments:
+- id: 1729
+  author: "远走高飞"
+  author_email: www.uptall.com@gmail.com
+  author_url: http://uptall.com
+  date: '2011-03-22 18:59:29 +0800'
+  date_gmt: '2011-03-23 02:59:29 +0800'
+  content: google翻译倒常用，这个用得少
+- id: 1888
+  author: bigCat
+  author_email: liuyan@ooxx.me
+  author_url: http://ooxx.me
+  date: '2011-04-10 06:31:32 +0800'
+  date_gmt: '2011-04-10 14:31:32 +0800'
+  content: "= = 不能下载啊，看看神码错误。。。"
+- id: 1937
+  author: TheWaWaR
+  author_email: TheWaWaR@hotmail.com
+  author_url: http://www.roammyfield.com
+  date: '2011-04-23 00:05:50 +0800'
+  date_gmt: '2011-04-23 08:05:50 +0800'
+  content: "我也不能下载\r\n500 Internal Server Error"
+- id: 1938
+  author: TheWaWaR
+  author_email: TheWaWaR@hotmail.com
+  author_url: http://www.roammyfield.com
+  date: '2011-04-23 00:31:23 +0800'
+  date_gmt: '2011-04-23 08:31:23 +0800'
+  content: "各种Perl错误，放弃了....."
+- id: 2057
+  author: twcai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://www.caitengwei.com
+  date: '2011-05-25 18:35:16 +0800'
+  date_gmt: '2011-05-26 02:35:16 +0800'
+  content: "@<a href=\"#comment-1938\" rel=\"nofollow\">TheWaWaR <&#47;a>\r\n你在什么环境下跑的这个Perl脚本"
+- id: 2063
+  author: TheWaWaR
+  author_email: thewawar@hotmail.com
+  author_url: http://www.roammyfield.com/
+  date: '2011-06-02 01:30:59 +0800'
+  date_gmt: '2011-06-02 09:30:59 +0800'
+  content: Ubuntu 10.10
+- id: 2129
+  author: zerob13
+  author_email: zerob13@gmail.com
+  author_url: http://zerob13.in
+  date: '2011-07-14 02:04:48 +0800'
+  date_gmt: '2011-07-14 10:04:48 +0800'
+  content: "非常好用。。。"
+---
+<p>这个Perl脚本其实并不能算我的原创，是师傅<a href="http:&#47;&#47;t.sina.com.cn&#47;kanhongdeng">Perl帝<&#47;a>拿出来分享的。本来拿的是iciba的翻译，我另外改了一个上Google字典拿翻译的版本。</p>
+<p>要修改的原因：<br />
+1. Google字典的英中字典，有双语解释；<br />
+2. Google字典的例句和相关短语这些资源要丰富的多，可以帮助理解单词使用的语境，写英文材料时非常有用；<br />
+3. 我习惯用Google字典，我一个G粉。</p>
+<p>先上截图<br />
+<a href="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;03&#47;gdict.png"><img alt="gdict " src="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2011&#47;03&#47;gdict.png" title="Google Dictionary" width="640" height="400" &#47;><&#47;a></p>
+<p>为什么要用一个脚本查单词？对于命令行控来说，离开当前工作终端，开个网页查单词是很痛苦的事情，他们甚至根本不想让手离开主键盘区！有这样的一个脚本，然后扔进&#47;user&#47;bin&#47;，就不用大费周章的移动手臂了。</p>
+<p>这个脚本用LWP::UserAgent抓取网页，HTML::TokeParser解析网页，获取单词的翻译。</p>
+<p>脚本实现了一个抓取和解析google字典的类，整体的逻辑在en2chs函数中：<br />
+1. 生成网址<br />
+2. 用LWP取得结果网页<br />
+3. 解析网页</p>
+<p>_parse_html找到翻译信息所在的代码块&mdash;&mdash;一个id叫&ldquo;pr-root&rdquo;的标签，然后主要的体力活就全都扔给_get_close_mean啦。</p>
+<p>要通过html标签来定位自己想要的内容，还真是个蛮累人的事情。但是Chrome的Deveploper Tools让事情简单了很多，实在是让人心神舒畅啊。</p>
+<p>来看代码吧<a id="more"></a><a id="more-961"></a></p>
+<pre class="prettyprint lang-perl">
+#!&#47;usr&#47;bin&#47;perl<br />
+use strict;<br />
+use warnings;</p>
+<p>my $robot = Translater->new;<br />
+print $robot->en2chs( $ARGV[0] );</p>
+<p>#<br />
+# Class Translator<br />
+#<br />
+package Translater;</p>
+<p>use strict;<br />
+use warnings;<br />
+use LWP::UserAgent;<br />
+use HTML::TokeParser;<br />
+use URI::Escape;<br />
+use Carp qw(confess);<br />
+use IO::Scalar;</p>
+<p>sub new {<br />
+    my $class = shift;<br />
+    my $self = bless {}, $class;<br />
+    $self->_init;<br />
+    return $self;<br />
+}</p>
+<p>sub _init {<br />
+    my $self = shift;<br />
+    $self->{browser} = LWP::UserAgent->new;<br />
+    $self->{browser}->timeout(60);<br />
+    $self->{browser}->env_proxy;<br />
+    $self->{_url} = "http:&#47;&#47;www.google.com.hk&#47;dictionary?q=KEYW0RD&hl=zh-CN&langpair=en|zh-CN&spell=1&oi=spell";<br />
+}</p>
+<p>sub en2chs {<br />
+    my ( $self, $word ) = @_;<br />
+    my $buffer;</p>
+<p>    $word = uri_escape($word);<br />
+    $self->{_url} =~ s&#47;KEYW0RD&#47;$word&#47;;<br />
+    my $response = $self->{browser}->get( $self->{_url} );<br />
+    confess "Cannot connect to Google Dictionary " . $self->{browser}->status_line<br />
+        unless ( $response->is_success );<br />
+    my $content = $response->content;</p>
+<p>    $self->{_io} = IO::Scalar->new( \$buffer );<br />
+    $self->_parse_html( \$content );<br />
+    return $buffer;<br />
+}</p>
+<p>sub _parse_html {<br />
+    my ( $self, $ctxt_ref ) = @_;</p>
+<p>    my $stream = HTML::TokeParser->new($ctxt_ref);<br />
+    while ( my $token = $stream->get_token ) {<br />
+        if (    $token->[0] eq 'S'<br />
+            and $token->[1] eq 'ul'<br />
+            and exists $token->[2]{id}<br />
+            and $token->[2]{id} eq 'pr-root' )<br />
+        {<br />
+            $self->_get_close_mean( $stream, $token );<br />
+            $self->{_io}->print("\n\n");<br />
+        }<br />
+    }<br />
+}</p>
+<p>sub _get_close_mean {<br />
+    my ( $self, $stream, $token ) = @_;<br />
+    my $mean_counter = 1;<br />
+    while ($token) {<br />
+        if (    $token->[0] eq 'S'<br />
+            and exists $token->[2]{class}<br />
+            and $token->[2]{class} eq 'dct-tt' )<br />
+        {    # find dictionary entry<br />
+            $self->{_io}->print( $stream->get_trimmed_text('&#47;span'), " " );<br />
+        }<br />
+        elsif ( $token->[0] eq 'S'<br />
+            and $token->[1] eq 'div'<br />
+            and exists $token->[2]{class}<br />
+            and $token->[2]{class} eq 'dct-em' )<br />
+        {<br />
+            $self->{_io}->print("\n\n  $mean_counter.  ");<br />
+            $mean_counter++;<br />
+        }<br />
+        elsif ( $token->[0] eq 'S'<br />
+            and exists $token->[2]{title}<br />
+            and $token->[2]{title} eq 'Part-of-Speech' )<br />
+        {    # find Part-of-Speech<br />
+            $self->{_io}->print( "\n\n", $stream->get_trimmed_text('&#47;span') );<br />
+            $mean_counter = 1;<br />
+        }<br />
+        elsif ( $token->[0] eq 'S'<br />
+            and $token->[1] eq 'div'<br />
+            and exists $token->[2]{class}<br />
+            and $token->[2]{class} eq 'dct-ee' )<br />
+        {    # find example<br />
+            $self->{_io}->print("\n      ~ ");<br />
+        }<br />
+        elsif ( $token->[0] eq 'S'<br />
+            and $token->[1] eq 'span'<br />
+            and exists $token->[2]{class}<br />
+            and $token->[2]{class} eq "dct-tp" )<br />
+        {    # find spell<br />
+            my $spell = $stream->get_trimmed_text('&#47;span');<br />
+            if ( $spell =~ &#47;([\&#47;\[].+[\&#47;\]])&#47; ) {<br />
+                $self->{_io}->print( " ", $1 );<br />
+            }<br />
+        }<br />
+        elsif ( $token->[0] eq 'S'<br />
+            and $token->[1] eq 'div'<br />
+            and exists $token->[2]{class}<br />
+            and $token->[2]{class} eq 'dct-er' )<br />
+        {    # escape "See also" tag<br />
+            while ("true") {<br />
+                $token = $stream->get_token;<br />
+                if (    $token->[0] eq 'E'<br />
+                    and $token->[1] eq 'div' )<br />
+                {<br />
+                    last;<br />
+                }<br />
+            }<br />
+        }<br />
+        $token = $stream->get_token;<br />
+        if (    $token->[0] eq 'S'<br />
+            and $token->[1] eq 'h3' )<br />
+        {<br />
+            last;<br />
+        }<br />
+    }</p>
+<p>}<br />
+<&#47;pre></p>

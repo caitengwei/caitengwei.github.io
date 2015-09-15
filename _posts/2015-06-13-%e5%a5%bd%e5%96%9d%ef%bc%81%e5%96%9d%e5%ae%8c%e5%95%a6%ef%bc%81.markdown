@@ -1,0 +1,26 @@
+---
+layout: post
+status: publish
+published: true
+title: "好喝！喝完啦！"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 1281
+wordpress_url: http://caitengwei.com/blog/?p=1281
+date: '2015-06-13 02:01:13 +0800'
+date_gmt: '2015-06-13 10:01:13 +0800'
+categories:
+- Instagram
+tags:
+- IFTTT
+- Instagram
+comments: []
+---
+<div><img src='https:&#47;&#47;scontent.cdninstagram.com&#47;hphotos-xft1&#47;t51.2885-15&#47;e15&#47;10952609_1587400548199888_2115906873_n.jpg' style='max-width:600px;' &#47;><br&#47;>
+<div>好喝！喝完啦！ via Instagram <a href="http:&#47;&#47;ift.tt&#47;1QuRkOV">http:&#47;&#47;ift.tt&#47;1QuRkOV<&#47;a><&#47;div><&#47;div></p>

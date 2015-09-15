@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: "那一天遥遥无期"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 198
+wordpress_url: http://child.kilu.de/blog/?p=198
+date: '2008-11-20 23:17:21 +0800'
+date_gmt: '2008-11-20 15:17:21 +0800'
+categories:
+- Some parts
+tags:
+- "白痴"
+comments:
+- id: 38
+  author: HHBL
+  author_email: google@zju.edu.cn
+  author_url: http://edu.cn/~hhbl
+  date: '2008-11-21 20:36:12 +0800'
+  date_gmt: '2008-11-21 12:36:12 +0800'
+  content: SB
+- id: 39
+  author: HHBL
+  author_email: google@zju.edu.cn
+  author_url: http://fm.zju.edu.cn/~hhbl
+  date: '2008-11-21 20:37:21 +0800'
+  date_gmt: '2008-11-21 12:37:21 +0800'
+  content: "你又闯什么祸了"
+---
+<p>最近又干了很多蠢事，好像在梦游一样&hellip;&hellip;</p>
+<p>给刘老师添麻烦了，但不太好意思当面道歉，在这里说个对不起&hellip;&hellip;</p>
+<p>不要给自己太高期望，当个民工好了</p>

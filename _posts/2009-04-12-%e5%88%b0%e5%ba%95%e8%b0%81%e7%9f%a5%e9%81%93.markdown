@@ -1,0 +1,28 @@
+---
+layout: post
+status: publish
+published: true
+title: "到底谁知道"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 380
+wordpress_url: http://child.kilu.de/blog/?p=380
+date: '2009-04-12 10:31:29 +0800'
+date_gmt: '2009-04-12 02:31:29 +0800'
+categories:
+- Some parts
+tags:
+- nano3
+comments: []
+---
+<p>昨天买的nano3，早上连接到iTurns之后突然死机了。于是去Google上搜了下&ldquo;nano3 死机&rdquo;，看了第一个搜索结果，说死机了只要hold开关拨两下，同时按住menu和play键10秒左右就好了，照做，无效。然后看了其他很多求助帖，说的都一样，这样一来就只能放电了。<br />
+实在无奈，翻出说明书来看了下，发现上面说的是：先把hold开关拨到HOLD位置，在拨回原位，然后同时按下menu和中间按钮6秒直到出现apple标志。<br />
+唉，原来如此～Google出来的结果前两位是百度知道，后面有论坛有天涯问答之类的，没有一个提供了正确的答案&hellip;&hellip;<br />
+中国的网络是普及了，但是我觉得大部分的网民都是盲目的。比如百度知道上面的垃圾答案，我已经见过很多了，然后这些回答的链接还被不加验证的随便乱贴，在Google上的排名都很高&hellip;&hellip;<br />
+唉，倒底谁才是真的知道呢？</p>

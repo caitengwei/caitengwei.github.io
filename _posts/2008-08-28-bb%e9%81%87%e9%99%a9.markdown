@@ -1,0 +1,36 @@
+---
+layout: post
+status: publish
+published: true
+title: BB遇险
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 11
+wordpress_url: http://child.kilu.de/blog/?p=11
+date: '2008-08-28 12:23:41 +0800'
+date_gmt: '2008-08-28 04:23:41 +0800'
+categories:
+- My BlackBerry
+tags:
+- app error 523
+- BlackBerry
+- Jstardict
+- "金山词霸"
+comments:
+- id: 2
+  author: zerob13
+  author_email: zerob13@gmail.com
+  author_url: http://zerob13.blog.163.com
+  date: '2009-01-20 00:56:35 +0800'
+  date_gmt: '2009-01-19 16:56:35 +0800'
+  content: "看到这个，我也立刻备份去了。。。"
+---
+<p>--2008-06-20 00:01<br />
+晚上在blackberry8100上安装了一个金山词霸，虽然已经有Jstardict了，但为了比较哪个字典更好用，我非常欠揍的把金山安装上了，完美运行。<br />
+顺便一提，我的BB8100是4.5的rom，我比较喜欢4.5的英文界面，因为感觉这个界面本来就没考虑到中文，待机画面下的中文字体非常</p>

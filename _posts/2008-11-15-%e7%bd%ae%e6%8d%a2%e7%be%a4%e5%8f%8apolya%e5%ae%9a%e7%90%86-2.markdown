@@ -1,0 +1,144 @@
+---
+layout: post
+status: publish
+published: true
+title: "置换群及P&oacute;lya定理专题"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 194
+wordpress_url: http://child.kilu.de/blog/?p=194
+date: '2008-11-15 22:50:49 +0800'
+date_gmt: '2008-11-15 14:50:49 +0800'
+categories:
+- ACM&#47;ICPC
+tags:
+- HDOJ
+- POJ
+- P&oacute;lya
+- "置换群"
+comments: []
+---
+<p>pku2369:概念题，理解置换群的合成运算即可</p>
+<table class="a" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#ffffff">
+<tbody>
+<tr align="center">
+<td>3878349<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;userstatus?user_id=clumsydragon">clumsydragon<&#47;a><&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=2369">2369<&#47;a><&#47;td></p>
+<td><span style="color: blue;">Accepted<&#47;span><&#47;td></p>
+<td>212K<&#47;td></p>
+<td>16MS<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;showsource?solution_id=3878349" target="_blank">C++<&#47;a><&#47;td></p>
+<td>579B<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+pku1026:置换群的幂运算</p>
+<table class="a" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#ffffff">
+<tbody>
+<tr align="center">
+<td>3879155<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;userstatus?user_id=clumsydragon">clumsydragon<&#47;a><&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=1026">1026<&#47;a><&#47;td></p>
+<td><span style="color: blue;">Accepted<&#47;span><&#47;td></p>
+<td>208K<&#47;td></p>
+<td>63MS<&#47;td></p>
+<td>C++<&#47;td></p>
+<td>825B<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+pku1721:像置换群的开方运算，但其实不用开方运算</p>
+<table class="a" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#ffffff">
+<tbody>
+<tr align="center">
+<td>4321228<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;userstatus?user_id=clumsydragon">clumsydragon<&#47;a><&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=1721">1721<&#47;a><&#47;td></p>
+<td><span style="color: blue;">Accepted<&#47;span><&#47;td></p>
+<td>216K<&#47;td></p>
+<td>16MS<&#47;td></p>
+<td>C++<&#47;td></p>
+<td>883B<&#47;td></p>
+<td><&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+pku3270:求最小花费(简单) 算法黑数上有讲，比较详细</p>
+<table class="a" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#ffffff">
+<tbody>
+<tr align="center">
+<td>4378625<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;userstatus?user_id=clumsydragon">clumsydragon<&#47;a><&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=3270">3270<&#47;a><&#47;td></p>
+<td><span style="color: blue;">Accepted<&#47;span><&#47;td></p>
+<td>528K<&#47;td></p>
+<td>47MS<&#47;td></p>
+<td>G++<&#47;td></p>
+<td>1266B<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+pku2409:关于环的polya,公式见下</p>
+<p>首先是环长度为奇数的形式，一共有两种共 2 * s 个置换，分别是旋转和反射各 s 个置换，旋转的置换群除了最原始的{1,2,3,...,s} 循环个数为 s，其他循环个数模拟置换过程求得。反射的置换群有 s个，每个置换群都有 s&#47;2 + 1个循环，包含了 s &#47; 2 对以及处于对称轴上的那个点。</p>
+<p>然后是环长度为偶数的实行，一共有三种，除了旋转和反射，还有&ldquo;对折&rdquo;(姑且这样称呼吧-_-|)，旋转没有区别，反射有 s &#47; 2 种置换，循环个数为 s&#47;2 + 1个，"对折"也有 s&#47;2 中置换，循环个数为 s&#47;2 个。</p>
+<p>推出了每种情况的循环节个数，这题就好做了，只要代入ploya公式就可以了。</p>
+<table class="a" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#ffffff">
+<tbody>
+<tr align="center">
+<td>4379482<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;userstatus?user_id=clumsydragon">clumsydragon<&#47;a><&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=2409">2409<&#47;a><&#47;td></p>
+<td><span style="color: blue;">Accepted<&#47;span><&#47;td></p>
+<td>400K<&#47;td></p>
+<td>0MS<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;showsource?solution_id=4379482" target="_blank">G++<&#47;a><&#47;td></p>
+<td>1128B<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+pku1286:2409简化版，注意数据范围就好了</p>
+<table class="a" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#ffffff">
+<tbody>
+<tr align="center">
+<td>4379536<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;userstatus?user_id=clumsydragon">clumsydragon<&#47;a><&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=1286">1286<&#47;a><&#47;td></p>
+<td><span style="color: blue;">Accepted<&#47;span><&#47;td></p>
+<td>400K<&#47;td></p>
+<td>0MS<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;showsource?solution_id=4379536" target="_blank">G++<&#47;a><&#47;td></p>
+<td>1139B<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+pku1879:这道题，minute truck, five minute truck, hour truck 都可用栈模拟，模拟一天后小球的序列:s1, s2, s3&hellip;&hellip;&hellip;接下来的做法基本和2369一样，需要注意的是，代表第12个小时的小球是跟在它前面的11个小球后面进入queue的，因为没有注意这点，花 费了很多时间调试</p>
+<table class="a" border="1" cellspacing="0" cellpadding="0" width="100%" bordercolor="#ffffff">
+<tbody>
+<tr align="center">
+<td>3887339<&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;userstatus?user_id=clumsydragon">clumsydragon<&#47;a><&#47;td></p>
+<td><a href="http:&#47;&#47;acm.pku.edu.cn&#47;JudgeOnline&#47;problem?id=1879">1879<&#47;a><&#47;td></p>
+<td><span style="color: blue;">Accepted<&#47;span><&#47;td></p>
+<td>208K<&#47;td></p>
+<td>16MS<&#47;td></p>
+<td>C++<&#47;td></p>
+<td>1283B<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+hdoj1537:置换(算置换比较麻烦)</p>
+<p>hdoj 1812:Ploya定理</p>
+<p>这题刚开始用枚举所有8种置换群，找出循环个数再使用Ploya公式的方法要TLE。不过还好每种置换群的循环个数都是有规律的，可以推出 N 分别为偶数和奇数时的公式。比较麻烦的是还要用到大数，我直接用java还是跑了将近两秒&hellip;&hellip;这题时间卡得有些苛刻。</p>
+<table class="table_text" style="border-bottom: 1px dashed #879bff;" border="0" cellspacing="2" width="100%" align="center">
+<tbody>
+<tr align="center">
+<td height="22">897436<&#47;td></p>
+<td>2008-11-15 15:25:47<&#47;td></p>
+<td><span style="color: red;">Accepted<&#47;span><&#47;td></p>
+<td><a href="http:&#47;&#47;192.168.100.16&#47;showproblem.php?pid=1812">1812<&#47;a><&#47;td></p>
+<td>1812MS<&#47;td></p>
+<td>2880K<&#47;td></p>
+<td><a href="http:&#47;&#47;192.168.100.16&#47;viewcode.php?rid=897436" target="_blank">852 B<&#47;a><&#47;td></p>
+<td>Java<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table></p>

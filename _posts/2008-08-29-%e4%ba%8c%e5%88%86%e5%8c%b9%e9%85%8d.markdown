@@ -1,0 +1,61 @@
+---
+layout: post
+status: publish
+published: true
+title: "二分匹配"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 23
+wordpress_url: http://child.kilu.de/blog/?p=23
+date: '2008-08-29 10:30:07 +0800'
+date_gmt: '2008-08-29 02:30:07 +0800'
+categories:
+- ACM&#47;ICPC
+tags:
+- hall定理
+- "二分匹配"
+comments: []
+---
+<p>都说简单，但是还是觉得很难理解，主要是感觉hall定理的定义比较难理解。<br />
+找了好久，终于找到一篇讲解得浅显易懂的文章。<br />
+<a href="http:&#47;&#47;imlazy.ycool.com&#47;post.1603708.html" target="_blank">imlazy.ycool.com&#47;post.1603708.html<&#47;a><br />
+这篇文章中的两幅图把hall定理说明的比较直白，很快就看懂了。<br />
+匈牙利算法也是比较简单的<br />
+现在发现主要的难点在于如何把一道题目转化为二分匹配问题<br />
+我想还是靠做大量的题目吧，下面是一些题目：<br />
+HDOJ_1281</p>
+<table class="table_text" style="border-bottom: 1px dashed #879bff;" border="0" cellspacing="2" width="100%" align="center">
+<tbody>
+<tr align="center" bgcolor="#d7ebff">
+<td>2008-08-04 16:16:35<&#47;td></p>
+<td><span style="color: red;">Accepted<&#47;span><&#47;td></p>
+<td><a href="http:&#47;&#47;192.168.100.16&#47;showproblem.php?pid=1281">1281<&#47;a><&#47;td></p>
+<td>0MS<&#47;td></p>
+<td>0K<&#47;td></p>
+<td><a href="http:&#47;&#47;192.168.100.16&#47;viewcode.php?rid=739477" target="_blank">985 B<&#47;a><&#47;td></p>
+<td>C++<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+HDOJ_1498</p>
+<table class="table_text" style="border-bottom: 1px dashed #879bff;" border="0" cellspacing="2" width="100%" align="center">
+<tbody>
+<tr align="center">
+<td>2008-08-05 11:05:22<&#47;td></p>
+<td><span style="color: red;">Accepted<&#47;span><&#47;td></p>
+<td><a href="http:&#47;&#47;192.168.100.16&#47;showproblem.php?pid=1498">1498<&#47;a><&#47;td></p>
+<td>62MS<&#47;td></p>
+<td>0K<&#47;td></p>
+<td><a href="http:&#47;&#47;192.168.100.16&#47;viewcode.php?rid=740977" target="_blank">1507 B<&#47;a><&#47;td></p>
+<td>C++<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><&#47;table><br />
+HDOJ_1528<br />
+HDOJ_1507<br />
+POJ_2724<br />
+POJ_3216</p>

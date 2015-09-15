@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: "啪哒"
+author:
+  display_name: twcai
+  login: admin
+  email: clumsywyvern@gmail.com
+  url: http://www.caitengwei.com
+author_login: admin
+author_email: clumsywyvern@gmail.com
+author_url: http://www.caitengwei.com
+wordpress_id: 1101
+wordpress_url: http://caitengwei.com/blog/?p=1101
+date: '2013-02-27 08:42:06 +0800'
+date_gmt: '2013-02-27 16:42:06 +0800'
+categories:
+- Some parts
+- Programming
+tags: []
+comments:
+- id: 4108
+  author: weet
+  author_email: thewawar@gmail.com
+  author_url: http://ahorn.me
+  date: '2013-03-14 00:22:00 +0800'
+  date_gmt: '2013-03-14 08:22:00 +0800'
+  content: "好高端的样纸..."
+- id: 4122
+  author: twcai
+  author_email: clumsywyvern@gmail.com
+  author_url: http://www.caitengwei.com
+  date: '2013-03-14 07:25:45 +0800'
+  date_gmt: '2013-03-14 15:25:45 +0800'
+  content: "@weet 不高端，大部分还是shell"
+---
+<p>今天看了一天的<a href="http:&#47;&#47;www.gnu.org&#47;software&#47;autoconf&#47;manual&#47;autoconf.html">GNU Build System<&#47;a>文档，一直到三个小时前，脑子里还是跟一团浆糊似的。</p>
+<p>但是三个小时前，正好我在文档和configure.ac之间切来切去的时候，脑子里的东西在某一刻变得顺利成章。这个脚本的结构从一盘散沙突然变成一个搭好了脚手架的建筑工地。</p>
+<p>人脑真的是很奇怪啊。</p>

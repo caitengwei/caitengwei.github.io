@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 15 Sep 2015 15:45:10 +0800</pubDate>
-    <lastBuildDate>Tue, 15 Sep 2015 15:45:10 +0800</lastBuildDate>
+    <title>台湾菜</title>
+    <description>日常生活和技术博客</description>
+    <link>http://caitengwei.com/blog/</link>
+    <atom:link href="http://caitengwei.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 15 Sep 2015 15:53:41 +0800</pubDate>
+    <lastBuildDate>Tue, 15 Sep 2015 15:53:41 +0800</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -28,8 +27,8 @@
 
 </description>
         <pubDate>Tue, 01 Sep 2015 08:06:23 +0800</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/09/01/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/09/01/welcome-to-jekyll.html</guid>
+        <link>http://caitengwei.com/blog/2015/09/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2015/09/welcome-to-jekyll/</guid>
         
         
         <category>jekyll</category>
@@ -45,8 +44,8 @@
 &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 24 Jul 2015 20:44:44 +0800</pubDate>
-        <link>http://yourdomain.com/instagram/2015/07/24/1285.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/instagram/2015/07/24/1285.html</guid>
+        <link>http://caitengwei.com/blog/2015/07/1285/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2015/07/1285/</guid>
         
         <category>IFTTT</category>
         
@@ -64,8 +63,8 @@
 &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 13 Jun 2015 02:01:13 +0800</pubDate>
-        <link>http://yourdomain.com/instagram/2015/06/13/%25e5%25a5%25bd%25e5%2596%259d%25ef%25bc%2581%25e5%2596%259d%25e5%25ae%258c%25e5%2595%25a6%25ef%25bc%2581.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/instagram/2015/06/13/%25e5%25a5%25bd%25e5%2596%259d%25ef%25bc%2581%25e5%2596%259d%25e5%25ae%258c%25e5%2595%25a6%25ef%25bc%2581.html</guid>
+        <link>http://caitengwei.com/blog/2015/06/%25e5%25a5%25bd%25e5%2596%259d%25ef%25bc%2581%25e5%2596%259d%25e5%25ae%258c%25e5%2595%25a6%25ef%25bc%2581/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2015/06/%25e5%25a5%25bd%25e5%2596%259d%25ef%25bc%2581%25e5%2596%259d%25e5%25ae%258c%25e5%2595%25a6%25ef%25bc%2581/</guid>
         
         <category>IFTTT</category>
         
@@ -83,8 +82,8 @@
 &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 27 Apr 2015 19:56:27 +0800</pubDate>
-        <link>http://yourdomain.com/instagram/2015/04/27/forty-two-mm-of-awesomeness.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/instagram/2015/04/27/forty-two-mm-of-awesomeness.html</guid>
+        <link>http://caitengwei.com/blog/2015/04/forty-two-mm-of-awesomeness/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2015/04/forty-two-mm-of-awesomeness/</guid>
         
         <category>IFTTT</category>
         
@@ -118,8 +117,8 @@ fetch = :refs&amp;#47;remotes&amp;#47;git-svn-dev-branch&lt;br /&gt;
 &lt;/li&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/pre&gt;&lt;/li&gt;&lt;/li&gt;&lt;/ol&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 23 Mar 2015 07:20:28 +0800</pubDate>
-        <link>http://yourdomain.com/geek%20stuff/programming/2015/03/23/git-svn%25e6%25b7%25bb%25e5%258a%25a0%25e5%25a4%259a%25e4%25b8%25aasvn%25e4%25bb%2593%25e5%25ba%2593.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/geek%20stuff/programming/2015/03/23/git-svn%25e6%25b7%25bb%25e5%258a%25a0%25e5%25a4%259a%25e4%25b8%25aasvn%25e4%25bb%2593%25e5%25ba%2593.html</guid>
+        <link>http://caitengwei.com/blog/2015/03/git-svn%25e6%25b7%25bb%25e5%258a%25a0%25e5%25a4%259a%25e4%25b8%25aasvn%25e4%25bb%2593%25e5%25ba%2593/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2015/03/git-svn%25e6%25b7%25bb%25e5%258a%25a0%25e5%25a4%259a%25e4%25b8%25aasvn%25e4%25bb%2593%25e5%25ba%2593/</guid>
         
         
         <category>geek stuff</category>
@@ -135,8 +134,8 @@ fetch = :refs&amp;#47;remotes&amp;#47;git-svn-dev-branch&lt;br /&gt;
 &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 17 Jan 2015 19:32:57 +0800</pubDate>
-        <link>http://yourdomain.com/instagram/2015/01/17/%25e6%2597%25a9%25e9%25a4%2590%25ef%25bc%258c%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e6%258a%258a%25e8%259b%258b%25e6%258a%2596%25e6%2595%25a3%25e4%25ba%2586.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/instagram/2015/01/17/%25e6%2597%25a9%25e9%25a4%2590%25ef%25bc%258c%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e6%258a%258a%25e8%259b%258b%25e6%258a%2596%25e6%2595%25a3%25e4%25ba%2586.html</guid>
+        <link>http://caitengwei.com/blog/2015/01/%25e6%2597%25a9%25e9%25a4%2590%25ef%25bc%258c%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e6%258a%258a%25e8%259b%258b%25e6%258a%2596%25e6%2595%25a3%25e4%25ba%2586/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2015/01/%25e6%2597%25a9%25e9%25a4%2590%25ef%25bc%258c%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e6%258a%258a%25e8%259b%258b%25e6%258a%2596%25e6%2595%25a3%25e4%25ba%2586/</guid>
         
         <category>IFTTT</category>
         
@@ -154,8 +153,8 @@ fetch = :refs&amp;#47;remotes&amp;#47;git-svn-dev-branch&lt;br /&gt;
 &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Fri, 12 Sep 2014 21:54:38 +0800</pubDate>
-        <link>http://yourdomain.com/instagram/2014/09/12/latte-%25e8%25a5%25bf%25e7%25aa%2597%25ef%25bc%258c%25e5%258e%25a6%25e9%2597%25a8%25e6%259b%25be%25e5%258e%259d%25e5%259e%25b5.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/instagram/2014/09/12/latte-%25e8%25a5%25bf%25e7%25aa%2597%25ef%25bc%258c%25e5%258e%25a6%25e9%2597%25a8%25e6%259b%25be%25e5%258e%259d%25e5%259e%25b5.html</guid>
+        <link>http://caitengwei.com/blog/2014/09/latte-%25e8%25a5%25bf%25e7%25aa%2597%25ef%25bc%258c%25e5%258e%25a6%25e9%2597%25a8%25e6%259b%25be%25e5%258e%259d%25e5%259e%25b5/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2014/09/latte-%25e8%25a5%25bf%25e7%25aa%2597%25ef%25bc%258c%25e5%258e%25a6%25e9%2597%25a8%25e6%259b%25be%25e5%258e%259d%25e5%259e%25b5/</guid>
         
         <category>IFTTT</category>
         
@@ -173,8 +172,8 @@ fetch = :refs&amp;#47;remotes&amp;#47;git-svn-dev-branch&lt;br /&gt;
 &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Wed, 06 Aug 2014 07:49:18 +0800</pubDate>
-        <link>http://yourdomain.com/instagram/2014/08/06/%25e4%25bf%258f%25e8%2587%2580.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/instagram/2014/08/06/%25e4%25bf%258f%25e8%2587%2580.html</guid>
+        <link>http://caitengwei.com/blog/2014/08/%25e4%25bf%258f%25e8%2587%2580/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2014/08/%25e4%25bf%258f%25e8%2587%2580/</guid>
         
         <category>IFTTT</category>
         
@@ -192,8 +191,8 @@ fetch = :refs&amp;#47;remotes&amp;#47;git-svn-dev-branch&lt;br /&gt;
 &lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Thu, 17 Jul 2014 21:01:16 +0800</pubDate>
-        <link>http://yourdomain.com/instagram/2014/07/17/%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e8%25bf%259b%25e4%25ba%2586%25e9%25ba%25a6%25e5%25bd%2593%25e5%258a%25b3%25e7%259a%2584%25e5%259d%2591%25ef%25bc%258c%25e4%25b8%258b%25e5%2591%25a8%25e5%2586%258d%25e6%259d%25a5%25e4%25b8%25aa%25e4%25b9%2594%25e5%25b7%25b4.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/instagram/2014/07/17/%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e8%25bf%259b%25e4%25ba%2586%25e9%25ba%25a6%25e5%25bd%2593%25e5%258a%25b3%25e7%259a%2584%25e5%259d%2591%25ef%25bc%258c%25e4%25b8%258b%25e5%2591%25a8%25e5%2586%258d%25e6%259d%25a5%25e4%25b8%25aa%25e4%25b9%2594%25e5%25b7%25b4.html</guid>
+        <link>http://caitengwei.com/blog/2014/07/%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e8%25bf%259b%25e4%25ba%2586%25e9%25ba%25a6%25e5%25bd%2593%25e5%258a%25b3%25e7%259a%2584%25e5%259d%2591%25ef%25bc%258c%25e4%25b8%258b%25e5%2591%25a8%25e5%2586%258d%25e6%259d%25a5%25e4%25b8%25aa%25e4%25b9%2594%25e5%25b7%25b4/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2014/07/%25e4%25b8%2580%25e4%25b8%258d%25e5%25b0%258f%25e5%25bf%2583%25e8%25bf%259b%25e4%25ba%2586%25e9%25ba%25a6%25e5%25bd%2593%25e5%258a%25b3%25e7%259a%2584%25e5%259d%2591%25ef%25bc%258c%25e4%25b8%258b%25e5%2591%25a8%25e5%2586%258d%25e6%259d%25a5%25e4%25b8%25aa%25e4%25b9%2594%25e5%25b7%25b4/</guid>
         
         <category>IFTTT</category>
         
@@ -211,8 +210,8 @@ fetch = :refs&amp;#47;remotes&amp;#47;git-svn-dev-branch&lt;br /&gt;
 &lt;/a&gt;&lt;/div&gt;&lt;/a&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 24 May 2014 06:43:07 +0800</pubDate>
-        <link>http://yourdomain.com/my%20life/2014/05/24/%25e6%25b3%25b0%25e5%25ba%2599%25e5%25b0%258f%25e6%2580%25aa%25e5%2585%25bd.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/my%20life/2014/05/24/%25e6%25b3%25b0%25e5%25ba%2599%25e5%25b0%258f%25e6%2580%25aa%25e5%2585%25bd.html</guid>
+        <link>http://caitengwei.com/blog/2014/05/%25e6%25b3%25b0%25e5%25ba%2599%25e5%25b0%258f%25e6%2580%25aa%25e5%2585%25bd/</link>
+        <guid isPermaLink="true">http://caitengwei.com/blog/2014/05/%25e6%25b3%25b0%25e5%25ba%2599%25e5%25b0%258f%25e6%2580%25aa%25e5%2585%25bd/</guid>
         
         <category>IFTTT</category>
         

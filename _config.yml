@@ -1,9 +1,8 @@
 # Site settings
 title: 台湾菜
 email: tengweicai@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-日常生活和技术博客
-baseurl: "/blog/" # the subpath of your site, e.g. /blog/
+description: 日常生活和技术博客
+baseurl: "/blog" # the subpath of your site, e.g. /blog/
 url: "http://caitengwei.com" # the base hostname & protocol for your site
 twitter_username: caitengwei
 github_username:  caitengwei

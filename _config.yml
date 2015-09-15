@@ -9,3 +9,24 @@ github_username:  caitengwei
 # Build settings
 markdown: kramdown
 permalink: /:year/:month/:title/
+
+style:
+#    body: "whitesmoke"
+    padding: 33%
+    anchor: "#46f"
+    serif-heading: true
+    nav: "#181818"
+#    headline: "#06f"
+    description: "white"
+    article:
+        odd: "#ffffff"
+        even: "#222222"
+
+links:
+  - github: "https://github.com/me/"
+  - twitter: "https://twitter.com/me/"
+
+paginate: 10
+excerpt_separator: "\n\n\n" # excerpt ends after two blank lines
+defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
+gems: [jekyll-feed] # include feed plugin (supported by gh-pages)

@@ -1,0 +1,43 @@
+---
+title: "黑莓8100刷机失败修复记录"
+date: 2010-02-28 21:39:47.000000000 +08:00
+categories:
+- My BlackBerry
+tags:
+- app error 507
+- BlackBerry
+- "刷机"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>　　前天买了个HTC HERO，回到寝室把原来81上的联系人同步到新手机上去。同步完，DM ( BlackBerry Desktop Manager ) 提醒我81的ROM有可用更新，忘记当时已经断电熄灯30分钟，我直接选择了更新81的ROM。因为这个本本的电池也陪我度过3年了，又过了10分钟以后他就可怜巴巴的请我备份手头的工作……这下囧了，81还没同步完，他就自动待机了。</p>
+<p>　　然后我的小黑眨巴着他的指示灯，就这么瘫痪了。</p>
+<p>　　在网上找到一个英文版的<a href="http://forums.pinstack.com/f73/how_to_reinstall_os_when_computer_wont_recognize_the_device_is_connected-5178/">小黑系统重装指南</a>，照着攻略重新刷了一遍，果然小黑起死回生。</p>
+<p>　　把文章主要内容翻译一下，供小黑玩家们参考：系统无法识别黑莓手机连接情况下重装黑莓系统</p>
+<p>　　1. 安装黑莓桌面管理软件：<a href="http://down.maxpda.com/blackberry/76205.html">BlackBerry Desktop Manager</a>。<br />
+　　2. 安装一个黑莓ROM：<a href="http://down.maxpda.com/blackberry/76163.html">黑莓 BlackBerry 8100 ROM 4.5.0.174 东亚版</a>。<br />
+　　3. 把电池从手机中取出。<br />
+　　4. 打开DM，把手机连接到电脑上。<br />
+　　5. 打开DM界面上的"选项" -> "连接设置"。<br />
+　　6. 选择USB PIN，因为手机中没有电池这个可能需要几分钟的时间。一些比较少见的情况你可能需要先检测设备。<br />
+　　7. 选择"安装程序"图标。<br />
+　　8. 选择你要安装的程序组件(个人在语言支持只选了英文，节省空间么，其他组件全部选上)。<br />
+　　9. 一直下一步知道看到"完成"这个按钮。<br />
+　　10. <strong>这一步非常重要</strong>，不要点击"完成"按钮，选择"高级"按钮(我没找到-_-可能跟DM版本有关)。<br />
+　　11. 确定所有的选项都被选上(同样被我忽略)。<br />
+　　12. 一直到他问你是否需要使用自动备份与还原P，选择不自动备份我的ROM(这个选项原文为：DO NOT AUTOMATICALLY BACK UP MY HANDHELD)。<br />
+　　13. <strong>当安装系统的任务开始进行时，得把电池插回手机，小心不要影响到传输。一些比较少见的情况下，你可能需要一直等到他说连接需要<font color="red">重新插入电池</font></strong>(我在第一次传输途中看到手机屏幕上出现电池图标，不知道该干嘛，这应该就是需要插入电池的指示)。</p>
+<p>　　刚开始可能会失败，但不要怕，再试几次。</p>
+<p>　　如果你第三次还是失败了(老外也讲究事不过三？)，下载黑莓JDE(原文为BlackBerry java developers kit)，然后安装。安装好后找到javaloader.exe然后移动到C盘根目录。</p>
+<p>　　打开windows命令行，执行命令”c:\javaloader -usb wipe”，把黑莓的ROM给擦掉。</p>
+<p>　　*我(指老外)把第13步高亮的原因是这个真的非常重要，如果你的手机没有装入电池，DM就不会重新初始化你的设备。</p>
+<p>　　翻译到此为止，正常情况下，重新初始化设备后，手机一开始会出现507错误，然后显示和电脑通讯的标识，接下来你需要做的就是坐等小黑恢复正常。</p>

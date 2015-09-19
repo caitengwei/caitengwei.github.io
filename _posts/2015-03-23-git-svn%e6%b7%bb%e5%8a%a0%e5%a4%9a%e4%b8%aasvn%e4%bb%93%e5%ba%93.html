@@ -1,0 +1,40 @@
+---
+title: Git svn添加多个svn仓库
+date: 2015-03-23 07:20:28.000000000 +08:00
+categories:
+- Geek Stuff
+- Programming
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+  _wpas_done_all: '1'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>很早以前刚学会 Git 的时候就觉得 Subversion 相比 Git 不只是落后，而是落后了一个时代，还在豆瓣上写了篇<a href="http://www.douban.com/note/321006700/">日志</a>吐槽。</p>
+<p>虽然公司目前还是以 Subversion 为主流，但幸好有 git-svn 插件，目前日常开发中的 SCM 工作已经可以完全使用 Git 来满足。</p>
+<p>Git-svn也非常强大，在项目的一份本地代码中中随手切换任意一个 Subversion branch 也是直接看懵了一起干活的同学。要做到这样只需在用 git-svn clone 代码时加上 -T trunk -b branches 就能自动添加 Subversion 分支到 Git 的远程 branch 中，一般来说用 --stdlayout 可以直接搞定大部分情况。</p>
+<p>不过这里要说的另外一种比较奇葩又相对少见的情况，就是 trunk 和 dev branch 并不按照常规分布（常规是指 trunk 在 svn://root/project/trunk，branch 在 svn://root/project/branches/x_branch）。</p>
+<p>最极端的情况是这两个代码库分别位于完全不同的Subversion 代码库，例如 svn://root/projectA/ 和 svn://root/projectB 。</p>
+<p>以下就是对应的解决步骤：</p>
+<ol>
+<li>首先 clone trunk 代码：git svn clone svn://root/projectA/ project</li>
+<li> 修改 project 目录下的 .git/config ，增加如下内容：
+<pre class="prettyprint">
+[svn-remote "dev-branch"]
+url = svn://root/projectB
+fetch = :refs/remotes/git-svn-dev-branch
+</pre>
+</li>
+<li>在 project 目录下执行
+<pre class="prettyprint">git svn fetch --all</pre>
+<p>执行这一步后 git-svn 应会增加一个 remotes/git-svn-dev-branch，并且fetch 了相应的代码</li>
+<li>用 git checkout -b dev-branch remotes/git-svn-dev-branch 在本地创建开发分支</li>
+</ol>

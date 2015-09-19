@@ -1,0 +1,34 @@
+---
+title: ELF Hash
+date: 2008-04-24 18:16:13.000000000 +08:00
+categories:
+- ACM/ICPC
+tags:
+- ELF hash
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>ELF hash是对字符串进行hash操作时的常用函数<br />
+这个算法将一个字符串的数组中的每个元素依次按前四位与上一个元素的低四位相与，组成一个长整形，如果长整的高四位大于零，那么就将它折回再与长整的低四位相异或，要注意最后得到的整型不是唯一的，一开始因为不知道这个吃过亏。<br />
+<coolcode lang="cpp">int ELFhash(char *key)<br />
+{<br />
+    unsigned long h = 0;<br />
+    unsigned long g;<br />
+    while( *key )<br />
+    {<br />
+        h =( h<< 4) + *key++;<br />
+        g = h & 0xf0000000L;<br />
+        if( g ) h ^= g >> 24;<br />
+        h &= ~g;<br />
+    }<br />
+    return h;<br />
+}</coolcode></p>

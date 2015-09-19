@@ -1,0 +1,133 @@
+---
+title: "记忆化搜索"
+date: 2009-04-05 00:15:12.000000000 +08:00
+categories:
+- ACM/ICPC
+tags:
+- POJ
+- TOJ
+- "记忆化搜索"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>居然整ACM那么久记忆化搜索还不会，今晚TOJ的C就这么卡在那边了……<br />
+不过还好学起来还是蛮简单了，回到寝室后A了比较相似的两题，一题是TOJ 3234，一题是POJ 1088.<br />
+我的做法都是用dfs扩展结点，用一个数组保存最优解。<br />
+贴下代码(顺便一提，今天看到一个等宽字体叫Monaco，狂好看！在coolcode的css里改了下，但是没效果=,= 郁闷)：<br />
+<coolcode lang="cpp">//TOJ 3234<br />
+#include <iostream><br />
+#include <queue><br />
+#include <algorithm><br />
+using namespace std;</p>
+<p>int n, ret;<br />
+int d[101][101];<br />
+int dp[101][101];</p>
+<p>inline int dfs(int x, int y)<br />
+{<br />
+	//printf("%d %d\n", x, y);<br />
+	if(x == 0 && y == 3){<br />
+		x = 0, y = 3;<br />
+	}<br />
+	if(dp[x][y] > 0)<br />
+		return dp[x][y];<br />
+	int i, op;<br />
+	op = x -1;<br />
+	for(i = 0; op >= 0 && i < n; i++){<br />
+		if(abs(i - y) > 1 && d[op][i] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(op, i) +1);<br />
+	}<br />
+	op = x +1;<br />
+	for(i = 0; op < n && i < n; i++){<br />
+		if(abs(i - y) > 1 && d[op][i] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(op, i) +1);<br />
+	}<br />
+	op = y -1;<br />
+	for(i = 0; op >= 0 && i < n; i++){<br />
+		if(abs(i - x) > 1 && d[i][op] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(i, op) +1);<br />
+	}<br />
+	op = y +1;<br />
+	for(i = 0; op < n && i < n; i++){<br />
+		if(abs(i - x) > 1 && d[i][op] > d[x][y] )<br />
+			dp[x][y] = max(dp[x][y], dfs(i, op) +1);<br />
+	}<br />
+	if(dp[x][y] < 0)<br />
+		dp[x][y] = 1;<br />
+	return dp[x][y];<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int x, y;<br />
+	int i, j;<br />
+	//freopen("ACM.out", "w", stdout);</p>
+<p>	while(scanf("%d", &n) != EOF){<br />
+		scanf("%d %d", &x, &y);<br />
+		for(i = 0; i < n; i++){<br />
+			for(j = 0; j < n; j++){<br />
+				scanf("%d", &d[i][j]);<br />
+			}<br />
+		}<br />
+		memset(dp, -1, sizeof(dp));<br />
+		ret = dfs(x -1, y -1);<br />
+		printf("%d\n", ret);<br />
+	}<br />
+	return 0;<br />
+}</algorithm></queue></iostream></coolcode><br />
+<!--more--><br />
+<coolcode lang="cpp">//POJ 1088<br />
+#include <iostream><br />
+#include <algorithm><br />
+using namespace std;</p>
+<p>int n, m, ret;<br />
+int d[102][102], dp[102][102];<br />
+int dir[4][2] = {0, 1, -1, 0, 0, -1, 1, 0};</p>
+<p>inline int dfs(int x, int y)<br />
+{<br />
+	//printf("%d %d\n", x, y);<br />
+	if(dp[x][y] > 0)<br />
+		return dp[x][y];<br />
+	int i;<br />
+	int tx, ty;<br />
+	for(i = 0; i < 4; i++){<br />
+		tx = x + dir[i][0], ty = y + dir[i][1];<br />
+		if(tx < 0 || tx >= n || ty < 0 || ty >= m)<br />
+			continue;<br />
+		if(d[tx][ty] <= d[x][y])<br />
+			continue;<br />
+		dp[x][y] = max(dp[x][y], dfs(tx, ty) +1);<br />
+	}<br />
+	if(dp[x][y] < 0)<br />
+		dp[x][y] = 1;<br />
+	return dp[x][y];<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int i, j;<br />
+	//freopen("ACM.out", "w", stdout);<br />
+	while(scanf("%d %d", &n, &m) != EOF)<br />
+	{<br />
+		for(i = 0; i < n; i++){<br />
+			for(j = 0; j < m; j++){<br />
+				scanf("%d", &d[i][j]);<br />
+			}<br />
+		}<br />
+		memset(dp, -1, sizeof(dp));<br />
+		ret = 0;<br />
+		for(i = 0; i < n; i++){<br />
+			for(j = 0; j < m; j++){<br />
+				ret = max(ret, dfs(i, j));<br />
+			}<br />
+		}<br />
+		printf("%d\n", ret);<br />
+	}<br />
+	return 0;<br />
+}</algorithm></iostream></coolcode></p>

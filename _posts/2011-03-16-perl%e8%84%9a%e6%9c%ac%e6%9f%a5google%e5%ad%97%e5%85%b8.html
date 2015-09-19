@@ -1,0 +1,172 @@
+---
+title: Perl脚本查Google字典
+date: 2011-03-16 09:37:18.000000000 +08:00
+categories:
+- Perl
+tags:
+- LWP
+- Perl
+- TokeParser
+- "字典"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '1'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>这个Perl脚本其实并不能算我的原创，是师傅<a href="http://t.sina.com.cn/kanhongdeng">Perl帝</a>拿出来分享的。本来拿的是iciba的翻译，我另外改了一个上Google字典拿翻译的版本。</p>
+<p>要修改的原因：<br />
+1. Google字典的英中字典，有双语解释；<br />
+2. Google字典的例句和相关短语这些资源要丰富的多，可以帮助理解单词使用的语境，写英文材料时非常有用；<br />
+3. 我习惯用Google字典，我一个G粉。</p>
+<p>先上截图<br />
+<a href="http://caitengwei.com/blog/wp-content/uploads/2011/03/gdict.png"><img alt="gdict " src="http://caitengwei.com/blog/wp-content/uploads/2011/03/gdict.png" title="Google Dictionary" width="640" height="400" /></a></p>
+<p>为什么要用一个脚本查单词？对于命令行控来说，离开当前工作终端，开个网页查单词是很痛苦的事情，他们甚至根本不想让手离开主键盘区！有这样的一个脚本，然后扔进/user/bin/，就不用大费周章的移动手臂了。</p>
+<p>这个脚本用LWP::UserAgent抓取网页，HTML::TokeParser解析网页，获取单词的翻译。</p>
+<p>脚本实现了一个抓取和解析google字典的类，整体的逻辑在en2chs函数中：<br />
+1. 生成网址<br />
+2. 用LWP取得结果网页<br />
+3. 解析网页</p>
+<p>_parse_html找到翻译信息所在的代码块——一个id叫“pr-root”的标签，然后主要的体力活就全都扔给_get_close_mean啦。</p>
+<p>要通过html标签来定位自己想要的内容，还真是个蛮累人的事情。但是Chrome的Deveploper Tools让事情简单了很多，实在是让人心神舒畅啊。</p>
+<p>来看代码吧<!--more--></p>
+<pre class="prettyprint lang-perl">
+#!/usr/bin/perl 
+use strict;
+use warnings;
+
+my $robot = Translater->new;
+print $robot->en2chs( $ARGV[0] );
+
+#
+# Class Translator
+#
+package Translater;
+
+use strict;
+use warnings;
+use LWP::UserAgent;
+use HTML::TokeParser;
+use URI::Escape;
+use Carp qw(confess);
+use IO::Scalar;
+
+sub new {
+    my $class = shift;
+    my $self = bless {}, $class;
+    $self->_init;
+    return $self;
+}
+
+sub _init {
+    my $self = shift;
+    $self->{browser} = LWP::UserAgent->new;
+    $self->{browser}->timeout(60);
+    $self->{browser}->env_proxy;
+    $self->{_url} = "http://www.google.com.hk/dictionary?q=KEYW0RD&hl=zh-CN&langpair=en|zh-CN&spell=1&oi=spell";
+}
+
+sub en2chs {
+    my ( $self, $word ) = @_;
+    my $buffer;
+
+    $word = uri_escape($word);
+    $self->{_url} =~ s/KEYW0RD/$word/;
+    my $response = $self->{browser}->get( $self->{_url} );
+    confess "Cannot connect to Google Dictionary " . $self->{browser}->status_line
+        unless ( $response->is_success );
+    my $content = $response->content;
+
+    $self->{_io} = IO::Scalar->new( \$buffer );
+    $self->_parse_html( \$content );
+    return $buffer;
+}
+
+sub _parse_html {
+    my ( $self, $ctxt_ref ) = @_;
+
+    my $stream = HTML::TokeParser->new($ctxt_ref);
+    while ( my $token = $stream->get_token ) {
+        if (    $token->[0] eq 'S'
+            and $token->[1] eq 'ul'
+            and exists $token->[2]{id}
+            and $token->[2]{id} eq 'pr-root' )
+        {
+            $self->_get_close_mean( $stream, $token );
+            $self->{_io}->print("\n\n");
+        }
+    }
+}
+
+sub _get_close_mean {
+    my ( $self, $stream, $token ) = @_;
+    my $mean_counter = 1;
+    while ($token) {
+        if (    $token->[0] eq 'S'
+            and exists $token->[2]{class}
+            and $token->[2]{class} eq 'dct-tt' )
+        {    # find dictionary entry
+            $self->{_io}->print( $stream->get_trimmed_text('/span'), " " );
+        }
+        elsif ( $token->[0] eq 'S'
+            and $token->[1] eq 'div'
+            and exists $token->[2]{class}
+            and $token->[2]{class} eq 'dct-em' )
+        {
+            $self->{_io}->print("\n\n  $mean_counter.  ");
+            $mean_counter++;
+        }
+        elsif ( $token->[0] eq 'S'
+            and exists $token->[2]{title}
+            and $token->[2]{title} eq 'Part-of-Speech' )
+        {    # find Part-of-Speech
+            $self->{_io}->print( "\n\n", $stream->get_trimmed_text('/span') );
+            $mean_counter = 1;
+        }
+        elsif ( $token->[0] eq 'S'
+            and $token->[1] eq 'div'
+            and exists $token->[2]{class}
+            and $token->[2]{class} eq 'dct-ee' )
+        {    # find example
+            $self->{_io}->print("\n      ~ ");
+        }
+        elsif ( $token->[0] eq 'S'
+            and $token->[1] eq 'span'
+            and exists $token->[2]{class}
+            and $token->[2]{class} eq "dct-tp" )
+        {    # find spell
+            my $spell = $stream->get_trimmed_text('/span');
+            if ( $spell =~ /([\/\[].+[\/\]])/ ) {
+                $self->{_io}->print( " ", $1 );
+            }
+        }
+        elsif ( $token->[0] eq 'S'
+            and $token->[1] eq 'div'
+            and exists $token->[2]{class}
+            and $token->[2]{class} eq 'dct-er' )
+        {    # escape "See also" tag
+            while ("true") {
+                $token = $stream->get_token;
+                if (    $token->[0] eq 'E'
+                    and $token->[1] eq 'div' )
+                {
+                    last;
+                }
+            }
+        }
+        $token = $stream->get_token;
+        if (    $token->[0] eq 'S'
+            and $token->[1] eq 'h3' )
+        {
+            last;
+        }
+    }
+
+}
+</pre>

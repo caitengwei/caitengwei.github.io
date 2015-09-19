@@ -1,0 +1,74 @@
+---
+title: "扩展欧几里德算法"
+date: 2009-03-08 23:17:55.000000000 +08:00
+categories:
+- ACM/ICPC
+tags:
+- HDOJ
+- "数论"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2669" target="_BLANK">HDOJ 2669</a><br />
+用扩展欧几里德算法求解线性方程，这个内容以前看过，但是不太明白，今天A了题以后感觉有点理解了。数论这方面一定要加强。<br />
+该算法是用来求解 a * x + b * y = gcd(a, b) 这个线性方程的，这样的解应该有无数个吧，通过算法求出来的只是其中一个。<br />
+若求出来的一组解为X0, Y0, 其他整数解的求法为：<br />
+Xi = gcd(a, b) * X0 + b * i;<br />
+Yi = gcd(a, b) * Y0 - a * i; (i 为整数)<br />
+贴下代码:<br />
+<coolcode lang="cpp">#include <iostream><br />
+using namespace std;</p>
+<p>inline void euclid(int a, int b, int &x, int &y)<br />
+{<br />
+	if(b == 0){<br />
+		x = 1;<br />
+		y = 0;<br />
+		return a;<br />
+	}<br />
+	else{<br />
+		int d = euclid(b, a % b, x, y);<br />
+		int tmp = x;<br />
+		x = y;<br />
+		y = tmp - a / b * y;<br />
+		return d;<br />
+	}<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int a, b, x, y, q;</p>
+<p>	while(scanf("%d %d", &a, &b) != EOF){</p>
+<p>		q = euclid(a, b, x, y);</p>
+<p>		if(q == 1){<br />
+			if(x >= 0){<br />
+				while(x >= b){<br />
+					x -= b;<br />
+					y += a;<br />
+				}<br />
+			}<br />
+			else{<br />
+				while(x < 0){<br />
+					x += b;<br />
+					y -= a;<br />
+				}<br />
+			}<br />
+			printf("%d %dn", x, y);<br />
+		}<br />
+		else{<br />
+			printf("sorryn");<br />
+		}<br />
+	}<br />
+	return 0;<br />
+}</p>
+<p>/*<br />
+97 77<br />
+2012 1013<br />
+*/</iostream></coolcode></p>

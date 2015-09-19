@@ -1,0 +1,181 @@
+---
+title: HDOJ 2429 Word Game
+date: 2008-11-05 15:01:47.000000000 +08:00
+categories:
+- ACM/ICPC
+tags:
+- HDOJ
+- Word Game
+- "二分"
+- "矩阵"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>成都网络赛的题目，这题可以用矩阵乘法求解。以单词为点，能前后相连的单词之间连边，得到一个有向图，求长度为奇数且小于等于N的不同的S->T的路径数。设该有向图的邻接矩阵为A，则可通过求A + A ^ 3 + ... + A ^ N求解。<br />
+因为 N 比较大所以要通过二分来求矩阵和，即 A + A ^ 3 + A ^ 5 + A ^ 7  = (A + A ^ 3) + A^4 * (A + A ^ 3)。贴下代码：<br />
+<coolcode lang="cpp">#include <iostream><br />
+#include <cstring><br />
+using namespace std;</p>
+<p>char tem[33][12];<br />
+int l[33], t, m, n;</p>
+<p>class matrix{<br />
+public :<br />
+	int rw;<br />
+	int cn;<br />
+	int ma[33][33];</p>
+<p>	matrix()<br />
+	{<br />
+		rw = 0;<br />
+		cn = 0;<br />
+	}</p>
+<p>	matrix(int &x, int &y)<br />
+	{<br />
+		int i, j;<br />
+		rw = x;<br />
+		cn = y;</p>
+<p>		for(i = 0; i < rw; i++)<br />
+			for(j = 0; j < cn; j++)<br />
+				ma[i][j] = 0;<br />
+	}</p>
+<p>	matrix(const matrix &x)<br />
+	{<br />
+		int i, j;<br />
+		rw = x.rw;<br />
+		cn = x.cn;<br />
+		for(i = 0; i < rw; i++)<br />
+			for(j = 0; j < cn; j++)<br />
+				ma[i][j] = x.ma[i][j];<br />
+	}</p>
+<p>	matrix operator*(matrix &x)<br />
+	{<br />
+		int i, j, k;<br />
+		matrix ret(cn, x.rw);<br />
+		for(i = 0; i < rw ; i++)<br />
+			for(j = 0; j < x.cn ; j++)<br />
+			{<br />
+				for(k = 0; k < cn; k++)<br />
+					ret.ma[i][j] += ma[i][k] * x.ma[k][j];<br />
+				if(ret.ma[i][j] > 10001)<br />
+					ret.ma[i][j] %= 10001;<br />
+			}<br />
+			return ret;<br />
+	}</p>
+<p>	matrix power(int x)<br />
+	{<br />
+		matrix ret(rw, cn);</p>
+<p>		if(x == 1)<br />
+			return *this;<br />
+		if(x == 2)<br />
+		{<br />
+			int i, j ,k;<br />
+			for(i = 0; i < rw; i++)<br />
+				for(j = 0; j < cn; j++)<br />
+				{<br />
+					for(k = 0; k < cn; k++)<br />
+						ret.ma[i][j] += ma[i][k] * ma[k][j];<br />
+					if(ret.ma[i][j] >= 10001)<br />
+						ret.ma[i][j] %= 10001;<br />
+				}<br />
+		}<br />
+		else if((x & 1) == 0)<br />
+		{<br />
+			ret = this->power(x >> 1);<br />
+			ret = ret.power(2);<br />
+		}<br />
+		else<br />
+		{<br />
+			ret = this->power(x >> 1);<br />
+			ret = ret.power(2);<br />
+			ret = ret * (*this);<br />
+		}</p>
+<p>		return ret;<br />
+	}</p>
+<p>	inline matrix operator+= (const matrix &x)<br />
+	{<br />
+		int i, j;<br />
+		for(i = 0; i < rw; i++)<br />
+			for(j = 0; j < cn; j++)<br />
+			{<br />
+				ma[i][j] += x.ma[i][j];<br />
+				if(ma[i][j] > 10001)<br />
+					ma[i][j] %= 10001;<br />
+			}<br />
+			return *this;<br />
+	}</p>
+<p>	inline matrix operator = (const matrix &x)<br />
+	{<br />
+		int i, j;<br />
+		rw = x.rw;<br />
+		cn = x.cn;</p>
+<p>		for(i = 0; i < rw; i++)<br />
+			for(j = 0; j < cn; j++)<br />
+				ma[i][j] = x.ma[i][j];<br />
+		return *this;<br />
+	}</p>
+<p>};</p>
+<p>inline matrix mtx(matrix &ltr, int n)<br />
+{<br />
+	if((n & 1) == 0) n--;<br />
+	if(n == 1) return ltr;</p>
+<p>	int tmp = (n + 1) >> 1;<br />
+	matrix ret, t1, t2;<br />
+	t1 = mtx(ltr, tmp - 1);<br />
+	t2 = ltr.power(tmp);<br />
+	if((tmp & 1) == 0)<br />
+	{<br />
+		ret = t2;<br />
+		ret = ret * t1;<br />
+		ret += t1;<br />
+	}<br />
+	else<br />
+	{<br />
+		ret = t2 * ltr;<br />
+		ret = ret * t1;<br />
+		ret += t1;<br />
+		ret += t2;<br />
+	}<br />
+	return ret;<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int i, j;<br />
+	int st, ed;<br />
+	matrix ret;</p>
+<p>	scanf("%d", &t);<br />
+	while(t--)<br />
+	{<br />
+		scanf("%d", &m);<br />
+		for(i = 0; i < m + 2; i++)<br />
+		{<br />
+			scanf("%s", tem[i]);<br />
+			l[i] = strlen(tem[i]);<br />
+		}<br />
+		scanf("%d", &n);</p>
+<p>		matrix ltr(m, m);<br />
+		st = -1; ed = -1;<br />
+		for(i = 0; i < m; i++)<br />
+		{<br />
+			if(st == -1 && strcmp(tem[i], tem[m]) ==0)<br />
+				st = i;<br />
+			if(ed == -1 && strcmp(tem[i],tem[m+1])==0)<br />
+				ed = i;</p>
+<p>			for(j= 0; j < m; j++)<br />
+			{<br />
+				if(tem[i][l[i]-1] == tem[j][0])<br />
+					ltr.ma[i][j] = 1;<br />
+			}<br />
+		}<br />
+		ret = mtx(ltr, n);<br />
+		printf("%dn", ret.ma[st][ed]);<br />
+	}<br />
+	return 0;<br />
+}</cstring></iostream></coolcode></p>

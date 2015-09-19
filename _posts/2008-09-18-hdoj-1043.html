@@ -1,0 +1,220 @@
+---
+title: HDOJ 1043
+date: 2008-09-18 00:07:04.000000000 +08:00
+categories:
+- ACM/ICPC
+tags:
+- "八数码"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>八数码问题，pku上的数据太弱了，zju还在升级中(非常期待啊)，我的代码在hdoj上跑了14XXms，用的是优先队列+bfs。<br />
+明天整个白天都有课，等有空了再优化吧，花了一天多的时间A了这题，贴下代码先。<br />
+<coolcode lang="cpp">#include <iostream><br />
+#include <queue><br />
+using namespace std;<br />
+#define END 123456789<br />
+int hash[362880];<br />
+short path[362880];<br />
+int fa[362880];<br />
+char eight[25];<br />
+int fi[9]={0,1,2,6,24,120,720,5040,40320};<br />
+int ten[10]={1,10,100,1000,10000,100000,1000000,10000000,100000000,1000000000};</p>
+<p>inline int lt(const int &x)<br />
+{<br />
+	return x-1;<br />
+}</p>
+<p>inline int rt (const int &x)<br />
+{<br />
+	return x+1;<br />
+}</p>
+<p>inline int up(const int &x)<br />
+{<br />
+	int t0=10-x%10;<br />
+	int t1=x/ten[t0];<br />
+	int t2=t1%1000;<br />
+	t1=t1-t2+(t2%100)*10+t2/100;<br />
+	t1*=ten[t0];<br />
+	return (t1+x%ten[t0]-3);<br />
+}</p>
+<p>inline int dn(const int &x)<br />
+{<br />
+	int t0=7-x%10;<br />
+	int t1=x/ten[t0];<br />
+	int t2=t1%1000;<br />
+	t1=t1-t2+(t2/10)+(t2%10)*100;<br />
+	t1*=ten[t0];<br />
+	return (t1+x%ten[t0]+3);<br />
+}</p>
+<p>inline int hashfun(const int &x)<br />
+{<br />
+	int di=0;<br />
+	int cou=8;<br />
+	int tem=x;<br />
+	int dig[9]={0};<br />
+	while(tem>0)<br />
+	{<br />
+		dig[cou--]=tem%10;<br />
+		tem/=10;<br />
+	}<br />
+	for(int i=1;i<8;i++)<br />
+	{<br />
+		tem=0;<br />
+		for(int j=0;j<i;j++)<br />
+			if(dig[j]>dig[i]) tem++;<br />
+		di+=tem*fi[i];<br />
+	}<br />
+	di+=(9-dig[8])*fi[8];<br />
+	return di;<br />
+}</p>
+<p>inline int gu(const int &x)<br />
+{<br />
+	int di=0;<br />
+	int bk;<br />
+	int tem=x;<br />
+	bk=x%10;tem/=10;bk--;<br />
+	for(int i=8;i>=0;i--)<br />
+	{<br />
+		if(i==bk) continue;<br />
+		if(tem%10!=i+1) di++;<br />
+		tem/=10;<br />
+	}<br />
+	return di;<br />
+}</p>
+<p>struct node{<br />
+	int sta;<br />
+	int no;<br />
+	int va;<br />
+	int ga;<br />
+};<br />
+bool operator <(const node &x,const node &y)<br />
+{<br />
+	return x.va>y.va;<br />
+}</p>
+<p>node now,next;<br />
+priority_queue <node> et;<br />
+int be,bef;</p>
+<p>inline int bfs()<br />
+{<br />
+	int bk;<br />
+	memset(hash,0,sizeof(hash));<br />
+	while(!et.empty()) et.pop();<br />
+	now.sta=be;now.ga=0;<br />
+	now.va=gu(now.sta);<br />
+	now.no=hashfun(now.sta);bef=now.no;<br />
+	fa[now.no]=0;path[now.no]=0;<br />
+	et.push(now);hash[now.no]=1;<br />
+	while(!et.empty()){<br />
+		now=et.top();et.pop();<br />
+		if(now.sta==END) return now.no;<br />
+		bk=now.sta%10;<br />
+		for(int i=0;i<4;i++)<br />
+		{<br />
+			switch(i)<br />
+			{<br />
+			case 0:if(bk==1 || bk==4 || bk==7) continue;<br />
+				next.sta=lt(now.sta);<br />
+				next.no=hashfun(next.sta);<br />
+				next.va=gu(next.sta);<br />
+				next.ga=now.ga+1;<br />
+				if((next.ga+next.va)<(now.ga+now.va)) continue;<br />
+				if(hash[next.no]==1) continue;<br />
+				path[next.no]=i;fa[next.no]=now.no;<br />
+				et.push(next);hash[next.no]=1;<br />
+				break;		//left<br />
+			case 1:if(bk==3 || bk==6 || bk==9) continue;<br />
+				next.sta=rt(now.sta);<br />
+				next.no=hashfun(next.sta);<br />
+				next.va=gu(next.sta);<br />
+				next.ga=now.ga+1;<br />
+				if((next.ga+next.va)<(now.ga+now.va)) continue;<br />
+				if(hash[next.no]==1) continue;<br />
+				path[next.no]=i;fa[next.no]=now.no;<br />
+				et.push(next);hash[next.no]=1;<br />
+				break;		//right<br />
+			case 2:if(bk<4) continue;<br />
+				next.sta=up(now.sta);<br />
+				next.no=hashfun(next.sta);<br />
+				next.va=gu(next.sta);<br />
+				next.ga=now.ga+1;<br />
+				if((next.ga+next.va)<(now.ga+now.va)) continue;<br />
+				if(hash[next.no]==1) continue;<br />
+				path[next.no]=i;fa[next.no]=now.no;<br />
+				et.push(next);hash[next.no]=1;<br />
+				break;		//up<br />
+			case 3:if(bk>6) continue;<br />
+				next.sta=dn(now.sta);<br />
+				next.no=hashfun(next.sta);<br />
+				next.va=gu(next.sta);<br />
+				next.ga=now.ga+1;<br />
+				if((next.ga+next.va)<(now.ga+now.va)) continue;<br />
+				if(hash[next.no]==1) continue;<br />
+				path[next.no]=i;fa[next.no]=now.no;<br />
+				et.push(next);hash[next.no]=1;<br />
+				break;		//down<br />
+			}<br />
+		}<br />
+	}<br />
+	return 0;<br />
+}</p>
+<p>inline void dfs(const int &n)<br />
+{<br />
+	if(n==bef) return ;<br />
+	dfs(fa[n]);<br />
+	switch(path[n])<br />
+	{<br />
+	case 0:printf("l");<br />
+		break;<br />
+	case 1:printf("r");<br />
+		break;<br />
+	case 2:printf("u");<br />
+		break;<br />
+	case 3:printf("d");<br />
+		break;<br />
+	}<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int x,en,xpl;<br />
+	int tem,di,cou,dig[9]={0};<br />
+	while(gets(eight))<br />
+	{<br />
+		be=0;xpl=0;<br />
+		{<br />
+			if(eight[i]>='0' && eight[i]<='9')<br />
+			{be*=10;be+=eight[i]-'0';xpl++;}<br />
+			else if(eight[i]=='x')<br />
+				x=xpl+1;<br />
+		}<br />
+		be*=10;be+=x;<br />
+		di=0;cou=8;tem=be;<br />
+		while(tem>0)<br />
+		{<br />
+			dig[cou--]=tem%10;<br />
+			tem/=10;<br />
+		}<br />
+		for(int i=1;i<8;i++)<br />
+		{<br />
+			tem=0;<br />
+			for(int j=0;j<i;j++)<br />
+				if(dig[j]>dig[i]) tem++;<br />
+			di+=tem;<br />
+		}<br />
+		if((di&1)!=0) printf("unsolvablen");<br />
+		else {<br />
+			en=bfs();<br />
+			dfs(en);<br />
+			printf("n");<br />
+		}<br />
+	}<br />
+	return 0;<br />
+}</node></queue></iostream></coolcode></p>

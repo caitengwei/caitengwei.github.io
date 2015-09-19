@@ -1,0 +1,74 @@
+---
+title: "继续置换群"
+date: 2008-10-30 15:46:10.000000000 +08:00
+categories:
+- ACM/ICPC
+tags:
+- POJ
+- "置换群"
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>奉Teddy大牛暨队长之命，我这个离散白痴重新开始置换群专题。</p>
+<p>先链接一下以前的关于这个专题的日志：<a href="http://child.kilu.de/blog/?p=25" target="_blank">置换群及Pólya定理</a></p>
+<p>pku1721 CARDS : 这道题我用模拟置换群的平方运算，找出循环次数n，再顺推 n - s(mod n) 次这样的笨办法过的。最好的方法是用置换群的分数幂运算(这个还在学习中，看得相当头大)，在效率上会有很大的差别，不过POJ数据偏弱了。<br />
+贴下代码：<br />
+<coolcode lang="cpp">#include <iostream><br />
+using namespace std;</p>
+<p>int dor[1010];<br />
+int d[2][1010];</p>
+<p>int main()<br />
+{<br />
+	int n, s, i, j;<br />
+	int f, nf, np, count;</p>
+<p>	while(scanf("%d %d", &n, &s) != EOF)<br />
+	{<br />
+		for(i = 1; i <= n; i++)<br />
+		{<br />
+			scanf("%d", &dor[i]);<br />
+			d[0][i] = dor[i];<br />
+		}<br />
+		f = 0;<br />
+		np = 0;<br />
+		count = 0;<br />
+		while(1)<br />
+		{<br />
+			nf = 1 - f;<br />
+			np = 1;<br />
+			for(i = 1; i <= n; i++)<br />
+				if(d[f][i] != dor[i])<br />
+				{<br />
+					np = 0;<br />
+					break;<br />
+				}<br />
+			if(np == 1 && count) break;<br />
+			for(i = 1; i <= n; i++)<br />
+				d[nf][i] = d[f][d[f][i]];<br />
+			f = nf;<br />
+			count++;<br />
+		}</p>
+<p>		s = count - s % count;<br />
+		f = 0;<br />
+		for(i = 1; i <= n; i++)<br />
+			d[0][i] = dor[i];</p>
+<p>		for(i = 0 ; i < s; i++)<br />
+		{<br />
+			nf = 1 - f;<br />
+			for(j = 1; j <= n; j++)<br />
+				d[nf][j] = d[f][d[f][j]];<br />
+			f = nf;<br />
+		}</p>
+<p>		for(i = 1; i <= n; i++)<br />
+			printf("%dn", d[nf][i]);<br />
+	}<br />
+	return 0;<br />
+}</iostream></coolcode></p>

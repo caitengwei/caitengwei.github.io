@@ -1,0 +1,48 @@
+---
+title: prettyprint test
+date: 2014-01-23 03:18:43.000000000 +08:00
+categories:
+- My Life
+tags: []
+status: draft
+type: post
+published: false
+meta:
+  _edit_last: '1'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<pre class="prettyprint lang-perl">
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use utf8;
+
+use Encode qw(encode);
+use IO::Scalar;
+use LWP::UserAgent;
+use HTML::TreeBuilder::XPath;
+use URI::Escape;
+use Data::Dumper;
+
+my $url     = 'http://dict.youdao.com/search?q=KEYW0RD&ue=utf8';
+my %ele_map = (
+    # Result area
+    results_contents => q(//div[@id='results-contents']),
+
+    # Word
+    word     => q(//h2[@class='wordbook-js']),
+    keyword  => q(//h2[@class='wordbook-js']/span[@class='keyword']),
+    phonetic => q(//h2[@class='wordbook-js']/span[@class='phonetic']),
+);
+
+my $keyword = $ARGV[0];
+$keyword = uri_escape ($keyword);
+$url =~ s/KEYW0RD/$keyword/;
+die "You must pass a Chinese/English word as parameter" if (!$keyword);
+</pre>

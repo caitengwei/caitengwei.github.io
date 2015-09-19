@@ -1,0 +1,112 @@
+---
+title: "网络流"
+date: 2009-09-10 15:55:27.000000000 +08:00
+categories:
+- ACM/ICPC
+tags:
+- "网络流"
+status: private
+type: post
+published: false
+meta:
+  _edit_last: '1'
+author:
+  login: admin
+  email: clumsywyvern@gmail.com
+  display_name: twcai
+  first_name: Tengwei
+  last_name: Cai
+---
+<p>网络流题目<br />
+USACO Drainage Ditches</p>
+<p>二分匹配可以转化为网络流来做，或者说，二分匹配就是特殊的网络流</p>
+<p>附ditch代码 :<br />
+<coolcode lang="cpp">#include <iostream><br />
+#include <algorithm><br />
+using namespace std;</p>
+<p>#define SZ 201<br />
+#define MAX 100010</p>
+<p>class edge {<br />
+	int nt[SZ], sz;<br />
+public:<br />
+	inline int size() {<br />
+		return sz;<br />
+	}</p>
+<p>	inline void clear() {<br />
+		sz = 0;<br />
+	}</p>
+<p>	inline void push(int x) {<br />
+		nt[sz ++] = x;<br />
+	}</p>
+<p>	inline int operator[] (const int &x) {<br />
+		return nt[x];<br />
+	}<br />
+};<br />
+edge arc[SZ];<br />
+int qq[MAX];<br />
+int n, m, ma[SZ][SZ];</p>
+<p>int edmonds(int st, int ed) {<br />
+	int fa[SZ], flow[SZ];<br />
+	int ret = 0, lt = 0, rt = 0;<br />
+	int cur, i, n, np, tmp;<br />
+	memset(fa, 0, sizeof(fa));<br />
+	qq[rt++] = st;<br />
+	flow[st] = 0x7fffffff;<br />
+	while(lt != rt) {<br />
+		cur = qq[lt ++];<br />
+		if(lt == MAX) lt = 0;<br />
+		n = arc[cur].size();<br />
+		for(i = 0; i < n; i++) {<br />
+			np = arc[cur][i];<br />
+			if(!ma[cur][np] || np == st)  continue;<br />
+			if(fa[np]) continue;<br />
+			fa[np] = cur;<br />
+			flow[np] = min(ma[cur][np], flow[cur]);<br />
+			qq[rt++] = np;<br />
+			if(rt == MAX) rt = 0;<br />
+			if(np == ed) {<br />
+				tmp = flow[np];<br />
+				while(np != st) {<br />
+					ma[fa[np]][np] -= tmp;<br />
+					if(!ma[np][fa[np]]) {<br />
+						arc[np].push(fa[np]);<br />
+						ma[np][fa[np]] = tmp;<br />
+					}<br />
+					else<br />
+						ma[np][fa[np]] += tmp;<br />
+					np = fa[np];<br />
+				}<br />
+				memset(fa, 0, sizeof(fa));<br />
+				flow[st] = 0x7fffffff;<br />
+				ret += tmp;<br />
+				lt = 0, rt = 0;<br />
+				qq[rt ++] = st;<br />
+				break;<br />
+			}<br />
+		}<br />
+	}</p>
+<p>	return ret;<br />
+}</p>
+<p>int main()<br />
+{<br />
+	int n, m;<br />
+	while(cin >> m >> n) {<br />
+		int i, j, a, b, c;<br />
+		memset(ma, 0, sizeof(ma));<br />
+		for(i = 1; i <= n; i++) {<br />
+			arc[i].clear();<br />
+		}<br />
+		for(i = 0; i < m; i++) {<br />
+			cin >> a >> b >> c;<br />
+			if(ma[a][b]) ma[a][b] += c;<br />
+			else {<br />
+				arc[a].push(b);<br />
+				ma[a][b] = c;<br />
+			}<br />
+		}</p>
+<p>		int ret = edmonds(1, n);<br />
+		cout << ret << endl;<br />
+	}<br />
+	return 0;<br />
+}<br />
+</algorithm></iostream></coolcode></p>

@@ -23,7 +23,7 @@ author:
 <p>好久没有更新博客了，这次更新的原因是上次贴的<a href="./programming/perl/perl脚本查google字典/" target="_blank">Perl脚本查Google字典</a>因为Google关闭字典服务的关系已经不能再用了。</p>
 <p>前段时间接触了一个新东西叫XPath，名字听起来挺酷的，于是拿来又折腾了一个脚本出来。这次查的是有道辞典，没有Google的好用，但因为Google字典已经不再提供服务，目前能找到的Google字典服务都是通过Unofficial API实现的，也不知道能用多久，就先这么凑合着用吧。</p>
 <p>上图<br />
-<a href="/assets/wp-uploads/2011/11/youdao_dict.jpg"><img alt="youdao_dict " src="/assets/wp-uploads/2011/11/youdao_dict.jpg" title="youdao_dict" width="640" height="400" /></a><br />
+<a href="{{ site.baseurl }}/assets/wp-uploads/2011/11/youdao_dict.jpg"><img alt="youdao_dict " src="{{ site.baseurl }}/assets/wp-uploads/2011/11/youdao_dict.jpg" title="youdao_dict" width="640" height="400" /></a><br />
 <br />
 这次脚本代码还是主要分两部分，一部分是通过LWP::UserAgent抓网页内容，一部分是用HTML::TreeBuilder::XPath分析网页内容提取需要的数据。</p>
 <ul>

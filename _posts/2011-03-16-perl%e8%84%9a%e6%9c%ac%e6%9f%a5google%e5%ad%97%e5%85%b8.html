@@ -26,7 +26,7 @@ author:
 2. Google字典的例句和相关短语这些资源要丰富的多，可以帮助理解单词使用的语境，写英文材料时非常有用；<br />
 3. 我习惯用Google字典，我一个G粉。</p>
 <p>先上截图<br />
-<a href="/assets/wp-uploads/2011/03/gdict.png"><img alt="gdict " src="/assets/wp-uploads/2011/03/gdict.png" title="Google Dictionary" width="640" height="400" /></a></p>
+<a href="{{ site.baseurl }}/assets/wp-uploads/2011/03/gdict.png"><img alt="gdict " src="{{ site.baseurl }}/assets/wp-uploads/2011/03/gdict.png" title="Google Dictionary" width="640" height="400" /></a></p>
 <p>为什么要用一个脚本查单词？对于命令行控来说，离开当前工作终端，开个网页查单词是很痛苦的事情，他们甚至根本不想让手离开主键盘区！有这样的一个脚本，然后扔进/user/bin/，就不用大费周章的移动手臂了。</p>
 <p>这个脚本用LWP::UserAgent抓取网页，HTML::TokeParser解析网页，获取单词的翻译。</p>
 <p>脚本实现了一个抓取和解析google字典的类，整体的逻辑在en2chs函数中：<br />

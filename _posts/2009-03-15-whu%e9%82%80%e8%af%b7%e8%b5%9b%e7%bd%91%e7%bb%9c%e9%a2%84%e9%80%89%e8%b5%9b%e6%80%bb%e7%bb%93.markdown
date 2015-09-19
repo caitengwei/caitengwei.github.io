@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: WHU邀请赛网络预选赛总结

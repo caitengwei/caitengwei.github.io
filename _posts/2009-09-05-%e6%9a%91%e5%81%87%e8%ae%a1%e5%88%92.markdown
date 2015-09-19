@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "暑假计划 &amp; 总结"

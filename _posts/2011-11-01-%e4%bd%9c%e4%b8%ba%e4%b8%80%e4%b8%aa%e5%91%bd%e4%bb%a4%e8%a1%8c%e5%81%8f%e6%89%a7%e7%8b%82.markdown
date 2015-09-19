@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "作为一个命令行偏执狂..."

@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "黑莓8100刷机失败修复记录"

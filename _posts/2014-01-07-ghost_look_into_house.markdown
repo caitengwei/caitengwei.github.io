@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: Instagram Post - Jan 7, 2014

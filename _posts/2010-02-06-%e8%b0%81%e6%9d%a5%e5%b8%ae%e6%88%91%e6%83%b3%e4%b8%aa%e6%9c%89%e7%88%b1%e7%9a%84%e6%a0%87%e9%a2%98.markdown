@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "谁来帮我想个有爱的标题"

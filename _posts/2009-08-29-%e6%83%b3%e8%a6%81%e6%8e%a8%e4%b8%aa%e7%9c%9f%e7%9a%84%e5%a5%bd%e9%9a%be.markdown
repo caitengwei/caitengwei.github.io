@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "想要推个真的好难"

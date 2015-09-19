@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: TOJ 2919 Alphanumeric Expression

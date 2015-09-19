@@ -4,7 +4,7 @@
     <!-- Niklas Buschmann 2015 MIT <http://github.com/niklasbuschmann> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="{{ site.encoding }}">
-    {% if page.author %}<meta name="author" content="{{ page.author }}">{% endif %}
+    {% if page.author.display_name %}<meta name="author" content="{{ page.author.display_name }}">{% endif %}
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <title>{% if page.title %} {{ page.title }} › {% endif %}{{ site.title }}</title>
     <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url}}">
@@ -29,7 +29,13 @@
     {% if site.subheading %}<div>{{ site.subheading }}</div>{% endif %}
 {{ content }}
     <footer>
-      <span><a href="{{ site.url }}">{% if page.author %}{{ page.author }}{% else %}{{site.author}}{% endif %}</a></span>
+      <span>
+        {% if page.author %}
+          <a href="{{ page.author.url }}">{{ page.author.display_name }}</a>
+        {% else %}
+          <a href="{{ site.url }}">{{site.author}}</a>
+        {% endif %}
+      </span>
       <span>{% for link_hash in site.links %}{% for link in link_hash %}<a href="{{ link[1] }}"><i class="fa fa-{{ link[0] }}-square"></i></a>{% endfor %}{% endfor %}</span>
       <span>&copy; {{ site.time | date: "%Y" }}</span>
     </footer>

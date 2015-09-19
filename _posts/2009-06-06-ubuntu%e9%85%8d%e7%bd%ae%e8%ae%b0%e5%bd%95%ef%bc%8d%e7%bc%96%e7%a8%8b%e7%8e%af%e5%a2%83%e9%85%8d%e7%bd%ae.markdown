@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: Ubuntu配置记录－编程环境配置

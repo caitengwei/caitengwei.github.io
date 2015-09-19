@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "随便来点流水帐"

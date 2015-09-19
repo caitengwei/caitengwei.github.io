@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: Linux编程学习笔记

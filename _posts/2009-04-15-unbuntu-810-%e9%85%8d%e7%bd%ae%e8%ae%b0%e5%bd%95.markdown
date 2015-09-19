@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: Ubuntu 8.10 配置记录

@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "平底锅热披萨"

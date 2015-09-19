@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: Perl中建立一个实例方法的线程

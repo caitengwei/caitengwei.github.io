@@ -10,6 +10,9 @@ github_username:  caitengwei
 markdown: kramdown
 permalink: /:year/:month/:title/
 
+comments:
+    disqus: "caitengwei"
+
 style:
 #    body: "whitesmoke"
     padding: 33%

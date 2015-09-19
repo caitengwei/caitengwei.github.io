@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: Latte @ 西窗，厦门曾厝垵

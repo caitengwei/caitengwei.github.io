@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: HDU 2008&#039;10 Programming Contest 解题报告

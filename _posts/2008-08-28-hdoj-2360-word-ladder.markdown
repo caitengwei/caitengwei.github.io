@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: HDOJ 2360 Word Ladder

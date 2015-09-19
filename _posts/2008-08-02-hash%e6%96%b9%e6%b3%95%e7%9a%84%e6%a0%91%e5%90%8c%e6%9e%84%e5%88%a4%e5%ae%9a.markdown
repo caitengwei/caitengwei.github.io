@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "树的同构判定的两种方法"

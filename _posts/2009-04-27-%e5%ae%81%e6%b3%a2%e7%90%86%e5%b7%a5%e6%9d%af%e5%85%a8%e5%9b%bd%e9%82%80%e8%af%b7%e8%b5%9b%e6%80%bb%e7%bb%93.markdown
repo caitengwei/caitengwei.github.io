@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "宁波理工杯全国邀请赛总结"

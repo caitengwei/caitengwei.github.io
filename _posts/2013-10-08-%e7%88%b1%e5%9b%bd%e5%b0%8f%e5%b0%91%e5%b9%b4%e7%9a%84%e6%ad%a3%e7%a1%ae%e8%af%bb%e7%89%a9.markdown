@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "爱国小少年的正确读物"

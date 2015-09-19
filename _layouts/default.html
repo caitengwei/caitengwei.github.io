@@ -4,7 +4,16 @@ layout: blank
     <article>
       <header>
         <h2><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></h2>
-        <p>{% if page.author %}{{ page.author }} • {% endif %}{% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>{% endif %}{% if page.categories %} • {{ page.categories | array_to_sentence_string }}{% endif %}</p>
+        <p>
+          {% if page.author %}
+            <span>
+              <!-- FIXME: css style <img src="{{ page.author.email | to_gravatar }}" alt="{{ page.author.display_name }}" /> -->
+              <a href="{{ page.author.url }}" target="_blank">{{ page.author.display_name }}</a>
+            </span> • 
+          {% endif %}
+          {% if page.date %}<time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>{% endif %}
+          {% if page.categories %} • {{ page.categories | array_to_sentence_string }}{% endif %}
+        </p>
       </header>
       <div>
 {{ content }}

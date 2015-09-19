@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: ZOJ 3209 Treasure Map

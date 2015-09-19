@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "一路向西&hellip;&hellip;"

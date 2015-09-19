@@ -1,5 +1,4 @@
 ---
-layout: post
 status: publish
 published: true
 title: "知乎问答：Mac OSX 系统好用在哪里？"

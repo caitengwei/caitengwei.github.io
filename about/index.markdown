@@ -5,10 +5,10 @@ title: About Me
 author:
   display_name: twcai
   login: admin
-  email: clumsywyvern@gmail.com
+  email: tengweicai@gmail.com
   url: http://www.caitengwei.com
 author_login: admin
-author_email: clumsywyvern@gmail.com
+author_email: tengweicai@gmail.com
 author_url: http://www.caitengwei.com
 wordpress_id: 2
 wordpress_url: http://www.caitengwei.com/blog/?page_id=2
@@ -55,7 +55,7 @@ comments:
   content: <a href="#comment-190" rel="nofollow">@MadFroG<&#47;a>, 楼上何人，何故冒充在下？
 - id: 194
   author: CD
-  author_email: clumsywyvern@gmail.com
+  author_email: tengweicai@gmail.com
   author_url: http://www.caitengwei.com
   date: '2010-02-17 04:20:20 +0800'
   date_gmt: '2010-02-17 12:20:20 +0800'
@@ -76,7 +76,7 @@ comments:
   content: "蔡大牛你是用什么备份的？"
 - id: 325
   author: CD
-  author_email: clumsywyvern@gmail.com
+  author_email: tengweicai@gmail.com
   author_url: http://www.caitengwei.com
   date: '2010-04-06 23:58:01 +0800'
   date_gmt: '2010-04-07 07:58:01 +0800'
@@ -97,7 +97,7 @@ comments:
   content: "多久没更新了\r\n你个懒虫"
 - id: 2292
   author: twcai
-  author_email: clumsywyvern@gmail.com
+  author_email: tengweicai@gmail.com
   author_url: http://www.caitengwei.com
   date: '2011-11-01 10:00:03 +0800'
   date_gmt: '2011-11-01 18:00:03 +0800'
@@ -111,7 +111,7 @@ comments:
   content: "表示借了一本书 里面有大牛的一个发票=。="
 - id: 2539
   author: twcai
-  author_email: clumsywyvern@gmail.com
+  author_email: tengweicai@gmail.com
   author_url: http://www.caitengwei.com
   date: '2012-02-07 22:36:52 +0800'
   date_gmt: '2012-02-08 06:36:52 +0800'

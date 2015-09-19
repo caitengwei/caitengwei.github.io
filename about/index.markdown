@@ -1,5 +1,4 @@
 ---
-layout: page
 status: publish
 published: true
 title: About Me
@@ -132,12 +131,14 @@ comments:
   date_gmt: '2014-04-09 10:02:25 +0800'
   content: "大神、求一份 hdu 2533 c++代码。。那题让我纠结了一下午、c++wa g++ac"
 ---
-<p>[caption id="attachment_1104" align="alignleft" width="300"]<a href="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2009&#47;12&#47;IMG_0030.jpg"><img src="http:&#47;&#47;caitengwei.com&#47;blog&#47;wp-content&#47;uploads&#47;2009&#47;12&#47;IMG_0030-300x300.jpg" alt="Me @ 798" width="300" height="300" class="size-medium wp-image-1104" &#47;><&#47;a>[&#47;caption]</p>
-<div>
-对什么都有点兴趣，对什么都三分钟热度的伪Geek。<br />
-大学时在HDU ACM集训队乱捣鼓了几年算法。<br />
-如今正在测试与开发之间游走纠结。<br />
-<&#47;div></p>
-<div>
-新浪微博 <a href="http:&#47;&#47;weibo.com&#47;twcai">@台湾菜<&#47;a><br />
-<&#47;div></p>
+
+对什么都有点兴趣，对什么都三分钟热度的伪Geek。
+
+大学时在HDU ACM集训队乱捣鼓了几年算法。
+
+<del>如今</del>一直正在测试与开发之间游走纠结。
+
+关注我的社交网络
+
+* 新浪微博 [@台湾菜](http://weibo.com/twcai)
+* 知乎 [@蔡腾纬](http://www.zhihu.com/people/caitengwei)

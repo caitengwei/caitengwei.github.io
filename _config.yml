@@ -26,8 +26,8 @@ style:
         even: "#222222"
 
 links:
-  - github: "https://github.com/me/"
-  - twitter: "https://twitter.com/me/"
+  - github: "https://github.com/caitengwei/"
+  - twitter: "https://twitter.com/caitengwei/"
 
 paginate: 10
 excerpt_separator: "\n\n\n" # excerpt ends after two blank lines

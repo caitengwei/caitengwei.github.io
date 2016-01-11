@@ -15,7 +15,7 @@ tags:
 
 2015年国庆去霓虹国旅游时，给自己买了一把 [HHKB Pro2 Type-S][1] 回来。
 
-![不要脸的秀键盘](/assets/images/2015-01-11-HHKB.jpg)
+![不要脸的秀键盘][hhkb]
 
 然而回国后，一开始用 HHKB 就感到各种不习惯，好几个已经成为 muscle memory 的常用操作都不能用了。主要原因在于 HHKB ：
 
@@ -57,7 +57,7 @@ HHKB for Mac 的跳线调整就不赘述了，这里主要用到一个键位 rem
 
 再顺手贴一下我目前在用的一些 remap 规则：
 
-![Karabiner规则](/assets/images/2015-01-11-Karabiner.png)
+![Karabiner规则][karabiner-config]
 
 ## Hammerspoon
 
@@ -114,3 +114,5 @@ usbWatcher:start()
 [1]: http://www.pfu.fujitsu.com/hhkeyboard/type-s/
 [2]: https://pqrs.org/osx/karabiner/
 [3]: http://www.hammerspoon.org/
+[hhkb]: {{ site.baseurl }}/assets/images/2015-01-11-HHKB.jpg
+[karabiner-config]: {{ site.baseurl }}/assets/images/2015-01-11-Karabiner.png

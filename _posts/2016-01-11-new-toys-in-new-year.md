@@ -13,7 +13,9 @@ tags:
 
 ## HHKB Pro2 Type-S
 
-2015年国庆去霓虹国旅游时，给自己买了一把 HHKB Pro2 Type-S 回来。
+2015年国庆去霓虹国旅游时，给自己买了一把 [HHKB Pro2 Type-S][1] 回来。
+
+![不要脸的秀键盘](/assets/images/2015-01-11-HHKB.jpg)
 
 然而回国后，一开始用 HHKB 就感到各种不习惯，好几个已经成为 muscle memory 的常用操作都不能用了。主要原因在于 HHKB ：
 
@@ -24,7 +26,7 @@ tags:
 
 ## Karabiner
 
-HHKB for Mac 的跳线调整就不赘述了，这里主要用到一个键位 remap 的神器叫 Karabiner，把键位做了如下改动：
+HHKB for Mac 的跳线调整就不赘述了，这里主要用到一个键位 remap 的神器叫 [Karabiner][2]，把键位做了如下改动：
 
 1. Shift + ESC --> Tilde(~)
 2. Cmd + ESC --> 程序内窗口切换（OSX 默认的 Cmd + ` 组合键）
@@ -55,11 +57,11 @@ HHKB for Mac 的跳线调整就不赘述了，这里主要用到一个键位 rem
 
 再顺手贴一下我目前在用的一些 remap 规则：
 
-![remap 规则]
+![Karabiner规则](/assets/images/2015-01-11-Karabiner.png)
 
 ## Hammerspoon
 
-这里再介绍一个很好用的工具 Hammerspoon。
+这里再介绍一个很好用的工具 [Hammerspoon][3]。
 
 用到这个主要是因为公司办公经常会带着 Macbook 到处开会，那么用 Macbook 的时候，就需要把 HHKB 的 remap 关掉，具体到 Karabiner 的操作就是切换 profile。然而拔出键盘后还要手动切一下 remap profile 也是挺不爽的事情，所以就 Google 到了 Hammerspoon 这个工具。
 
@@ -108,3 +110,7 @@ usbWatcher:start()
 总之以上是最近特别想分享的一些小工具，都是因为败了一个 HHKB 又可以 kill 自己好多时间……
 
 等过段时间自己不那么穷了，准备把 HHKB 的键帽都换成无刻，就更加不用在意原始键位这个事情了。
+
+[1]: http://www.pfu.fujitsu.com/hhkeyboard/type-s/
+[2]: https://pqrs.org/osx/karabiner/
+[3]: http://www.hammerspoon.org/

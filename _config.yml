@@ -3,7 +3,6 @@ title: 台湾菜
 email: tengweicai@gmail.com
 description: 日常生活和技术博客
 url: "http://caitengwei.com" # the base hostname & protocol for your site
-baseurl: "/blog"
 twitter_username: caitengwei
 github_username:  caitengwei
 
